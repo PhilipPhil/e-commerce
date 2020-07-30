@@ -6,7 +6,7 @@ class Item extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      dishes: [
+      items: [
         {
           id: 0,
           name: 'Big Sleeping Mask',
@@ -30,16 +30,16 @@ class Item extends Component {
   }
 
   render() {
-    const menu = this.state.dishes.map((dish) => {
+    const menu = this.state.items.map((item) => {
       return (
-        <div key={dish.id} className="col-12 mt-5">
+        <div key={item.id} className="col-12 mt-5">
           <Media tag="li">
             <Media left middle>
-              <Media object src={dish.image} alt={dish.name} />
+              <Media object src={item.image} alt={item.name} />
             </Media>
             <Media body className="ml-5">
-              <Media heading>{dish.name}</Media>
-              <p>{dish.description}</p>
+              <Media heading>{item.name}</Media>
+              <p>{item.description}</p>
             </Media>
           </Media>
         </div>
