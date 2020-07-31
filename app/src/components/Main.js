@@ -1,9 +1,12 @@
 import React , { Component } from 'react';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import Menu from './Item';
 import Header from './include/Header'
 import Footer from './include/Footer'
+import Home from './Home';
 
 import { ITEMS } from '../shared/items';
+
 
 class Main extends Component {
 
@@ -16,10 +19,19 @@ class Main extends Component {
     }
 
     render() {
+        const HomePage = () => {
+            return(
+                <Home />
+            );
+          }
         return (
             <div>
                 <Header />
-                <Menu items={this.state.items}/>
+                <Switch>
+                    <Route path="/home" component={Home} />
+                    <Route exact path = "/items" component={() => <Menu items={this.state.items} />} />
+                    <Redirect to="/home" />
+                </Switch>
                 <Footer />
             </div>
         );
