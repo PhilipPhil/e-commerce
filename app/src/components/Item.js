@@ -1,31 +1,14 @@
 import React, { Component } from 'react';
 import { Media } from 'reactstrap';
+import { ITEMS } from '../shared/items';
+
 
 class Item extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      items: [
-        {
-          id: 0,
-          name: 'Big Sleeping Mask',
-          image: 'assets/images/facemask.jpg',
-          category: 'Mask',
-          label: 'Hot',
-          price: '19.99',
-          description: 'The mask itself is little more than foam glued to a piece of plastic. It will provide your eyes with total blackness.'
-        },
-        {
-          id: 1,
-          name: 'Wax Ear Plugs',
-          image: 'assets/images/earplugs.png',
-          category: 'Ear Plugs',
-          label: '',
-          price: '9.99',
-          description: 'Comfy Wax Ear Plugs are made from cotton and lanolin. They provide a comfy fit into the ear canal while creating a snug seal against noise or water entry. Ideal for sleep, study, travel or noisy workplaces.'
-        }
-      ],
+      items: ITEMS
     };
   }
 
