@@ -1,28 +1,26 @@
 import React , { Component } from 'react';
-
-import { Navbar, NavbarBrand } from 'reactstrap'
-
 import Menu from './Item';
+import Header from './include/Header'
+import Footer from './include/Footer'
 
+import { ITEMS } from '../shared/items';
 
 class Main extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-        };
+            items: ITEMS
+          };
 
     }
 
     render() {
         return (
             <div>
-                <Navbar dark color="primary">
-                    <div className="container">
-                        <NavbarBrand href="/">Sleepy Sheep</NavbarBrand>
-                    </div>
-                </Navbar>
-                <Menu />
+                <Header />
+                <Menu items={this.state.items}/>
+                <Footer />
             </div>
         );
     }

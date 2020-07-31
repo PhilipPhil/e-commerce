@@ -1,19 +1,15 @@
 import React, { Component } from 'react';
 import { Media } from 'reactstrap';
-import { ITEMS } from '../shared/items';
 
 
 class Item extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-      items: ITEMS
-    };
   }
 
   render() {
-    const menu = this.state.items.map((item) => {
+    const menu = this.props.items.map((item) => {
       return (
         <div key={item.id} className="col-12 mt-5">
           <Media tag="li">
