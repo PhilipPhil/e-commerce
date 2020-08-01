@@ -1,16 +1,16 @@
 import React from 'react';
 
-function Home(props) {
+function Contact(props) {
     return(
       <div className="container">
         <div className="row">
-          <div className="col">
-          <h4>Home</h4>
-          <p>This will be the home page</p>
+        <div className="col">
+          <h4>Contact</h4>
+          <p>This will be the Contact page</p>
           </div>
         </div>
     </div>
     );
 }
 
-export default Home;   
+export default Contact;   

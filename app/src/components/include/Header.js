@@ -25,37 +25,25 @@ class Header extends Component {
                 <Navbar dark color="primary" expand="md">
                     <div className="container">
                         <NavbarToggler onClick={this.toggleNav} />
-                        <NavbarBrand className="mr-auto" href="/"><img src='assets/images/logo.png' height="30" width="30" alt='Sleepy Sheep' /></NavbarBrand>
+                        <NavbarBrand className="mr-auto" href="/"><img src='/assets/images/logo.png' height="60" width="60" alt='Sleepy Sheep' /></NavbarBrand>
                         <Collapse isOpen={this.state.isNavOpen} navbar>
                             <Nav navbar>
                             <NavItem>
-                                <NavLink className="nav-link"  to='/home'><span className="fa fa-home fa-lg"></span> Home</NavLink>
+                                <NavLink className="nav-link" exact to='/'>HOME</NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink className="nav-link" to='/aboutus'><span className="fa fa-info fa-lg"></span> About Us</NavLink>
+                                <NavLink className="nav-link"  to='/shop'>SHOP</NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink className="nav-link"  to='/items'><span className="fa fa-list fa-lg"></span> items</NavLink>
+                                <NavLink className="nav-link" to='/about'>ABOUT</NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink className="nav-link" to='/contactus'><span className="fa fa-address-card fa-lg"></span> Contact Us</NavLink>
+                                <NavLink className="nav-link" to='/contact'>CONTACT</NavLink>
                             </NavItem>
                             </Nav>
                         </Collapse>
                     </div>
                 </Navbar>
-                <Jumbotron>
-                    <div className="container">
-                        <div className="row row-header">
-                            <div className="col-12 col-sm-6">
-                                <h1>Sleepy Sheep</h1>
-                            </div>
-                            <div className="col-12 col-sm-6">
-                                <p>Sleep is very important. We sell prodcuts that get you the best night sleep. So you can be as</p>
-                            </div>
-                        </div>
-                    </div>
-                </Jumbotron>
             </React.Fragment>
         )
     }

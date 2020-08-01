@@ -1,40 +1,16 @@
-import React, { Component } from 'react';
-import { Media } from 'reactstrap';
+import React from 'react';
 
-
-class Item extends Component {
-
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    const menu = this.props.items.map((item) => {
-      return (
-        <div key={item.id} className="col-12 mt-5">
-          <Media tag="li">
-            <Media left middle>
-              <Media object src={item.image} alt={item.name} />
-            </Media>
-            <Media body className="ml-5">
-              <Media heading>{item.name}</Media>
-              <p>{item.description}</p>
-            </Media>
-          </Media>
-        </div>
-      );
-    });
-
-    return (
+function Item(props) {
+    return(
       <div className="container">
-        <div className="row">
-          <Media list>
-            {menu}
-          </Media>
-        </div>
+        <h1>items page</h1>
+        <p>{props.item.id}</p>
+        <p>{props.item.name}</p>
+        <p>{props.item.category}</p>
+        <p>{props.item.price}</p>
+        <p>{props.item.comments[0].rating} : {props.item.comments[0].comment}</p>
       </div>
     );
-  }
 }
 
-export default Item;
+export default Item;   
