@@ -4,7 +4,7 @@ import StarRatings from 'react-star-ratings';
 const CardComponent = (props) => {
   return (
     <div class="col-md-4">
-      <div class="card mb-4 box-shadow">
+      <div class="card mb-4">
         <img class="card-img-top" src={props.item.image} alt={props.item.name} />
         <div class="card-body">
           <h5 class="text-center">{props.item.name}</h5>
@@ -14,7 +14,7 @@ const CardComponent = (props) => {
             <div class="btn-group">
               <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
             </div>
-            <div>
+            <div className="align-self-center">
               <StarRatings rating={4.403} starDimension="20px" starSpacing="2px" />
             </div>
             
