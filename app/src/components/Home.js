@@ -45,7 +45,7 @@ const CarouselComponent = () => {
 
 const HomeBodyComponent = () => {
   return(
-    <div class="container marketing">
+    <div class="container marketing py-5">
     <div class="row justify-content-center">
       <div class="col-lg-4 text-center">
         <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140" />
@@ -112,7 +112,7 @@ function Home(props) {
       <React.Fragment>
 
         <CarouselComponent />
-        <br />
+
         <HomeBodyComponent />
 
       </React.Fragment>

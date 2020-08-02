@@ -1,6 +1,29 @@
 import React, { Component } from 'react';
-import { Media } from 'reactstrap';
+import StarRatings from 'react-star-ratings';
 
+const CardComponent = (props) => {
+  return (
+    <div class="col-md-4">
+      <div class="card mb-4 box-shadow">
+        <img class="card-img-top" src={props.item.image} alt={props.item.name} />
+        <div class="card-body">
+          <h5 class="text-center">{props.item.name}</h5>
+          <p class="card-text">{props.item.description}</p>
+          <div class="d-flex justify-content-between align-items-center">
+
+            <div class="btn-group">
+              <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+            </div>
+            <div>
+              <StarRatings rating={4.403} starDimension="20px" starSpacing="2px" />
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
 
 class Shop extends Component {
 
@@ -11,32 +34,15 @@ class Shop extends Component {
   render() {
     const menu = this.props.items.map((item) => {
       return (
-        <div className="row" key={item.id} className="col-12 mt-5">
-          <Media tag="li">
-            <Media left middle>
-              <Media object src={item.image} alt={item.name} />
-            </Media>
-            <Media body className="ml-5">
-              <Media heading>{item.name}</Media>
-              <p>{item.description}</p>
-            </Media>
-          </Media>
-        </div>
+        <CardComponent item={item} />
       );
     });
 
     return (
       <div className="container">
-
-        <div className="row">
-          <div className="col">
-            <h4>Shop</h4>
-            <p>This will be the Shop page</p>
-          </div>
-        </div>
-
+        <div class="row py-5">
           {menu}
-
+        </div>
       </div>
     );
   }
