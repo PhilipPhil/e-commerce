@@ -45,7 +45,7 @@ const CarouselComponent = () => {
 
 const HomeBodyComponent = () => {
   return(
-    <div class="container marketing py-5">
+    <div class="container marketing py-4">
     <div class="row justify-content-center">
       <div class="col-lg-4 text-center">
         <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140" />
@@ -99,8 +99,6 @@ const HomeBodyComponent = () => {
         <img class="featurette-image img-fluid mx-auto" src="assets/images/500x500.jpg" alt="Generic placeholder image" />
       </div>
     </div>
-
-    <hr class="featurette-divider" />
 
   </div>
   )

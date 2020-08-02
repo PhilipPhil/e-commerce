@@ -2,3 +2,33 @@
     min-height: 20rem;
     object-fit: cover;
 }
+
+.top-nav {
+    height: 30px;
+    background-color: #212121!important;
+}
+
+.bottom-nav {
+    background-color: #2E2E2E!important;
+}
+
+.footer, .footer .fa {
+    color: rgba(255,255,255, 0.5);
+}
+
+
+.top-footer {
+    background-color: #2E2E2E!important;
+    
+}
+
+.bottom-footer {
+    background-color: #212121!important;
+    height: 30px;
+
+}
+
+
+.bottom-footer .container p {
+    margin: 0;
+}
