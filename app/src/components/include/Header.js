@@ -35,10 +35,10 @@ class Header extends Component {
                                 <NavLink className="nav-link"  to='/shop'>SHOP</NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink className="nav-link" to='/about'>ABOUT</NavLink>
+                                <NavLink className="nav-link" to='/contact'>CONTACT</NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink className="nav-link" to='/contact'>CONTACT</NavLink>
+                                <NavLink className="nav-link" to='/cart'>CART</NavLink>
                             </NavItem>
                             </Nav>
                         </Collapse>

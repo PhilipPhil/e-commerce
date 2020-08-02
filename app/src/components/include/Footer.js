@@ -8,7 +8,7 @@ function Footer(props) {
                 <div className="row justify-content-center">
                     
                     <div className="col-12 col-md-6">
-                        <h5>FOOTER CONTENT</h5>
+                        <h5>Footer Content</h5>
                         <p>
                             Here you can use rows and columns here to organize your footer
                             content. Lorem ipsum dolor sit amet, consectetur adipisicing
@@ -21,8 +21,8 @@ function Footer(props) {
                         <ul className="list-unstyled">
                             <li><Link to='/'>Home</Link></li>
                             <li><Link to='/shop'>Shop</Link></li>
-                            <li><Link to='/about'>About Us</Link></li>
-                            <li><Link to='/contact'>Contact Us</Link></li>
+                            <li><Link to='/contact'>Contact</Link></li>
+                            <li><Link to='/cart'>Cart</Link></li>
                         </ul>
                     </div>
    
