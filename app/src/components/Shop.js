@@ -10,8 +10,7 @@ const CardComponent = (props) => {
           <h5 class="text-center">{props.item.name}</h5>
           <p class="card-text">{props.item.description}</p>
           <div class="d-flex justify-content-between align-items-center">
-
-            <div class="btn-group">
+            <div class="align-self-center">
               <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
             </div>
             <div className="align-self-center">
