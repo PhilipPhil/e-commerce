@@ -2,6 +2,7 @@ import React from 'react';
 
 function Contact(props) {
     return(
+      <React.Fragment>
       <div className="container">
         <div className="row">
         <div className="col">
@@ -10,6 +11,7 @@ function Contact(props) {
           </div>
         </div>
     </div>
+    </React.Fragment>
     );
 }
 
