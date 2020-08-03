@@ -35,7 +35,6 @@ class Header extends Component {
                 <Navbar dark expand="md" className="bottom-nav">
                     <div className="container">
                         <NavbarToggler onClick={this.toggleNav} />
-                        <NavbarBrand className="mr-auto" href="/"><img src='/assets/images/logo.png' height="60" width="60" alt='Sleepy Sheep' /></NavbarBrand>
                         <Collapse isOpen={this.state.isNavOpen} navbar>
                             <Nav navbar>
                                 <NavItem>
@@ -52,6 +51,7 @@ class Header extends Component {
                                 </NavItem>
                             </Nav>
                         </Collapse>
+                        <NavbarBrand href="/"><img src='/assets/images/logo.png' height="60" width="60" alt='Sleepy Sheep' /></NavbarBrand>
                     </div>
                 </Navbar>
             </React.Fragment>
