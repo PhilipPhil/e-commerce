@@ -6,7 +6,7 @@ import Footer from './include/Footer'
 import Home from './Home';
 import Item from './Item';
 import Contact from './Contact';
-import Cart from './Cart';
+import About from './About';
 import Error404 from './Error404';
 
 import { ITEMS } from '../shared/items';
@@ -51,7 +51,7 @@ class Main extends Component {
                     <Route exact path = "/shop" component={() => <Menu items={this.state.items} />} />
                     <Route path='/shop/:itemid' component={ItemWithId} />
                     <Route path='/Contact' component={ContactPage} />
-                    <Route path='/Cart' component={Cart} />
+                    <Route path='/about' component={About} />
                     <Route path='/error404' component={Error404} />
                     <Redirect to="/error404" />
                 </Switch>

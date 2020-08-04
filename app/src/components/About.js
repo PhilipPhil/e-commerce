@@ -1,16 +1,16 @@
 import React from 'react';
 
-function Cart(props) {
+function About(props) {
     return(
       <div className="container">
         <div className="row">
         <div className="col">
-          <h4>Cart</h4>
-          <p>This will be the cart page</p>
+          <h4>About</h4>
+          <p>This will be the About page</p>
           </div>
         </div>
     </div>
     );
 }
 
-export default Cart;   
+export default About;   

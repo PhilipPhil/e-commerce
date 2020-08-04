@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 function Error404(props) {
   return (
     <React.Fragment>
-      <img className="d-block w-100 top-img" src="assets/images/1200x400.jpg" alt="First slide" />
+      <img className="d-block w-100 top-img" src="assets/images/page4040.jpg" alt="First slide" />
       <div className="container">
         <div className="row py-4">
           <div className="col text-center">

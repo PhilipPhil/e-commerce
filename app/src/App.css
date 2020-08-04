@@ -24,13 +24,13 @@
 
 .top-footer {
     background-color: #2E2E2E!important;
-    min-height: 18vh;
+    min-height: 19vh;
     object-fit: cover
 }
 
 .bottom-footer {
     height: 30px;
-    min-height: 2vh;
+    min-height: 3vh;
     background-color: #212121!important;
     object-fit: cover
 }
@@ -41,5 +41,5 @@
 
 .main-container {
     width: 100%;
-    min-height: 80vh;
+    min-height: 78vh;
 }
