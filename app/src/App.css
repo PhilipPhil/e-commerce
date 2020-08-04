@@ -1,5 +1,11 @@
+.top-img {
+    height: 16rem;
+    object-fit: cover;
+}
+
 .carousel-item > img {
     min-height: 20rem;
+    max-height: 31rem;
     object-fit: cover;
 }
 
@@ -19,12 +25,14 @@
 .top-footer {
     background-color: #2E2E2E!important;
     min-height: 18vh;
+    object-fit: cover
 }
 
 .bottom-footer {
     height: 30px;
     min-height: 2vh;
     background-color: #212121!important;
+    object-fit: cover
 }
 
 .bottom-footer .container p {
@@ -32,7 +40,6 @@
 }
 
 .main-container {
-    margin: 0;
     width: 100%;
     min-height: 80vh;
 }
