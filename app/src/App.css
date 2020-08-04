@@ -18,14 +18,21 @@
 
 .top-footer {
     background-color: #2E2E2E!important;
-    
+    min-height: 18vh;
 }
 
 .bottom-footer {
-    background-color: #212121!important;
     height: 30px;
+    min-height: 2vh;
+    background-color: #212121!important;
 }
 
 .bottom-footer .container p {
     margin: 0;
+}
+
+.main-container {
+    margin: 0;
+    width: 100%;
+    min-height: 80vh;
 }

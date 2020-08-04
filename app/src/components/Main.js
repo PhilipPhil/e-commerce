@@ -7,6 +7,7 @@ import Home from './Home';
 import Item from './Item';
 import Contact from './Contact';
 import Cart from './Cart';
+import Error404 from './Error404';
 
 import { ITEMS } from '../shared/items';
 
@@ -43,6 +44,7 @@ class Main extends Component {
 
         return (
             <div>
+                <div className="main-container">
                 <Header />
                 <Switch>
                     <Route exact path="/" component={Home}></Route>
@@ -50,8 +52,10 @@ class Main extends Component {
                     <Route path='/shop/:itemid' component={ItemWithId} />
                     <Route path='/Contact' component={ContactPage} />
                     <Route path='/Cart' component={Cart} />
-                    <Redirect to="/" />
+                    <Route path='/error404' component={Error404} />
+                    <Redirect to="/error404" />
                 </Switch>
+                </div>   
                 <Footer />
             </div>
         );
