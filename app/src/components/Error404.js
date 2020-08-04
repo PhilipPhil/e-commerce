@@ -10,7 +10,7 @@ function Error404(props) {
         <div className="row py-4">
           <div className="col text-center">
             <h1>Oops!</h1>
-            <h2>404 Not Found</h2>
+            <h4>404 Not Found</h4>
             <p>Sorry, an error has occured, Requested page not found!</p>
             <div>
               <Link to='/'><i class="fa fa-home" aria-hidden="true" /> Take Me Home</Link>

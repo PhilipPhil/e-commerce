@@ -47,7 +47,7 @@ handleSubmit(event) {
         <div className="container">
         <div className="row py-4 d-flex justify-content-center">
                    <div className="col-12 col-md-7 text-center mb-2">
-                      <h3>Contact Us</h3>
+                      <h2>Contact Us</h2>
                    </div>
                     <div className="col-12 col-md-7">
                         <Form onSubmit={this.handleSubmit}>
