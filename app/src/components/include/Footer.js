@@ -28,7 +28,7 @@ const FooterComponent = (props) => {
                             </ul>
                         </div>
 
-                        <div className="col-7 col-md-4 align-self-center">
+                        <div className="col-6 col-md-2 align-self-center">
                             <a className="btn btn-social-icon btn-facebook" href="http://www.facebook.com/"><i className="fa fa-facebook"></i></a>
                             <a className="btn btn-social-icon btn-linkedin" href="http://www.linkedin.com/in/"><i className="fa fa-linkedin"></i></a>
                             <a className="btn btn-social-icon btn-twitter" href="http://twitter.com/"><i className="fa fa-twitter"></i></a>
