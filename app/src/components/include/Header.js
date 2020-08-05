@@ -53,7 +53,7 @@ class Header extends Component {
                         </Collapse>
                     </div>
                 </Navbar>
-                
+
             </React.Fragment>
         )
     }
