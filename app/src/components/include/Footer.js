@@ -22,7 +22,7 @@ const FooterComponent = (props) => {
                             <h5>Links</h5>
                             <ul className="list-unstyled">
                                 <li><Link to='/'>Home</Link></li>
-                                <li><Link to='/shop'>Shop</Link></li>
+                                <li><Link to='/deals'>Deals</Link></li>
                                 <li><Link to='/contact'>Contact</Link></li>
                                 <li><Link to='/About'>About</Link></li>
                             </ul>

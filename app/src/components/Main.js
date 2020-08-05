@@ -32,9 +32,9 @@ class Main extends Component {
             );
           }
 
-          const ItemWithId = ({match}) => {
+          const DealWithId = ({match}) => {
             return(
-                <Item item={this.state.items.filter((item) => item.id === parseInt(match.params.itemid,10))[0]} />
+                <Item item={this.state.items.filter((item) => item.id === parseInt(match.params.dealid,10))[0]} />
             );
           };
 
@@ -44,11 +44,13 @@ class Main extends Component {
                 <Header />
                 <Switch>
                     <Route exact path="/" component={Home}></Route>
-                    <Route exact path = "/shop" component={() => <Shop items={this.state.items} />} />
-                    <Route path='/shop/:itemid' component={ItemWithId} />
                     <Route path='/Contact' component={ContactPage} />
                     <Route path='/about' component={About} />
                     <Route path='/error404' component={Error404} />
+
+                    <Route exact path = "/deals" component={() => <Shop items={this.state.items} />} />
+                    <Route path='/deals/:dealid' component={DealWithId} />
+
                     <Redirect to="/error404" />
                 </Switch>
                 </div>   
