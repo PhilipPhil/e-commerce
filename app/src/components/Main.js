@@ -1,13 +1,14 @@
 import React , { Component } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
-import Menu from './Shop';
 import Header from './include/Header'
 import Footer from './include/Footer'
 import Home from './Home';
-import Item from './Item';
 import Contact from './Contact';
 import About from './About';
 import Error404 from './Error404';
+
+import Shop from './Shop';
+import Item from './Item';
 
 import { ITEMS } from '../shared/items';
 
@@ -24,11 +25,6 @@ class Main extends Component {
 
 
     render() {
-        const HomePage = () => {
-            return(
-                <Home />
-            );
-          }
 
           const ContactPage = () => {
             return(
@@ -48,7 +44,7 @@ class Main extends Component {
                 <Header />
                 <Switch>
                     <Route exact path="/" component={Home}></Route>
-                    <Route exact path = "/shop" component={() => <Menu items={this.state.items} />} />
+                    <Route exact path = "/shop" component={() => <Shop items={this.state.items} />} />
                     <Route path='/shop/:itemid' component={ItemWithId} />
                     <Route path='/Contact' component={ContactPage} />
                     <Route path='/about' component={About} />
