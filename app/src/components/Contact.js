@@ -63,7 +63,7 @@ class Contact extends Component {
                                         <Input type="select" id="subject" name="subject"
                                             value={this.state.subject}
                                             onChange={this.handleInputChange}>
-                                            <option value="" disabled>Please Choose</option>
+                                            <option value="" disabled>Please choose</option>
                                             <option>Question</option>
                                             <option>Payment</option>
                                             <option>Technical</option>
