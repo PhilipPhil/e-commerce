@@ -1,17 +1,18 @@
 import React from 'react';
+import StarRatings from 'react-star-ratings';
 
 function Deal(props) {
   return (
     <React.Fragment>
 
-      <div className="container">
+      <div className="container py-5">
 
-        <div class="row featurette py-5">
+        <div class="row featurette">
           <div class="col-md-6">
-            <img class="featurette-image img-fluid mx-auto" src="../assets/images/PintMainImage.jpg" alt="Generic placeholder image"/>
+            <img class="featurette-image img-fluid mx-auto" src={props.item.mainimage} alt={props.item.company} />
           </div>
           <div class="col-md-6 align-self-center text-center">
-            <img class="featurette-image img-fluid mx-auto" src="../assets/images/Pintlogo.jpg" alt="Generic placeholder image" />
+            <img class="featurette-image img-fluid mx-auto" src={props.item.logoimage} alt="Company Logo" />
             <h3>{props.item.company}</h3>
             <p class="lead">{props.item.shortdescription}</p>
           </div>
@@ -31,8 +32,14 @@ function Deal(props) {
 
         <hr class="featurette-divider" />
 
+        <div class="row">
+          <div class="col text-center">
+            <StarRatings rating={props.item.rating} starSpacing="2px" />
+          </div>
 
-        <p>Review Section</p>
+        </div>
+
+
 
       </div>
     </React.Fragment>

@@ -38,8 +38,8 @@ class Shop extends Component {
     });
 
     return (
-      <div className="container">
-        <div class="row py-5">
+      <div className="container py-5">
+        <div class="row">
           {menu}
         </div>
       </div>
