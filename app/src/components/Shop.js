@@ -3,9 +3,9 @@ import StarRatings from 'react-star-ratings';
 
 const CardComponent = (props) => {
   return (
-    <div class="col-md-4">
+    <div class="col-md-6 col-lg-4">
       <div class="card mb-4">
-        <img class="card-img-top" src={props.item.mainimage} alt={props.item.company} />
+        <img class="card-img-top" src={props.item.mainimage} alt={props.item.company}/>
         <div class="card-body">
           <h5 class="text-center">{props.item.company}</h5>
           <p class="card-text">{props.item.description}</p>
