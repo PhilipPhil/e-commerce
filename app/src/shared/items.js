@@ -1,24 +1,25 @@
 export const ITEMS = [
     {
         id: 0,
-        name: 'Big Sleeping Mask',
-        image: 'assets/images/500x333.jpg',
-        category: 'Mask',
-        label: 'Hot',
-        price: '19.99',
-        description: 'The mask itself is little more than foam glued to a piece of plastic. It will provide your eyes with total blackness.',
+        company: 'The Pint',
+        mainimage: 'assets/images/PintMainImage.jpg',
+        logoimage: 'assets/images/Pintlogo.jpg',
+        shortdescription: 'Flash your valid-year Key to your server at Ebisu on Robson for your choice of VIP loyalty-love, on every dine-in visit Sundays to Thursdays, all year long: Option 1:  Order 1 Drink + get a complimentary order of their signature truffle fries! Option 2: Spend $30 + get a complimentary drink of choice.*',
+        longdescription: 'THE FINE PRINT:  VIP perk is exclusive to Vancouver Key To The City Keyholders.  VIP Dining Perk is an exclusive privilege to enjoy 2-for-1 appetizers whenever dining in at The Pint Public House. Dining perk is for the Keyholder only.  Perk has no cash value and may not be combined with any other offer.  VIP Nightlife Perk is VIP access + skip-the-line and cover on every weekend night, all year long.   This VIP loyalty nightlife perk is for the valid year Keyholder + 1 guest, and depends on capacity, of course.   Loyalty returned instantly on every visit by the best of Vancouver.   Perk has no cash value.  The Pint Public House reserves the right to refuse entry to anyone not adhering to rules or policies.  Enjoy this exclusive VIP benefit as a Vancouver Keyholder.',
+        geopin: '',
+        rating: 4.5,
         comments: [
             {
                 id: 0,
                 rating: 5,
-                comment: "Imagine all the sleep!",
+                comment: "Loved it!",
                 author: "John Lemon",
                 date: "2012-10-16T17:57:28.556094Z"
             },
             {
                 id: 1,
                 rating: 4,
-                comment: "Sends anyone to sleep!",
+                comment: "It was pretty good.",
                 author: "Paul McVites",
                 date: "2014-09-05T17:57:28.556094Z"
             }
@@ -26,228 +27,25 @@ export const ITEMS = [
     },
     {
         id: 1,
-        name: 'Wax Ear Plugs',
-        image: 'assets/images/500x333.jpg',
-        category: 'Ear Plugs',
-        label: '',
-        price: '9.99',
-        description: 'This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.',
-        comments: [
-            {
-                id: 0,
-                rating: 5,
-                comment: "Imagine all the sleep!",
-                author: "John Lemon",
-                date: "2012-10-16T17:57:28.556094Z"
-            },
-            {
-                id: 1,
-                rating: 4,
-                comment: "Sends anyone to sleep!",
-                author: "Paul McVites",
-                date: "2014-09-05T17:57:28.556094Z"
-            }
-        ]
+        company: 'The Pint',
+        mainimage: 'assets/images/500x333.jpg',
+        logoimage: 'assets/images/PintMainImage.jpg',
+        shortdescription: 'Flash your valid-year Key to your server at Ebisu on Robson for your choice of VIP loyalty-love, on every dine-in visit Sundays to Thursdays, all year long: Option 1:  Order 1 Drink + get a complimentary order of their signature truffle fries! Option 2: Spend $30 + get a complimentary drink of choice.*',
+        longdescription: 'THE FINE PRINT:  VIP perk is exclusive to Vancouver Key To The City Keyholders.  VIP Dining Perk is an exclusive privilege to enjoy 2-for-1 appetizers whenever dining in at The Pint Public House. Dining perk is for the Keyholder only.  Perk has no cash value and may not be combined with any other offer.  VIP Nightlife Perk is VIP access + skip-the-line and cover on every weekend night, all year long.   This VIP loyalty nightlife perk is for the valid year Keyholder + 1 guest, and depends on capacity, of course.   Loyalty returned instantly on every visit by the best of Vancouver.   Perk has no cash value.  The Pint Public House reserves the right to refuse entry to anyone not adhering to rules or policies.  Enjoy this exclusive VIP benefit as a Vancouver Keyholder.',
+        geopin: '',
+        rating: 0,
+        comments: []
     },
     {
-        id: 1,
-        name: 'Wax Ear Plugs',
-        image: 'assets/images/500x333.jpg',
-        category: 'Ear Plugs',
-        label: '',
-        price: '9.99',
-        description: 'Comfy Wax Ear Plugs are made from cotton and lanolin. They provide a comfy fit into the ear canal while creating a snug seal against noise or water entry. Ideal for sleep, study, travel or noisy workplaces.',
-        comments: [
-            {
-                id: 0,
-                rating: 5,
-                comment: "Imagine all the sleep!",
-                author: "John Lemon",
-                date: "2012-10-16T17:57:28.556094Z"
-            },
-            {
-                id: 1,
-                rating: 4,
-                comment: "Sends anyone to sleep!",
-                author: "Paul McVites",
-                date: "2014-09-05T17:57:28.556094Z"
-            }
-        ]
-    },
-    {
-        id: 1,
-        name: 'Wax Ear Plugs',
-        image: 'assets/images/500x333.jpg',
-        category: 'Ear Plugs',
-        label: '',
-        price: '9.99',
-        description: 'Comfy Wax Ear Plugs are made from cotton and lanolin. They provide a comfy fit into the ear canal while creating a snug seal against noise or water entry. Ideal for sleep, study, travel or noisy workplaces.',
-        comments: [
-            {
-                id: 0,
-                rating: 5,
-                comment: "Imagine all the sleep!",
-                author: "John Lemon",
-                date: "2012-10-16T17:57:28.556094Z"
-            },
-            {
-                id: 1,
-                rating: 4,
-                comment: "Sends anyone to sleep!",
-                author: "Paul McVites",
-                date: "2014-09-05T17:57:28.556094Z"
-            }
-        ]
-    },
-    {
-        id: 1,
-        name: 'Wax Ear Plugs',
-        image: 'assets/images/500x333.jpg',
-        category: 'Ear Plugs',
-        label: '',
-        price: '9.99',
-        description: 'Comfy Wax Ear Plugs are made from cotton and lanolin. They provide a comfy fit into the ear canal while creating a snug seal against noise or water entry. Ideal for sleep, study, travel or noisy workplaces.',
-        comments: [
-            {
-                id: 0,
-                rating: 5,
-                comment: "Imagine all the sleep!",
-                author: "John Lemon",
-                date: "2012-10-16T17:57:28.556094Z"
-            },
-            {
-                id: 1,
-                rating: 4,
-                comment: "Sends anyone to sleep!",
-                author: "Paul McVites",
-                date: "2014-09-05T17:57:28.556094Z"
-            }
-        ]
-    },
-    {
-        id: 1,
-        name: 'Wax Ear Plugs',
-        image: 'assets/images/500x333.jpg',
-        category: 'Ear Plugs',
-        label: '',
-        price: '9.99',
-        description: 'Comfy Wax Ear Plugs are made from cotton and lanolin. They provide a comfy fit into the ear canal while creating a snug seal against noise or water entry. Ideal for sleep, study, travel or noisy workplaces.',
-        comments: [
-            {
-                id: 0,
-                rating: 5,
-                comment: "Imagine all the sleep!",
-                author: "John Lemon",
-                date: "2012-10-16T17:57:28.556094Z"
-            },
-            {
-                id: 1,
-                rating: 4,
-                comment: "Sends anyone to sleep!",
-                author: "Paul McVites",
-                date: "2014-09-05T17:57:28.556094Z"
-            }
-        ]
-    },
-    {
-        id: 1,
-        name: 'Wax Ear Plugs',
-        image: 'assets/images/500x333.jpg',
-        category: 'Ear Plugs',
-        label: '',
-        price: '9.99',
-        description: 'Comfy Wax Ear Plugs are made from cotton and lanolin. They provide a comfy fit into the ear canal while creating a snug seal against noise or water entry. Ideal for sleep, study, travel or noisy workplaces.',
-        comments: [
-            {
-                id: 0,
-                rating: 5,
-                comment: "Imagine all the sleep!",
-                author: "John Lemon",
-                date: "2012-10-16T17:57:28.556094Z"
-            },
-            {
-                id: 1,
-                rating: 4,
-                comment: "Sends anyone to sleep!",
-                author: "Paul McVites",
-                date: "2014-09-05T17:57:28.556094Z"
-            }
-        ]
-    },
-    {
-        id: 1,
-        name: 'Wax Ear Plugs',
-        image: 'assets/images/500x333.jpg',
-        category: 'Ear Plugs',
-        label: '',
-        price: '9.99',
-        description: 'Comfy Wax Ear Plugs are made from cotton and lanolin. They provide a comfy fit into the ear canal while creating a snug seal against noise or water entry. Ideal for sleep, study, travel or noisy workplaces.',
-        comments: [
-            {
-                id: 0,
-                rating: 5,
-                comment: "Imagine all the sleep!",
-                author: "John Lemon",
-                date: "2012-10-16T17:57:28.556094Z"
-            },
-            {
-                id: 1,
-                rating: 4,
-                comment: "Sends anyone to sleep!",
-                author: "Paul McVites",
-                date: "2014-09-05T17:57:28.556094Z"
-            }
-        ]
-    },
-    {
-        id: 1,
-        name: 'Wax Ear Plugs',
-        image: 'assets/images/500x333.jpg',
-        category: 'Ear Plugs',
-        label: '',
-        price: '9.99',
-        description: 'Comfy Wax Ear Plugs are made from cotton and lanolin. They provide a comfy fit into the ear canal while creating a snug seal against noise or water entry. Ideal for sleep, study, travel or noisy workplaces.',
-        comments: [
-            {
-                id: 0,
-                rating: 5,
-                comment: "Imagine all the sleep!",
-                author: "John Lemon",
-                date: "2012-10-16T17:57:28.556094Z"
-            },
-            {
-                id: 1,
-                rating: 4,
-                comment: "Sends anyone to sleep!",
-                author: "Paul McVites",
-                date: "2014-09-05T17:57:28.556094Z"
-            }
-        ]
-    },
-    {
-        id: 1,
-        name: 'Wax Ear Plugs',
-        image: 'assets/images/500x333.jpg',
-        category: 'Ear Plugs',
-        label: '',
-        price: '9.99',
-        description: 'Comfy Wax Ear Plugs are made from cotton and lanolin. They provide a comfy fit into the ear canal while creating a snug seal against noise or water entry. Ideal for sleep, study, travel or noisy workplaces.',
-        comments: [
-            {
-                id: 0,
-                rating: 5,
-                comment: "Imagine all the sleep!",
-                author: "John Lemon",
-                date: "2012-10-16T17:57:28.556094Z"
-            },
-            {
-                id: 1,
-                rating: 4,
-                comment: "Sends anyone to sleep!",
-                author: "Paul McVites",
-                date: "2014-09-05T17:57:28.556094Z"
-            }
-        ]
+        id: 2,
+        company: 'The Pint',
+        mainimage: 'assets/images/Pintlogo.jpg',
+        logoimage: 'assets/images/PintMainImage.jpg',
+        shortdescription: 'Flash your valid-year Key to your server at Ebisu on Robson for your choice of VIP loyalty-love, on every dine-in visit Sundays to Thursdays, all year long: Option 1:  Order 1 Drink + get a complimentary order of their signature truffle fries! Option 2: Spend $30 + get a complimentary drink of choice.*',
+        longdescription: 'THE FINE PRINT:  VIP perk is exclusive to Vancouver Key To The City Keyholders.  VIP Dining Perk is an exclusive privilege to enjoy 2-for-1 appetizers whenever dining in at The Pint Public House. Dining perk is for the Keyholder only.  Perk has no cash value and may not be combined with any other offer.  VIP Nightlife Perk is VIP access + skip-the-line and cover on every weekend night, all year long.   This VIP loyalty nightlife perk is for the valid year Keyholder + 1 guest, and depends on capacity, of course.   Loyalty returned instantly on every visit by the best of Vancouver.   Perk has no cash value.  The Pint Public House reserves the right to refuse entry to anyone not adhering to rules or policies.  Enjoy this exclusive VIP benefit as a Vancouver Keyholder.',
+        geopin: '',
+        rating: 3.3333,
+        comments: []
     }
 ];
 

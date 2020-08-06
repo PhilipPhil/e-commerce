@@ -5,16 +5,16 @@ const CardComponent = (props) => {
   return (
     <div class="col-md-4">
       <div class="card mb-4">
-        <img class="card-img-top" src={props.item.image} alt={props.item.name} />
+        <img class="card-img-top" src={props.item.mainimage} alt={props.item.company} />
         <div class="card-body">
-          <h5 class="text-center">{props.item.name}</h5>
-          <p class="card-text">{props.item.description}</p>
+          <h5 class="text-center">{props.item.company}</h5>
+          <p class="card-text">{props.item.shortdescription}</p>
           <div class="d-flex justify-content-between align-items-center">
             <div class="align-self-center">
               <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
             </div>
             <div className="align-self-center">
-              <StarRatings rating={4.403} starDimension="20px" starSpacing="2px" />
+              <StarRatings rating={props.item.rating} starDimension="20px" starSpacing="2px" />
             </div>
             
           </div>

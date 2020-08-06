@@ -8,7 +8,7 @@ import About from './About';
 import Error404 from './Error404';
 
 import Shop from './Shop';
-import Item from './Item';
+import Deal from './Deal';
 
 import { ITEMS } from '../shared/items';
 
@@ -34,7 +34,7 @@ class Main extends Component {
 
           const DealWithId = ({match}) => {
             return(
-                <Item item={this.state.items.filter((item) => item.id === parseInt(match.params.dealid,10))[0]} />
+                <Deal item={this.state.items.filter((item) => item.id === parseInt(match.params.dealid,10))[0]} />
             );
           };
 
