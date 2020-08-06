@@ -43,7 +43,7 @@ const FooterComponent = (props) => {
                 <div className="container">
                     <div className="row justify-content-center bottom-footer">
                         <div className="col-auto align-self-center">
-                            <p>&copy; COPYRIGHT COMPANY {new Date().getFullYear()}</p>
+                            <p>&copy; COPYRIGHT DEAL ALCHEMIST {new Date().getFullYear()}</p>
                         </div>
                     </div>
                 </div>
