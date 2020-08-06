@@ -5,16 +5,16 @@ const CardComponent = (props) => {
   return (
     <div class="col-md-6 col-lg-4">
       <div class="card mb-4">
-        <img class="card-img-top" src={props.item.mainimage} alt={props.item.company}/>
+        <img class="card-img-top" src={props.deal.mainimage} alt={props.deal.company}/>
         <div class="card-body">
-          <h5 class="text-center">{props.item.company}</h5>
-          <p class="card-text">{props.item.description}</p>
+          <h5 class="text-center">{props.deal.company}</h5>
+          <p class="card-text">{props.deal.description}</p>
           <div class="d-flex justify-content-between align-items-center">
             <div class="align-self-center">
               <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
             </div>
             <div className="align-self-center">
-              <StarRatings rating={props.item.rating} starDimension="20px" starSpacing="2px" />
+              <StarRatings rating={props.deal.rating} starDimension="20px" starSpacing="2px" />
             </div>
             
           </div>
@@ -31,9 +31,9 @@ class Shop extends Component {
   }
 
   render() {
-    const menu = this.props.items.map((item) => {
+    const menu = this.props.deals.map((deal) => {
       return (
-        <CardComponent item={item} />
+        <CardComponent deal={deal} />
       );
     });
 

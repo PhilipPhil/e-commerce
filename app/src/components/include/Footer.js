@@ -21,10 +21,9 @@ const FooterComponent = (props) => {
                         <div className="col-auto mt-3">
                             <h5>Links</h5>
                             <ul className="list-unstyled">
-                                <li><Link to='/'>Home</Link></li>
-                                <li><Link to='/deals'>Deals</Link></li>
+                                <li><Link exact to='/'>Deals</Link></li>
+                                <li><Link to='/about'>About</Link></li>
                                 <li><Link to='/contact'>Contact</Link></li>
-                                <li><Link to='/About'>About</Link></li>
                             </ul>
                         </div>
 

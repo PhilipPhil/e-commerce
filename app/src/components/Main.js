@@ -4,9 +4,7 @@ import Header from './include/Header'
 import Footer from './include/Footer'
 import Home from './Home';
 import Contact from './Contact';
-import About from './About';
 import Error404 from './Error404';
-
 import Shop from './Shop';
 import Deal from './Deal';
 
@@ -18,7 +16,7 @@ class Main extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            items: ITEMS
+            deals: ITEMS
           };
 
     }
@@ -34,7 +32,7 @@ class Main extends Component {
 
           const DealWithId = ({match}) => {
             return(
-                <Deal item={this.state.items.filter((item) => item.id === parseInt(match.params.dealid,10))[0]} />
+                <Deal item={this.state.deals.filter((item) => item.id === parseInt(match.params.dealid,10))[0]} />
             );
           };
 
@@ -43,13 +41,17 @@ class Main extends Component {
                 <div className="main-container">
                 <Header />
                 <Switch>
-                    <Route exact path="/" component={Home}></Route>
+                    <Route exact path="/" component={() => <Shop deals={this.state.deals} />}></Route>
+                    {/* <Route exact path = "/deals" component={() => <Shop deals={this.state.deals} />} /> */}
+                    <Route path='/deal/:dealid' component={DealWithId} />
+
+
+                    <Route path='/about' component={Home} />
                     <Route path='/Contact' component={ContactPage} />
-                    <Route path='/about' component={About} />
+                    
                     <Route path='/error404' component={Error404} />
 
-                    <Route exact path = "/deals" component={() => <Shop items={this.state.items} />} />
-                    <Route path='/deals/:dealid' component={DealWithId} />
+
 
                     <Redirect to="/error404" />
                 </Switch>
