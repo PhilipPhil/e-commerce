@@ -1,5 +1,7 @@
 import React from 'react';
 import StarRatings from 'react-star-ratings';
+import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
+
 
 function Deal(props) {
   return (
@@ -7,26 +9,27 @@ function Deal(props) {
 
       <div className="container py-5">
 
-        <div class="row featurette">
-          <div class="col-md-6">
-            <img class="featurette-image img-fluid mx-auto" src={props.item.mainimage} alt={props.item.company} />
+        <div class="row featurette mb-4">
+          <div class="col-md-6 text-center">
+            <img class="featurette-image img-fluid mx-auto" src={props.item.mainimage} alt={props.item.company}  style={{"max-height": "100vh"}}/>
           </div>
           <div class="col-md-6 align-self-center text-center">
-            <img class="featurette-image img-fluid mx-auto" src={props.item.logoimage} alt="Company Logo" />
+            <img class="featurette-image img-fluid mx-auto" src={props.item.logoimage} alt="Company Logo" style={{"max-height": "129px", "max-width": "241px"}}/>
             <h3>{props.item.company}</h3>
-            <p class="lead">{props.item.shortdescription}</p>
+            <p>{props.item.description}</p>
+            <div class="row text-center justify-content-center mb-2">
+              <StarRatings rating={props.item.rating} starSpacing="2px" />
+              <h1>&nbsp;{props.item.rating}</h1>
+            </div>
+            <a className="btn btn-outline-secondary" href={props.item.website}>Visit {props.item.company} Website <i className="fa fa-external-link" /></a>
           </div>
         </div>
+
+        <hr class="featurette-divider" />
 
         <div class="row">
           <div class="col">
-            <p class="small">{props.item.longdescription}</p>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col text-center">
-            <p>Google Maps</p>
+            <p class="small"><b>THE FINE PRINT:</b> {props.item.fineprint}</p>
           </div>
         </div>
 
@@ -34,12 +37,18 @@ function Deal(props) {
 
         <div class="row">
           <div class="col text-center">
-            <StarRatings rating={props.item.rating} starSpacing="2px" />
+            <p>Google Maps</p>
           </div>
-
         </div>
 
 
+        <hr class="featurette-divider" />
+
+        <div class="row">
+          <div class="col text-center">
+            <p>Reviews</p>
+          </div>
+        </div>
 
       </div>
     </React.Fragment>
