@@ -2,15 +2,29 @@ import React, { Component } from 'react';
 import { Nav, Navbar, NavbarBrand, NavbarToggler, Collapse, NavItem } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 
+import {
+    Jumbotron,
+    Button, Modal, ModalHeader, ModalBody,
+    Form, FormGroup, Input, Label
+} from 'reactstrap';
+
 class Header extends Component {
     constructor(props) {
         super(props);
 
         this.toggleNav = this.toggleNav.bind(this);
         this.state = {
-            isNavOpen: false
+            isNavOpen: false,
+            isModalOpen: false
         };
+        this.toggleModal = this.toggleModal.bind(this);
     }
+
+    toggleModal() {
+        this.setState({
+          isModalOpen: !this.state.isModalOpen
+        });
+      }
 
     toggleNav() {
         this.setState({
@@ -25,8 +39,9 @@ class Header extends Component {
                 <Navbar dark expand className="top-nav">
                     <div className="container">
                         <Nav navbar className="ml-auto">
-                            <NavLink className="nav-link" exact to='/login'><i class="fa fa-sign-in" /> LOGIN</NavLink>
-                            <NavLink className="nav-link" exact to='/register'>REGISTER</NavLink>
+                            <Button className="nav-link" outline onClick={this.toggleModal} style={{"border": "none", "outline": "none"}}><i class="fa fa-sign-in" /> LOGIN</Button>
+                            <Button className="nav-link" outline onClick={this.toggleModal} style={{"border": "none", "outline": "none"}}>REGISTER</Button>
+                            {/* <NavLink className="nav-link" exact to='/login'><i class="fa fa-sign-in" /> LOGIN</NavLink> */}
                         </Nav>
                     </div>
                 </Navbar>
@@ -51,6 +66,14 @@ class Header extends Component {
                     </div>
                 </Navbar>
 
+                <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
+                    <ModalHeader toggle={this.toggleModal}>Login</ModalHeader>
+                    <ModalBody>
+                        <div>
+                            aaaa
+                        </div>
+                    </ModalBody>
+                </Modal>
             </React.Fragment>
         )
     }
