@@ -44,15 +44,9 @@ class Main extends Component {
                     <Route exact path="/" component={() => <Shop deals={this.state.deals} />}></Route>
                     {/* <Route exact path = "/deals" component={() => <Shop deals={this.state.deals} />} /> */}
                     <Route path='/deal/:dealid' component={DealWithId} />
-
-
                     <Route path='/about' component={Home} />
                     <Route path='/Contact' component={ContactPage} />
-                    
                     <Route path='/error404' component={Error404} />
-
-
-
                     <Redirect to="/error404" />
                 </Switch>
                 </div>   
