@@ -41,13 +41,21 @@ class Main extends Component {
                 <div className="main-container">
                 <Header />
                 <Switch>
-                    <Route exact path="/" component={() => <Shop deals={this.state.deals} />}></Route>
-                    {/* <Route exact path = "/deals" component={() => <Shop deals={this.state.deals} />} /> */}
+                    
+                    <Route exact path="/" component={() => <Shop deals={this.state.deals} />} />
+                    
+                    <Route exact path='/deal'>
+                        <Redirect exact path="/" />
+                    </Route>
+                    <Route path='/deals'>
+                        <Redirect exact path="/" />
+                    </Route>
+
                     <Route path='/deal/:dealid' component={DealWithId} />
                     <Route path='/about' component={Home} />
                     <Route path='/Contact' component={ContactPage} />
                     <Route path='/error404' component={Error404} />
-                    <Redirect to="/error404" />
+                    <Redirect to='/error404' />
                 </Switch>
                 </div>   
                 <Footer />

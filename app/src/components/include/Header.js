@@ -3,7 +3,6 @@ import { Nav, Navbar, NavbarBrand, NavbarToggler, Collapse, NavItem, Col } from 
 import { NavLink } from 'react-router-dom';
 
 import {
-    Jumbotron,
     Button, Modal, ModalHeader, ModalBody,
     Form, FormGroup, Input, Label
 } from 'reactstrap';
@@ -22,9 +21,9 @@ class Header extends Component {
 
     toggleModal() {
         this.setState({
-          isModalOpen: !this.state.isModalOpen
+            isModalOpen: !this.state.isModalOpen
         });
-      }
+    }
 
     toggleNav() {
         this.setState({
@@ -39,9 +38,8 @@ class Header extends Component {
                 <Navbar dark expand className="top-nav">
                     <div className="container">
                         <Nav navbar className="ml-auto">
-                            <Button className="nav-link" outline onClick={this.toggleModal} style={{"border": "none", "outline": "none"}}><i class="fa fa-sign-in" /> LOGIN</Button>
-                            <Button className="nav-link" outline onClick={this.toggleModal} style={{"border": "none", "outline": "none"}}>REGISTER</Button>
-                            {/* <NavLink className="nav-link" exact to='/login'><i class="fa fa-sign-in" /> LOGIN</NavLink> */}
+                            <Button className="nav-link" outline onClick={this.toggleModal} style={{ "border": "none", "outline": "none" }}><i class="fa fa-sign-in" /> LOGIN</Button>
+                            <Button className="nav-link" outline onClick={this.toggleModal} style={{ "border": "none", "outline": "none" }}>REGISTER</Button>
                         </Nav>
                     </div>
                 </Navbar>
@@ -71,16 +69,17 @@ class Header extends Component {
                     <ModalBody>
 
 
-                    <Form onSubmit={this.handleSubmit}>
-                                <FormGroup row>
-                                    <Label htmlFor="name" md={12}>Name</Label>
-                                    <Col md={12}>
-                                        <Input type="text" id="name" name="name"
-                                            placeholder="Name" />
-  
-                                    </Col>
-                                </FormGroup>
-                            </Form>
+                        <Form onSubmit={this.handleSubmit}>
+                            <FormGroup row>
+                                <Label htmlFor="name" md={12}>Name</Label>
+                                <Col md={12}>
+                                    <Input type="text" id="name" name="name"
+                                        placeholder="Name" />
+
+                                </Col>
+                            </FormGroup>
+                        </Form>
+                        
                     </ModalBody>
                 </Modal>
             </React.Fragment>
