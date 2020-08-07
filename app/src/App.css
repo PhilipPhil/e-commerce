@@ -43,3 +43,28 @@
     width: 100%;
     min-height: 78vh;
 }
+
+/* Modal design */
+.modal-content {
+    background-color: transparent !important;
+    border: none;
+  }
+  
+  .modal {
+    background-color: rgba(0, 0, 0, 0.60);
+  }
+  
+  .modal-header, .modal-header span, .modal label {
+    border: none;
+    color: #fff;
+    font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", sans-serif;
+  }
+
+  .modal button:focus {
+      outline:0;
+    }
+  
+  .modal-footer {
+    border: none;
+  }
+

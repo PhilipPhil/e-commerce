@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Nav, Navbar, NavbarBrand, NavbarToggler, Collapse, NavItem } from 'reactstrap';
+import { Nav, Navbar, NavbarBrand, NavbarToggler, Collapse, NavItem, Col } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 
 import {
@@ -67,11 +67,20 @@ class Header extends Component {
                 </Navbar>
 
                 <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
-                    <ModalHeader toggle={this.toggleModal}>Login</ModalHeader>
+                    <ModalHeader toggle={this.toggleModal}><i class="fa fa-sign-in" /> LOGIN</ModalHeader>
                     <ModalBody>
-                        <div>
-                            aaaa
-                        </div>
+
+
+                    <Form onSubmit={this.handleSubmit}>
+                                <FormGroup row>
+                                    <Label htmlFor="name" md={12}>Name</Label>
+                                    <Col md={12}>
+                                        <Input type="text" id="name" name="name"
+                                            placeholder="Name" />
+  
+                                    </Col>
+                                </FormGroup>
+                            </Form>
                     </ModalBody>
                 </Modal>
             </React.Fragment>
