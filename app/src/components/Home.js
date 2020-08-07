@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Carousel from 'react-bootstrap/Carousel'
 
 
@@ -104,7 +104,20 @@ const HomeBodyComponent = () => {
   )
 }
 
-function Home(props) {
+
+
+class Home extends Component {
+
+  constructor(props) {
+    super(props);
+  }
+
+  
+  componentDidMount() {
+    window.scrollTo(0, 0)
+  }
+  
+  render(){
     return(
 
       <React.Fragment>
@@ -115,6 +128,8 @@ function Home(props) {
 
       </React.Fragment>
     );
+  }
+
 }
 
 export default Home;   
