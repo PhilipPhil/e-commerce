@@ -18,10 +18,6 @@ const CardComponent = (props) => {
                 <Link className="btn btn-sm btn-outline-secondary" color="outline-secondary" outline to={`/deal/${props.deal.id}`} >View</Link>
                 <Button className="btn btn-sm btn-outline-danger" type="submit" color="outline-danger" outline ><i class="fa fa-heart" /></Button>
             </div>
-
-                
-              
-              {/* <button type="button" class="btn btn-sm btn-outline-secondary">View</button> */}
             </div>
             <div className="align-self-center">
               <StarRatings rating={props.deal.rating} starDimension="20px" starSpacing="2px" />
