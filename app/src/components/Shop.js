@@ -5,7 +5,7 @@ const CardComponent = (props) => {
   return (
     <div class="col-md-6 col-lg-4">
       <div class="card mb-4">
-        <img class="card-img-top" src={props.deal.mainimage} alt={props.deal.company}/>
+        <img class="card-img-top" src={props.deal.logoimage} alt={props.deal.company}/>
         <div class="card-body">
           <h5 class="text-center">{props.deal.company}</h5>
           <p class="card-text">{props.deal.description}</p>
