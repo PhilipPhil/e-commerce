@@ -41,7 +41,7 @@ class Deal extends Component {
             <div class="row text-center justify-content-center mb-2">
             
               <StarRatings rating={this.props.item.rating} starSpacing="2px" />
-              <h1>&nbsp;{this.props.item.rating}</h1>
+              <h1>&nbsp;{this.props.item.rating.toFixed(1)}</h1>
             </div>
 
             <Button className="btn btn-outline-danger btn-sm" type="submit" color="outline-danger" outline ><i class="fa fa-heart" /></Button> &nbsp;
