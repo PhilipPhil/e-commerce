@@ -36,6 +36,10 @@ class Shop extends Component {
     super(props);
   }
 
+  componentDidMount() {
+    window.scrollTo(0, 0)
+  }
+
   render() {
     const menu = this.props.deals.map((deal) => {
       return (
