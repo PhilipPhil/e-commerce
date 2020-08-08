@@ -37,15 +37,7 @@ class Login extends Component {
                   <Col md={12}>
                     <Control.text model=".email" id="email" name="email"
                       className="form-control"
-                      placeholder="Email"
-                      validators={{
-                        required, validEmail
-                      }} />
-                    <Errors className="text-danger" model=".email" show="touched"
-                      messages={{
-                        required: 'Required\n',
-                        validEmail: 'Email is not valid\n'
-                      }}></Errors>
+                      placeholder="Email" />
                   </Col>
                 </Row>
 
@@ -54,26 +46,26 @@ class Login extends Component {
                   <Col md={12}>
                     <Control.password model=".password" id="password" name="password"
                       className="form-control"
-                      placeholder="Password"
-                      validators={{
-                        required, minLength: minLength(6), maxLength: maxLength(12)
-                      }} />
-                    <Errors className="text-danger" model=".password" show="touched"
-                      messages={{
-                        required: 'Required\n',
-                        minLength: 'Minimum length is 6 characters\n',
-                        maxLength: 'Maximum length is 12 characters\n'
-                      }}></Errors>
+                      placeholder="Password" />
                   </Col>
                 </Row>
 
                 <Row className="form-group">
-                  <Col md={12}>
-                    <Button type="submit" color="outline-secondary">
-                      Login
-                                    </Button>
+                  <Col className="d-flex justify-content-start">
+                    <Label htmlFor="remember" className="form-check-label">
+                      <Control.checkbox model=".remember" id="remember" name="remember"
+                        className="form-group" /> Remember</Label>
+                  </Col>
+                  <Col className="d-flex justify-content-end">
+                    <Button type="submit" color="outline-secondary">Login</Button>
                   </Col>
                 </Row>
+
+                {/* <Row className="form-group">
+                  <Col md={10}>
+                    <Button type="submit" color="outline-secondary">Login</Button>
+                  </Col>
+                </Row> */}
 
               </LocalForm>
             </div>

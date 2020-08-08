@@ -87,9 +87,17 @@ class Register extends Component {
                                 </Row>
 
                                 <Row className="form-group">
-                                    <Col md={12}>
+                                    <Col className="d-flex justify-content-start">
+                                        <Label htmlFor="business" className="form-check-label">
+                                            <Control.checkbox model=".business" id="business" name="business"
+                                                className="form-group" /> Are you a business?</Label>
+                                    </Col>
+                                </Row>
+
+                                <Row className="form-group">
+                                    <Col className="d-flex justify-content-end">
                                         <Button type="submit" color="outline-secondary">
-                                            Create Account
+                                            Register
                                     </Button>
                                     </Col>
                                 </Row>
