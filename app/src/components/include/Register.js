@@ -86,17 +86,14 @@ class Register extends Component {
                                     </Col>
                                 </Row>
 
-                                <Row className="form-group">
-                                    <Col className="d-flex justify-content-start">
+                                <Row className="form-group d-flex bd-highlight">
+                                    <Col sm={9}>
                                         <Label htmlFor="business" className="form-check-label">
                                             <Control.checkbox model=".business" id="business" name="business"
                                                 className="form-group" /> Are you a business?</Label>
                                     </Col>
-                                </Row>
-
-                                <Row className="form-group">
-                                    <Col className="d-flex justify-content-end">
-                                        <Button type="submit" color="outline-secondary">
+                                    <Col sm={3} className="d-flex justify-content-end">
+                                        <Button type="submit" color="outline-secondary" className="btn btn-sm">
                                             Register
                                     </Button>
                                     </Col>

@@ -51,21 +51,10 @@ class Login extends Component {
                 </Row>
 
                 <Row className="form-group">
-                  <Col className="d-flex justify-content-start">
-                    <Label htmlFor="remember" className="form-check-label">
-                      <Control.checkbox model=".remember" id="remember" name="remember"
-                        className="form-group" /> Remember</Label>
-                  </Col>
                   <Col className="d-flex justify-content-end">
-                    <Button type="submit" color="outline-secondary">Login</Button>
+                    <Button type="submit" color="outline-secondary" className="btn btn-sm">Login</Button>
                   </Col>
                 </Row>
-
-                {/* <Row className="form-group">
-                  <Col md={10}>
-                    <Button type="submit" color="outline-secondary">Login</Button>
-                  </Col>
-                </Row> */}
 
               </LocalForm>
             </div>
