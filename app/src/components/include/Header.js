@@ -3,6 +3,7 @@ import { Nav, Navbar, NavbarBrand, NavbarToggler, Collapse, NavItem, Col } from 
 import { NavLink } from 'react-router-dom';
 
 import Login from './Login'
+import Register from './Register'
 
 import {
     Button, Modal, ModalHeader, ModalBody,
@@ -16,14 +17,22 @@ class Header extends Component {
         this.toggleNav = this.toggleNav.bind(this);
         this.state = {
             isNavOpen: false,
-            isModalOpen: false
+            isLoginOpen: false,
+            isRegisterOpen: false
         };
-        this.toggleModal = this.toggleModal.bind(this);
+        this.toggleLogin= this.toggleLogin.bind(this);
+        this.toggleRegister = this.toggleRegister.bind(this);
     }
 
-    toggleModal() {
+    toggleLogin() {
         this.setState({
-            isModalOpen: !this.state.isModalOpen
+            isLoginOpen: !this.state.isLoginOpen
+        });
+    }
+
+    toggleRegister() {
+        this.setState({
+            isRegisterOpen: !this.state.isRegisterOpen
         });
     }
 
@@ -40,8 +49,8 @@ class Header extends Component {
                 <Navbar dark expand className="top-nav">
                     <div className="container">
                         <Nav navbar className="ml-auto">
-                            <Button className="nav-link" outline onClick={this.toggleModal} style={{ "border": "none", "outline": "none" }}><i class="fa fa-sign-in" /> LOGIN</Button>
-                            <Button className="nav-link" outline onClick={this.toggleModal} style={{ "border": "none", "outline": "none" }}>REGISTER</Button>
+                            <Button className="nav-link" outline onClick={this.toggleLogin} style={{ "border": "none", "outline": "none" }}><i class="fa fa-sign-in" /> LOGIN</Button>
+                            <Button className="nav-link" outline onClick={this.toggleRegister} style={{ "border": "none", "outline": "none" }}>REGISTER</Button>
                         </Nav>
                     </div>
                 </Navbar>
@@ -66,22 +75,15 @@ class Header extends Component {
                     </div>
                 </Navbar>
 
-                <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
-                    <ModalHeader toggle={this.toggleModal}><i class="fa fa-sign-in" /> LOGIN</ModalHeader>
+                <Modal isOpen={this.state.isLoginOpen} toggle={this.toggleLogin}>
                     <ModalBody>
                         <Login />
+                    </ModalBody>
+                </Modal>
 
-                        {/* <Form onSubmit={this.handleSubmit}>
-                            <FormGroup row>
-                                <Label htmlFor="name" md={12}>Name</Label>
-                                <Col md={12}>
-                                    <Input type="text" id="name" name="name"
-                                        placeholder="Name" />
-                                </Col>
-                            </FormGroup>
-                        </Form> */}
-                        
-
+                <Modal isOpen={this.state.isRegisterOpen} toggle={this.toggleRegister}>
+                    <ModalBody>
+                        <Register />
                     </ModalBody>
                 </Modal>
             </React.Fragment>

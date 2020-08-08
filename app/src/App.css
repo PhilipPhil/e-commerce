@@ -47,7 +47,8 @@
 .breadcrumb { background-color: transparent !important; }
 
 /* Modal design */
-.modal-content {
+
+/* .modal-content {
     background-color: transparent !important;
     border: none;
   }
@@ -68,4 +69,4 @@
   
   .modal-footer {
     border: none;
-  }
+  } */
