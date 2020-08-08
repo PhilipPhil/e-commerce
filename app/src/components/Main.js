@@ -25,9 +25,9 @@ class Main extends Component {
 
     render() {
 
-          const ContactPage = () => {
+          const DealsPage = () => {
             return(
-                <Contact />
+                <Shop deals={this.props.deals} />
             );
           }
 
@@ -43,7 +43,7 @@ class Main extends Component {
                 <Header />
                 <Switch>
                     
-                    <Route exact path="/" component={() => <Shop deals={this.props.deals} />} />
+                    <Route exact path="/" component={DealsPage} />
                     
                     <Route exact path='/deal'>
                         <Redirect exact path="/" />
@@ -54,7 +54,7 @@ class Main extends Component {
 
                     <Route path='/deal/:dealid' component={DealWithId} />
                     <Route path='/about' component={Home} />
-                    <Route path='/Contact' component={ContactPage} />
+                    <Route path='/Contact' component={Contact} />
                     <Route path='/error404' component={Error404} />
                     <Redirect to='/error404' />
                 </Switch>
