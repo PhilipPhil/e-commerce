@@ -64,9 +64,10 @@ class Contact extends Component {
                                                 required
                                             }}>
                                             <option></option>
-                                            <option>Question</option>
-                                            <option>Payment</option>
+                                            <option>Post a deal - Include phone</option>
+                                            <option>Career - We are hiring!</option>
                                             <option>Technical</option>
+                                            <option>Question</option>
                                             <option>Other</option>
                                         </Control.select>
                                         <Errors className="text-danger" model=".subject" show="touched"
