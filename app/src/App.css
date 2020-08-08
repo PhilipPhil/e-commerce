@@ -44,6 +44,8 @@
     min-height: 78vh;
 }
 
+.breadcrumb { background-color: transparent !important; }
+
 /* Modal design */
 .modal-content {
     background-color: transparent !important;
@@ -67,5 +69,3 @@
   .modal-footer {
     border: none;
   }
-
-  .breadcrumb { background-color: transparent !important; }
