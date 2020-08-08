@@ -1,5 +1,6 @@
 import React , { Component } from 'react';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import Header from './include/Header'
 import Footer from './include/Footer'
 import Home from './Home';
@@ -8,19 +9,19 @@ import Error404 from './Error404';
 import Shop from './Shop';
 import Deal from './Deal';
 
-import { ITEMS } from '../shared/items';
 
+
+const mapStateToProps = state => {
+    return {
+        deals: state.deals
+    }
+}
 
 class Main extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-            deals: ITEMS
-          };
-
     }
-
 
     render() {
 
@@ -32,7 +33,7 @@ class Main extends Component {
 
           const DealWithId = ({match}) => {
             return(
-                <Deal item={this.state.deals.filter((item) => item.id === parseInt(match.params.dealid,10))[0]} />
+                <Deal item={this.props.deals.filter((item) => item.id === parseInt(match.params.dealid,10))[0]} />
             );
           };
 
@@ -42,7 +43,7 @@ class Main extends Component {
                 <Header />
                 <Switch>
                     
-                    <Route exact path="/" component={() => <Shop deals={this.state.deals} />} />
+                    <Route exact path="/" component={() => <Shop deals={this.props.deals} />} />
                     
                     <Route exact path='/deal'>
                         <Redirect exact path="/" />
@@ -65,4 +66,4 @@ class Main extends Component {
 
 }
 
-export default Main;
+export default withRouter(connect(mapStateToProps)(Main));

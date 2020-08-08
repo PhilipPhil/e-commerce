@@ -1,4 +1,4 @@
-export const ITEMS = [
+export const DEALS = [
     {
         id: 0,
         company: 'The Pint',
