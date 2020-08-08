@@ -29,7 +29,7 @@ class Register extends Component {
                 <div className="container">
                     <div className="row py-4 d-flex justify-content-center">
                         <div className="col-12">
-                            <h4>Create Account</h4>
+                            <h4>Register</h4>
                             <LocalForm onSubmit={(values) => this.handleSubmit(values)}>
 
                                 <Row className="form-group">
