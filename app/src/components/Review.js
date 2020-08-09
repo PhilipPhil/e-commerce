@@ -50,7 +50,7 @@ class Review extends Component {
                   <Label htmlFor="comment" md={12} className="d-flex justify-content-start">Comment</Label>
                   <Col md={12}>
                     <Control.textarea model=".comment" id="comment" name="comment"
-                      className="form-control" rows="5" validators={{ maxLength: maxLength(10000) }} />
+                      className="form-control" rows="2" validators={{ maxLength: maxLength(10000) }} />
                     <Errors className="text-danger" model=".comment" show="touched"
                       messages={{
                         maxLength: 'Too long\n'
