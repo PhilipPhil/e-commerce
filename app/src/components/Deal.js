@@ -79,6 +79,12 @@ class Deal extends Component {
           </div>
         </div>
 
+        <div class="row" id="review-section">
+          <div class="col text-center">
+            Comments
+          </div>
+        </div>
+
       </div>
     </React.Fragment>
 
