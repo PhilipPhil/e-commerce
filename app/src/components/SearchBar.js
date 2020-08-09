@@ -57,7 +57,7 @@ class SearchBar extends Component {
                 <option>Other</option>
               </ Control.select>
             </Col>
-            <Col className="col-xl-auto py-2">
+            <Col className="col-xl-auto py-2 text-right">
               <Button type="submit" color="primary">Search</Button>
             </Col>
           </Row>
