@@ -62,7 +62,7 @@ class Review extends Component {
 
                 <Row className="form-group">
                   <Col className="d-flex justify-content-end">
-                    <Button type="submit" color="outline-secondary" className="btn btn-sm">Post</Button>
+                    <Button type="submit" color="primary" className="btn btn-sm">Post</Button>
                   </Col>
                 </Row>
 

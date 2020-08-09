@@ -89,7 +89,7 @@ class Register extends Component {
                                                 className="form-group" /> Are you a business?</Label>
                                     </Col>
                                     <Col sm={3} className="d-flex justify-content-end">
-                                        <Button type="submit" color="outline-secondary" className="btn btn-sm">
+                                        <Button type="submit" color="primary" className="btn btn-sm">
                                             Register
                                     </Button>
                                     </Col>
