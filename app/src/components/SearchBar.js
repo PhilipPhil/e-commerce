@@ -26,7 +26,7 @@ class SearchBar extends Component {
 
         <LocalForm onSubmit={(values) => this.handleSubmit(values)}>
 
-          <Row className="form-group justify-content-center mb-4" style={{"backgroundColor": "rgb(0, 123, 255,0.06)" ,"border": "1px solid rgba(0,0,0,.125)", "padding": "15px", "border-radius":".25rem"}}>
+          <Row className="form-group justify-content-center mb-4" style={{"backgroundColor": "rgb(0, 123, 255,0.06)" ,"border": "1px solid rgba(0,0,0,.125)", "padding": "15px", "border-radius":".05rem"}}>
 
           <Col className="col-12 text-center">
               <h1>Deal Alchemist <img style={{"vertical-align": "sub"}} src='/assets/images/logo.png' height="60" width="60" alt='Deal Alchemist'/></h1>
