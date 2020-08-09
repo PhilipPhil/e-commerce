@@ -4,6 +4,8 @@ import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
 import { Link } from 'react-router-dom';
 
 import { Breadcrumb, BreadcrumbItem, Button } from 'reactstrap';
+import Review from './Review'
+
 
 class Deal extends Component {
 
@@ -73,6 +75,7 @@ class Deal extends Component {
         <div class="row">
           <div class="col text-center">
             <p>Reviews</p>
+            <Review />
           </div>
         </div>
 
