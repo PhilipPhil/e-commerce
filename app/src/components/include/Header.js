@@ -57,7 +57,7 @@ class Header extends Component {
 
                 <Navbar dark expand="md" className="bottom-nav">
                     <div className="container">
-                        <NavbarBrand href="/"><img src='/assets/images/logo.png' height="60" width="60" alt='Sleepy Sheep' /></NavbarBrand>
+                        <NavbarBrand href="/"><img src='/assets/images/logo.png' height="60" width="60" alt='Deal Alchemist' /></NavbarBrand>
                         <NavbarToggler className="ml-auto" onClick={this.toggleNav} />
                         <Collapse isOpen={this.state.isNavOpen} navbar>
                             <Nav navbar>

@@ -26,13 +26,17 @@ class SearchBar extends Component {
 
         <LocalForm onSubmit={(values) => this.handleSubmit(values)}>
 
-          <Row className="form-group justify-content-center mb-4" style={{"border": "2px solid #2E2E2E", "padding": "15px", "border-radius":"15px"}}>
+          <Row className="form-group justify-content-center mb-4" style={{"backgroundColor": "rgb(0, 123, 255,0.06)" ,"border": "1px solid rgba(0,0,0,.125)", "padding": "15px", "border-radius":".25rem"}}>
+
+          <Col className="col-12 text-center">
+              <h1>Deal Alchemist <img style={{"vertical-align": "sub"}} src='/assets/images/logo.png' height="60" width="60" alt='Deal Alchemist'/></h1>
+            </Col>
 
             <Col className="col-12 col-md-7 py-2">
-              <Control.text model=".name" id="name" name="name" placeholder="Search.."
+              <Control.text model=".name" id="name" name="name" placeholder="Search..."
                 className="form-control" />
             </Col>
-            <Col className="col-auto py-2">
+            <Col className="col-12 col-sm-6 col-md-auto py-2">
               <Control.select model=".city" id="city" name="city" className="form-control">
                 <option>Any City</option>
                 <option>Toronto</option>
@@ -40,7 +44,7 @@ class SearchBar extends Component {
                 <option>Vancouver</option>
               </ Control.select>
             </Col>
-            <Col className="col-auto py-2">
+            <Col className="col-12 col-sm-6 col-md-auto py-2">
               <Control.select model=".category" id="category" name="category" className="form-control">
                 <option>All Categories</option>
                 <option>Food</option>
