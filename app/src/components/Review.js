@@ -31,6 +31,7 @@ class Review extends Component {
                 <Row className="form-group">
                   <Label htmlFor="rating" md={12} className="d-flex justify-content-start">Rating</Label>
                   <Col md={12}>
+
                     <Control.select model=".rating" id="rating" name="rating" className="form-control" validators={{ required }}>
                       <option value="5">⭐⭐⭐⭐⭐</option>
                       <option value="4">⭐⭐⭐⭐</option>
@@ -38,6 +39,7 @@ class Review extends Component {
                       <option value="2">⭐⭐</option>
                       <option value="1">⭐</option>
                     </ Control.select>
+                    
                     <Errors className="text-danger" model=".rating" show="touched"
                       messages={{
                         required: 'Required\n'
