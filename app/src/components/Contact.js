@@ -27,6 +27,7 @@ class Contact extends Component {
     render() {
         return (
             <React.Fragment>
+                <img className="d-block w-100 top-img" src="assets/images/contactus.gif" alt="Contact Us" />
                 <div className="container">
                     <div className="row py-4 d-flex justify-content-center">
                         <div className="col-12 col-md-7 text-center mb-2">
@@ -64,10 +65,9 @@ class Contact extends Component {
                                                 required
                                             }}>
                                             <option></option>
-                                            <option>Post a deal - Include phone</option>
-                                            <option>Career - We are hiring!</option>
+                                            <option>Partner with us</option>
+                                            <option>Careers - We are hiring!</option>
                                             <option>Technical</option>
-                                            <option>Question</option>
                                             <option>Other</option>
                                         </Control.select>
                                         <Errors className="text-danger" model=".subject" show="touched"
