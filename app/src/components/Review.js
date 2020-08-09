@@ -39,7 +39,7 @@ class Review extends Component {
                       <option value="2">⭐⭐</option>
                       <option value="1">⭐</option>
                     </ Control.select>
-                    
+
                     <Errors className="text-danger" model=".rating" show="touched"
                       messages={{
                         required: 'Required\n'
@@ -62,7 +62,7 @@ class Review extends Component {
 
                 <Row className="form-group">
                   <Col className="d-flex justify-content-end">
-                    <Button type="submit" color="outline-secondary" className="btn btn-sm">POST</Button>
+                    <Button type="submit" color="outline-secondary" className="btn btn-sm">Post</Button>
                   </Col>
                 </Row>
 
