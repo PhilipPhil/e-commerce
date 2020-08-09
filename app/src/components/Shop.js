@@ -20,7 +20,7 @@ const CardComponent = (props) => {
             </div>
             </div>
             <div className="align-self-center">
-              <StarRatings rating={props.deal.rating} starDimension="20px" starSpacing="2px" />
+              <StarRatings rating={props.deal.rating} starDimension="20px" starSpacing="2px" starRatedColor="gold"/>
             </div>
 
           </div>

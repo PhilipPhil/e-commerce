@@ -42,7 +42,7 @@ class Deal extends Component {
             <p>{this.props.item.description}</p>
             <div class="row text-center justify-content-center mb-2">
             
-              <StarRatings rating={this.props.item.rating} starSpacing="2px" />
+              <StarRatings rating={this.props.item.rating} starSpacing="2px" starRatedColor="gold"/>
               <h1>&nbsp;{this.props.item.rating.toFixed(1)}</h1>
             </div>
 
