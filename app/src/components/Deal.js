@@ -74,7 +74,6 @@ class Deal extends Component {
 
         <div class="row">
           <div class="col text-center">
-            <p>Reviews</p>
             <Review />
           </div>
         </div>

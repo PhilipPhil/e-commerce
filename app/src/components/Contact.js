@@ -102,7 +102,7 @@ class Contact extends Component {
                                             rows="12"
                                             className="form-control" 
                                             validators={{
-                                                required, minLength: minLength(30), maxLength: maxLength(3000)
+                                                required, minLength: minLength(10), maxLength: maxLength(10000)
                                             }} />
                                             <Errors className="text-danger" model=".message" show="touched"
                                             messages={{

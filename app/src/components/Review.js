@@ -32,11 +32,11 @@ class Review extends Component {
                   <Label htmlFor="rating" md={12} className="d-flex justify-content-start">Rating</Label>
                   <Col md={12}>
                     <Control.select model=".rating" id="rating" name="rating" className="form-control" validators={{ required }}>
-                      <option>⭐⭐⭐⭐⭐</option>
-                      <option>⭐⭐⭐⭐</option>
-                      <option>⭐⭐⭐</option>
-                      <option>⭐⭐</option>
-                      <option>⭐</option>
+                      <option value="5">⭐⭐⭐⭐⭐</option>
+                      <option value="4">⭐⭐⭐⭐</option>
+                      <option value="3">⭐⭐⭐</option>
+                      <option value="2">⭐⭐</option>
+                      <option value="1">⭐</option>
                     </ Control.select>
                     <Errors className="text-danger" model=".rating" show="touched"
                       messages={{
@@ -50,7 +50,11 @@ class Review extends Component {
                   <Label htmlFor="comment" md={12} className="d-flex justify-content-start">Comment</Label>
                   <Col md={12}>
                     <Control.textarea model=".comment" id="comment" name="comment"
-                      className="form-control" />
+                      className="form-control" rows="5" validators={{ maxLength: maxLength(10000) }} />
+                    <Errors className="text-danger" model=".comment" show="touched"
+                      messages={{
+                        maxLength: 'Too long\n'
+                      }}></Errors>
                   </Col>
                 </Row>
 
