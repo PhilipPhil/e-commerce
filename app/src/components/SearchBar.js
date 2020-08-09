@@ -50,8 +50,11 @@ class SearchBar extends Component {
                 <option>Food</option>
                 <option>Entertainment</option>
                 <option>Night Life</option>
-                <option>Fitness</option>
-                <option>Recreation</option>
+                <option>Health &amp; Fitness</option>
+                <option>Beuty &amp; Spa</option>
+                <option>Hotels</option>
+                <option>Rentals</option>
+                <option>Other</option>
               </ Control.select>
             </Col>
             <Col className="col-xl-auto py-2">

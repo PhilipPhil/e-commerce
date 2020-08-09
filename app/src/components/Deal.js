@@ -59,6 +59,7 @@ class Deal extends Component {
         <div class="row">
           <div class="col">
             <p class="small"><b>THE FINE PRINT:</b> {this.props.item.fineprint}</p>
+            <p class="small"><b>CITY:</b> {this.props.item.city} <b>CATEGORY:</b> {this.props.item.category}</p>
           </div>
         </div>
 
@@ -67,6 +68,7 @@ class Deal extends Component {
         <div class="row">
           <div class="col text-center">
             <p>Google Maps</p>
+            <p class="small"><b>ADDRESS:</b> {this.props.item.address} </p>
           </div>
         </div>
 
