@@ -32,7 +32,7 @@ class SearchBar extends Component {
               <h1>Deal Alchemist <img style={{"vertical-align": "sub"}} src='/assets/images/logo.png' height="60" width="60" alt='Deal Alchemist'/></h1>
             </Col>
 
-            <Col className="col-12 col-md-7 py-2">
+            <Col className="col-12 col-xl-7 py-2">
               <Control.text model=".name" id="name" name="name" placeholder="Search..."
                 className="form-control" />
             </Col>
@@ -54,7 +54,7 @@ class SearchBar extends Component {
                 <option>Recreation</option>
               </ Control.select>
             </Col>
-            <Col className="col-auto text-right py-2">
+            <Col className="col-xl-auto py-2">
               <Button type="submit" color="primary">Search</Button>
             </Col>
           </Row>
