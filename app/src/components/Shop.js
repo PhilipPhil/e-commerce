@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import StarRatings from 'react-star-ratings';
 import { Link } from 'react-router-dom';
 import { Button } from 'reactstrap';
-
+import SearchBar from './SearchBar'
 
 const CardComponent = (props) => {
   return (
@@ -49,6 +49,7 @@ class Shop extends Component {
 
     return (
       <div className="container py-4">
+        <SearchBar />
         <div class="row">
           {menu}
         </div>
