@@ -28,14 +28,14 @@ export const DEALS = [
     },
     {
         id: 1,
-        company: 'The Pint',
-        mainimage: '../assets/images/PintMainImage.jpg',
-        logoimage: '../assets/images/Pintlogo.jpg',
-        description: 'Every dine-in visit Sundays to Thursdays, all year long: Option 1:  Order 1 Drink + get a complimentary order of their signature truffle fries! Option 2: Spend $30 + get a complimentary drink of choice.*',
-        fineprint: 'VIP perk is exclusive to Vancouver Key To The City Keyholders.  VIP Dining Perk is an exclusive privilege to enjoy 2-for-1 appetizers whenever dining in at The Pint Public House. Dining perk is for the Keyholder only.  Perk has no cash value and may not be combined with any other offer.  VIP Nightlife Perk is VIP access + skip-the-line and cover on every weekend night, all year long.   This VIP loyalty nightlife perk is for the valid year Keyholder + 1 guest, and depends on capacity, of course.   Loyalty returned instantly on every visit by the best of Vancouver.   Perk has no cash value.  The Pint Public House reserves the right to refuse entry to anyone not adhering to rules or policies.  Enjoy this exclusive VIP benefit as a Vancouver Keyholder.',
-        website: 'http://locations.thepint.ca/',
+        company: 'Sencha - Tea House',
+        mainimage: '../assets/images/SenchaMainImage.jpg',
+        logoimage: '../assets/images/Senchalogo.jpg',
+        description: 'Flash your valid Vancouver Key To The City for exclusive, loyalty-love Buy 1, Get 1 bonus complimentary bubble tea.',
+        fineprint: 'Buy 1, Get 1 on any bubble tea.',
+        website: 'https://www.facebook.com/senchatealounge/',
         geopin: '',
-        rating: 4.5,
+        rating: 3.88888,
         comments: [
             {
                 id: 2,
