@@ -10,11 +10,12 @@ const FooterComponent = (props) => {
                     <div className="row justify-content-center top-footer">
 
                         <div className="col-12 col-md-7 mt-3">
-                            <h5>Footer Content</h5>
+                            <h5>Deal Alchemist</h5>
                             <p>
-                                Here you can use rows and columns here to organize your footer
-                                content. Lorem ipsum dolor sit amet, consectetur adipisicing
-                                elit.
+                                We do two things at Deal Alchemist, we provide the public with 
+                                top deals on local services, and we promote local service providers.
+                                If you have questions or would like you have your company on our 
+                                website please contact us!
                         </p>
                         </div>
 
@@ -27,11 +28,12 @@ const FooterComponent = (props) => {
                             </ul>
                         </div>
 
-                        <div className="col-2 col-md-2 align-self-center">
+                        <div className="col-6 col-md-3 align-self-center">
                             <a className="btn btn-social-icon btn-facebook" href="http://www.facebook.com/"><i className="fa fa-facebook"></i></a>
                             <a className="btn btn-social-icon btn-linkedin" href="http://www.linkedin.com/in/"><i className="fa fa-linkedin"></i></a>
                             <a className="btn btn-social-icon btn-twitter" href="http://twitter.com/"><i className="fa fa-twitter"></i></a>
                             <a className="btn btn-social-icon btn-google" href="http://youtube.com/"><i className="fa fa-youtube"></i></a>
+                            <Link to='/contact' className="btn btn-social-icon btn-reddit"><i className="fa fa-envelope-o"></i></Link>
                         </div>
 
                     </div>
