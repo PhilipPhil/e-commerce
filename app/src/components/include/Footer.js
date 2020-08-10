@@ -12,10 +12,9 @@ const FooterComponent = (props) => {
                         <div className="col-12 col-md-7 mt-3">
                             <h5>Deal Alchemist</h5>
                             <p>
-                                We do two things at Deal Alchemist, we provide the public with 
-                                top deals on local services, and we promote local service providers.
-                                If you have questions or would like you have your company on our 
-                                website please contact us!
+                                We do two things at Deal Alchemist, provide top deals on local services,
+                                and promote local service providers. If you have questions or would 
+                                like us to have your business on our website please contact us!
                         </p>
                         </div>
 
