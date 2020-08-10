@@ -11,7 +11,8 @@ const CardComponent = (props) => {
         <img class="card-img-top" src={props.deal.logoimage} alt={props.deal.company} />
         <div class="card-body">
           <h5 class="text-center">{props.deal.company}</h5>
-          <p class="card-text">{props.deal.description}</p>
+          <p class="card-text" style={{marginBottom:0}}>{props.deal.description}</p>
+          <p class="card-text text-right"><small>{props.deal.city}</small></p>
           <div class="d-flex justify-content-between align-items-center">
             <div class="align-self-center">
             <div class="btn-group btn-group-sm" role="group" aria-label="...">
