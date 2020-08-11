@@ -11,10 +11,23 @@ class Deal extends Component {
 
   constructor(props) {
     super(props);
+    this.renderCategories = this.renderCategories.bind(this);
   }
 
   componentDidMount() {
     window.scrollTo(0, 0)
+  }
+
+  renderCategories(category) {
+    return (
+      <React.Fragment>
+        <span style={{ "background-color": "rgba(0, 123, 255, 0.1)", "border-radius" : "6px" }}>
+          &nbsp;{category}&nbsp;
+        </span>
+      &nbsp;
+      </React.Fragment>
+
+    )
   }
 
   render() {
@@ -59,7 +72,7 @@ class Deal extends Component {
           <div class="row">
             <div class="col">
               <p class="small"><b>THE FINE PRINT:</b> {this.props.deal.fineprint}</p>
-              <p class="small"><b>CITY:</b> {this.props.deal.city} <b>CATEGORY:</b> {this.props.deal.category}</p>
+              <p class="small"><b>CITY:</b> {this.renderCategories(this.props.deal.city)}<b>CATEGORY:</b> {this.props.deal.categories.map((item) => this.renderCategories(item))}</p>
             </div>
           </div>
 

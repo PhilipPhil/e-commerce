@@ -1,7 +1,9 @@
 import { DEALS } from '../shared/deals';
 
 export const initialState = {
-    deals: DEALS
+    // users: USERS,
+    deals: DEALS,
+    // reviews: REVIEWS
 }
 
 export const Reducer = (state = initialState, action) => {
