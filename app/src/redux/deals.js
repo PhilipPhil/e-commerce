@@ -1,6 +1,6 @@
-import { DEALS } from '../shared/dishes';
+import { DEALS } from '../shared/deals';
 
-export const Dishes = (state = DEALS, action) => {
+export const Deals = (state = DEALS, action) => {
     switch (action.type) {
         default:
           return state;

@@ -1,6 +1,6 @@
-import { USERS } from '../shared/dishes';
+import { USERS } from '../shared/users';
 
-export const Dishes = (state = USERS, action) => {
+export const Users = (state = USERS, action) => {
     switch (action.type) {
         default:
           return state;
