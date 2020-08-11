@@ -10,23 +10,7 @@ export const DEALS = [
         rating: 4.5,
         categories: ["Food","Night Life"],
         city:"Toronto",
-        address: "277 Front St W, Toronto, ON M5V 2X4",
-        comments: [
-            {
-                id: 0,
-                rating: 5,
-                comment: "Loved it!",
-                author: "John Lemon",
-                date: "2012-10-16T17:57:28.556094Z"
-            },
-            {
-                id: 1,
-                rating: 4,
-                comment: "It was pretty good.",
-                author: "Paul McVites",
-                date: "2014-09-05T17:57:28.556094Z"
-            }
-        ]
+        address: "277 Front St W, Toronto, ON M5V 2X4"
     },
     {
         id: 1,
@@ -39,23 +23,7 @@ export const DEALS = [
         rating: 4.5,
         categories: ["Food"],
         city:"Vancouver",
-        address: "3468 W Broadway, Vancouver, BC V6R 2B3",
-        comments: [
-            {
-                id: 2,
-                rating: 5,
-                comment: "Loved it!",
-                author: "John Lemon",
-                date: "2012-10-16T17:57:28.556094Z"
-            },
-            {
-                id: 3,
-                rating: 4,
-                comment: "It was pretty good.",
-                author: "Paul McVites",
-                date: "2014-09-05T17:57:28.556094Z"
-            }
-        ]
+        address: "3468 W Broadway, Vancouver, BC V6R 2B3"
     },
     {
         id: 2,
@@ -69,23 +37,7 @@ export const DEALS = [
         rating: 4.29435,
         categories: ["Rentals"],
         city:"Vancouver",
-        address: "Many locations",
-        comments: [
-            {
-                id: 4,
-                rating: 5,
-                comment: "Loved it!",
-                author: "John Lemon",
-                date: "2012-10-16T17:57:28.556094Z"
-            },
-            {
-                id: 5,
-                rating: 4,
-                comment: "It was pretty good.",
-                author: "Paul McVites",
-                date: "2014-09-05T17:57:28.556094Z"
-            }
-        ]
+        address: "Many locations"
     },
     {
         id: 3,
@@ -98,8 +50,7 @@ export const DEALS = [
         rating: 4.5,
         categories: ["Food"],
         city:"Toronto",
-        address: "277 Front St W, Toronto, ON M5V 2X4",
-        comments: []
+        address: "277 Front St W, Toronto, ON M5V 2X4"
     },
     {
         id: 4,
@@ -112,8 +63,7 @@ export const DEALS = [
         rating: 4.5,
         categories: ["Food"],
         city:"Vancouver",
-        address: "3468 W Broadway, Vancouver, BC V6R 2B3",
-        comments: []
+        address: "3468 W Broadway, Vancouver, BC V6R 2B3"
     },
     {
         id: 5,
@@ -127,8 +77,7 @@ export const DEALS = [
         rating: 4.29435,
         categories: ["Rentals"],
         city:"Vancouver",
-        address: "Many locations",
-        comments: []
+        address: "Many locations"
     },
     {
         id: 6,
@@ -141,8 +90,7 @@ export const DEALS = [
         rating: 4.5,
         categories: ["Food"],
         city:"Toronto",
-        address: "277 Front St W, Toronto, ON M5V 2X4",
-        comments: []
+        address: "277 Front St W, Toronto, ON M5V 2X4"
     },
     {
         id: 7,
@@ -155,8 +103,7 @@ export const DEALS = [
         rating: 4.5,
         categories: ["Food"],
         city:"Vancouver",
-        address: "3468 W Broadway, Vancouver, BC V6R 2B3",
-        comments: []
+        address: "3468 W Broadway, Vancouver, BC V6R 2B3"
     },
     {
         id: 8,
@@ -170,8 +117,7 @@ export const DEALS = [
         rating: 4.29435,
         categories: ["Rentals"],
         city:"Vancouver",
-        address: "Many locations",
-        comments: []
+        address: "Many locations"
     }
 ];
 
