@@ -15,8 +15,7 @@ class Review extends Component {
   }
 
   handleSubmit(values) {
-    console.log('Current State is: ' + JSON.stringify(values));
-    alert('Current State is: ' + JSON.stringify(values));
+    this.props.addReview(this.props.dealId, values.rating, values.comment, "username")
   }
 
   render() {

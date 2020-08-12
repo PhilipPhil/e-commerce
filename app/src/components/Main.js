@@ -20,9 +20,9 @@ const mapStateToProps = state => {
     }
 }
 
-const mapDispatchToProps = (dispatch) => ({
-    addReview: (rating, comment, user, dealId) => dispatch(addReview((rating, comment, user, dealId)))
-})
+const mapDispatchToProps = dispatch => ({
+    addReview: (dealId, rating, comment, user) => dispatch(addReview(dealId, rating, comment, user))
+  });
 
 class Main extends Component {
 

@@ -39,6 +39,7 @@ class Deal extends Component {
         <p class="col">comment: {review.comment}</p>
         <p class="col">dealId: {review.dealId}</p>
         <p class="col">date: {review.date} </p>
+        <p class="col">user: {review.user} </p>
       </div>
     )
   }
@@ -103,7 +104,7 @@ class Deal extends Component {
 
           <div class="row" id="review-section">
             <div class="col text-center">
-              <Review />
+              <Review dealId={this.props.deal.id} addReview={this.props.addReview}/>
             </div>
           </div>
 
