@@ -8,7 +8,7 @@ import Contact from './Contact';
 import Error404 from './Error404';
 import Shop from './Shop';
 import Deal from './Deal';
-
+import { actions } from 'react-redux-form';
 import { addReview, fetchDeals } from '../redux/ActionCreators';
 
 
@@ -22,8 +22,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => ({
     addReview: (dealId, rating, comment, user) => dispatch(addReview(dealId, rating, comment, user)),
-    fetchDeals: () => {dispatch(fetchDeals())}
-  });
+    fetchDeals: () => {dispatch(fetchDeals())},
+    resetEmailForm: () => { dispatch(actions.reset('emailform'))}  });
 
 class Main extends Component {
 
@@ -73,7 +73,7 @@ class Main extends Component {
 
                         <Route path='/deal/:dealId' component={DealWithId} />
                         <Route path='/about' component={Home} />
-                        <Route path='/Contact' component={Contact} />
+                        <Route path='/Contact' component={() => <Contact resetEmailForm={this.props.resetEmailForm} />} />
                         <Route path='/error404' component={Error404} />
                         <Redirect to='/error404' />
                     </Switch>

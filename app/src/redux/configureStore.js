@@ -4,6 +4,8 @@ import { Reviews } from './reviews'
 import { Users } from './users'
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
+import { createForms } from 'react-redux-form';
+import { InitialEmailForm } from './forms';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
@@ -12,7 +14,10 @@ export const ConfigureStore = () => {
         combineReducers({
             deals: Deals,
             reviews: Reviews,
-            users: Users
+            users: Users,
+            ...createForms({
+                emailform: InitialEmailForm
+            })
         }),
         composeEnhancers(applyMiddleware(thunk,logger))
     );
