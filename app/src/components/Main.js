@@ -9,7 +9,7 @@ import Error404 from './Error404';
 import Shop from './Shop';
 import Deal from './Deal';
 
-import { addReview } from '../redux/ActionCreators';
+import { addReview, fetchDeals } from '../redux/ActionCreators';
 
 
 const mapStateToProps = state => {
@@ -21,7 +21,8 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = dispatch => ({
-    addReview: (dealId, rating, comment, user) => dispatch(addReview(dealId, rating, comment, user))
+    addReview: (dealId, rating, comment, user) => dispatch(addReview(dealId, rating, comment, user)),
+    fetchDeals: () => {dispatch(fetchDeals())}
   });
 
 class Main extends Component {
@@ -30,18 +31,27 @@ class Main extends Component {
         super(props);
     }
 
+    componentDidMount() {
+        this.props.fetchDeals();
+    }
+
     render() {
 
         const DealsPage = () => {
             return (
-                <Shop deals={this.props.deals} />
+                <Shop deals={this.props.deals.deals} 
+                    isLoading={this.props.deals.isLoading}
+                    errMess={this.props.deals.errMess}
+                />
             );
         }
 
         const DealWithId = ({ match }) => {
             return (
-                <Deal deal={this.props.deals.filter((deal) => deal.id === parseInt(match.params.dealId, 10))[0]}
+                <Deal deal={this.props.deals.deals.filter((deal) => deal.id === parseInt(match.params.dealId, 10))[0]}
                     reviews={this.props.reviews.filter((review) => review.dealId === parseInt(match.params.dealId, 10))}
+                    isLoading={this.props.deals.isLoading}
+                    errMess={this.props.deals.errMess}
                     addReview={this.props.addReview} />
             );
         };

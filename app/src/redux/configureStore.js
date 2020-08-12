@@ -15,8 +15,6 @@ export const ConfigureStore = () => {
             users: Users
         }),
         composeEnhancers(applyMiddleware(thunk,logger))
-        
-        
     );
 
     return store;
