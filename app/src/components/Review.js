@@ -32,6 +32,7 @@ class Review extends Component {
                   <Col md={12}>
 
                     <Control.select model=".rating" id="rating" name="rating" className="form-control" validators={{ required }}>
+                      <option></option>
                       <option value="5">⭐⭐⭐⭐⭐</option>
                       <option value="4">⭐⭐⭐⭐</option>
                       <option value="3">⭐⭐⭐</option>

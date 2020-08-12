@@ -32,7 +32,6 @@ class Deal extends Component {
   }
 
   renderReview(review) {
-
       return (
         <div class="mb-4 col-12 col-md-8 offset-md-2 text-center">
           <div class="row mb-2">
@@ -51,8 +50,6 @@ class Deal extends Component {
           </div>
         </div>
       )
-    
-
   }
 
   render() {
