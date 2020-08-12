@@ -22,7 +22,7 @@ class Deal extends Component {
   renderCategory(category) {
     return (
       <React.Fragment>
-        <span style={{ "background-color": "rgba(0, 123, 255, 0.1)", "border-radius" : "6px" }}>
+        <span style={{ "background-color": "rgba(0, 123, 255, 0.1)", "border-radius": "6px" }}>
           &nbsp;{category}&nbsp;
         </span>
       &nbsp;
@@ -32,14 +32,22 @@ class Deal extends Component {
   }
 
   renderReview(review) {
-    return(
-      <div class="row">
-        <p class="col">id: {review.id}</p>
-        <p class="col">rating: {review.rating}</p>
-        <p class="col">comment: {review.comment}</p>
-        <p class="col">dealId: {review.dealId}</p>
-        <p class="col">date: {review.date} </p>
-        <p class="col">user: {review.user} </p>
+    return (
+      <div class="mb-4 col-12 col-md-8 offset-md-2 text-center">
+        <div class="row mb-2">
+          <div class="col-21 col-sm-6 text-left">
+            <h4 style={{ marginBottom: 0 }}>{review.user}</h4>
+            <small style={{ marginBottom: 0 }} class="text-muted">{review.date}</small>
+          </div>
+          <div class="col-12 col-sm-6 text-left text-sm-right">
+            <StarRatings rating={parseInt(review.rating, 10)} starSpacing="2px" starRatedColor="gold" starDimension="1.5rem" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 text-left">
+            <p>{review.comment}</p>
+          </div>
+        </div>
       </div>
     )
   }
@@ -104,15 +112,12 @@ class Deal extends Component {
 
           <div class="row" id="review-section">
             <div class="col text-center">
-              <Review dealId={this.props.deal.id} addReview={this.props.addReview}/>
+              <Review dealId={this.props.deal.id} addReview={this.props.addReview} />
             </div>
           </div>
 
-          <div class="row" id="review-section">
-            <div class="col text-center">
-              Reviews
-              {this.props.reviews.map((review) => this.renderReview(review))}
-          </div>
+          <div class="text-center" id="review-section">
+            {this.props.reviews.map((review) => this.renderReview(review))}
           </div>
 
         </div>
@@ -124,4 +129,4 @@ class Deal extends Component {
 }
 
 
-export default Deal;   
+export default Deal;
