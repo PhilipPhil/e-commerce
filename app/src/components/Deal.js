@@ -33,7 +33,13 @@ class Deal extends Component {
 
   renderReview(review) {
     return(
-      <div>hi</div>
+      <div class="row">
+        <p class="col">id: {review.id}</p>
+        <p class="col">rating: {review.rating}</p>
+        <p class="col">comment: {review.comment}</p>
+        <p class="col">dealId: {review.dealId}</p>
+        <p class="col">date: {review.date} </p>
+      </div>
     )
   }
 
@@ -104,8 +110,7 @@ class Deal extends Component {
           <div class="row" id="review-section">
             <div class="col text-center">
               Reviews
-              {this.props.reviews.id}
-              {/* {this.props.reviews.categories.map((review) => this.renderReview(review))} */}
+              {this.props.reviews.map((review) => this.renderReview(review))}
           </div>
           </div>
 

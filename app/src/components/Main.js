@@ -41,7 +41,7 @@ class Main extends Component {
         const DealWithId = ({ match }) => {
             return (
                 <Deal deal={this.props.deals.filter((deal) => deal.id === parseInt(match.params.dealId, 10))[0]}
-                    reviews={this.props.reviews.filter((review) => review.dealId === parseInt(match.params.dealId, 10))[0]}
+                    reviews={this.props.reviews.filter((review) => review.dealId === parseInt(match.params.dealId, 10))}
                     addReview={this.props.addReview} />
             );
         };
