@@ -4,7 +4,7 @@ export const REVIEWS = [
         rating: 5,
         comment: "Loved it!",
         user: "",
-        deal: "",
+        dealId: 0,
         date: "2012-10-16T17:57:28.556094Z"
        
     },
@@ -13,7 +13,7 @@ export const REVIEWS = [
         rating: 5,
         comment: "Loved it!",
         user: "",
-        deal: "",
+        dealId: 0,
         date: "2012-10-16T17:57:28.556094Z"
        
     },
@@ -22,7 +22,7 @@ export const REVIEWS = [
         rating: 5,
         comment: "Loved it!",
         user: "",
-        deal: "",
+        dealId: 0,
         date: "2012-10-16T17:57:28.556094Z"
        
     },
@@ -31,7 +31,7 @@ export const REVIEWS = [
         rating: 5,
         comment: "Loved it!",
         user: "",
-        deal: "",
+        dealId: 1,
         date: "2012-10-16T17:57:28.556094Z"
        
     }
