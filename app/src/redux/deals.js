@@ -6,11 +6,11 @@ export const Deals = (state = {
     deals: []
 }, action) => {
     switch (action.type) {
-        case ActionTypes.ADD_DEAL:
+        case ActionTypes.DEALS_ADD:
             return { ...state, isLoading: false, errMess: null, deals: action.payload }
-        case ActionTypes.DEAL_LOADING:
+        case ActionTypes.DEALS_LOADING:
             return { ...state, isLoading: true, errMess: null, deals: [] }
-        case ActionTypes.DEAL_FAILED:
+        case ActionTypes.DEALS_FAILED:
             return { ...state, isLoading: false, errMess: action.payload, deals: [] }
 
         default:

@@ -21,15 +21,15 @@ export const fetchDeals = () => (dispatch) => {
 }
 
 export const dealsLoading = () => ({
-   type: ActionTypes.DEAL_LOADING
+   type: ActionTypes.DEALS_LOADING
 })
 
 export const dealsFailed = (errmess) => ({
-    type: ActionTypes.DEAL_FAILED,
+    type: ActionTypes.DEALS_FAILED,
     payload: errmess
  })
 
  export const addDeals = (deals) => ({
-     type: ActionTypes.ADD_DEAL,
+     type: ActionTypes.DEALS_ADD,
      payload: deals
  })
