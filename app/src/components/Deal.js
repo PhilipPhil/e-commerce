@@ -32,24 +32,27 @@ class Deal extends Component {
   }
 
   renderReview(review) {
-    return (
-      <div class="mb-4 col-12 col-md-8 offset-md-2 text-center">
-        <div class="row mb-2">
-          <div class="col-21 col-sm-6 text-left">
-            <h4 style={{ marginBottom: 0 }}>{review.user}</h4>
-            <small style={{ marginBottom: 0 }} class="text-muted">{review.date}</small>
+
+      return (
+        <div class="mb-4 col-12 col-md-8 offset-md-2 text-center">
+          <div class="row mb-2">
+            <div class="col-21 col-sm-6 text-left">
+              <h4 style={{ marginBottom: 0 }}>{review.user}</h4>
+              <small style={{ marginBottom: 0 }} class="text-muted">{review.date}</small>
+            </div>
+            <div class="col-12 col-sm-6 text-left text-sm-right">
+              <StarRatings rating={parseInt(review.rating, 10)} starSpacing="2px" starRatedColor="gold" starDimension="1.5rem" />
+            </div>
           </div>
-          <div class="col-12 col-sm-6 text-left text-sm-right">
-            <StarRatings rating={parseInt(review.rating, 10)} starSpacing="2px" starRatedColor="gold" starDimension="1.5rem" />
+          <div class="row">
+            <div class="col-12 text-left">
+              <p>{review.comment}</p>
+            </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col-12 text-left">
-            <p>{review.comment}</p>
-          </div>
-        </div>
-      </div>
-    )
+      )
+    
+
   }
 
   render() {
