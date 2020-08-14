@@ -1,8 +1,10 @@
-export const ADD_REVIEW = 'ADD_REVIEW';
-export const REMOVE_REVIEW = 'REMOVE_REVIEW'
-export const EDIT_REVIEW = 'EDIT_REVIEW'
-export const REVIEW_LOADING = 'REVIEW_LOADING'
-export const REVIEW_FAILED = 'REVIEW_FAILED'
+export const REVIEW_ADD = 'REVIEW_ADD';
+export const REVIEW_REMOVE = 'REVIEW_REMOVE'
+export const REVIEW_EDIT = 'REVIEW_EDIT'
+
+export const REVIEWS_ADD = 'REVIEWS_ADD'
+export const REVIEWS_LOADING = 'REVIEWS_LOADING'
+export const REVIEWS_FAILED = 'REVIEWS_FAILED'
 
 export const DEALS_ADD = 'DEALS_ADD';
 export const DEALS_LOADING = 'DEALS_LOADING'
