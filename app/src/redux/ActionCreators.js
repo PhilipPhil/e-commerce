@@ -15,7 +15,7 @@ export const addReview = (dealId, rating, comment, user) => ({
 
 
 export const fetchDeals = () => (dispatch) => {
-    dispatch(dealsLoading(true));
+    dispatch(dealsLoading());
     return fetch(baseUrl + 'deals')
         .then(response => response.json())
         .then(deals => dispatch(addDeals(deals)))
@@ -35,10 +35,23 @@ export const dealsFailed = (errmess) => ({
      payload: deals
  })
 
+export const fetchReviews = () => (dispatch) => {
+    dispatch(reviewsLoading());
+    return fetch(baseUrl + 'reviews')
+        .then(response => response.json())
+        .then(reviews => dispatch(addReviews(reviews)))
+}
 
-//  export const fetchReviews = () => (dispatch) => {
-//     dispatch(dealsLoading(true));
-//     return fetch(baseURL + 'reviews')
-//         .then(response => response.json())
-//         .then(reviews => dispatch(addReviews(reviews)))
-// }
+export const reviewsLoading = () => ({
+   type: ActionTypes.REVIEWS_LOADING
+})
+
+export const reviewsFailed = (errmess) => ({
+    type: ActionTypes.REVIEWS_FAILED,
+    payload: errmess
+ })
+
+ export const addReviews = (reviews) => ({
+     type: ActionTypes.REVIEWS_ADD,
+     payload: reviews
+ })

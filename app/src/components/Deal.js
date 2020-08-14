@@ -5,7 +5,8 @@ import { Link } from 'react-router-dom';
 
 import { Breadcrumb, BreadcrumbItem, Button } from 'reactstrap';
 import Review from './Review'
-import Loading from "./Loading"
+import Loading from './Loading'
+import Comments from './Comments'
 import { baseUrl } from '../shared/baseUrl'
 
 class Deal extends Component {
@@ -55,17 +56,17 @@ class Deal extends Component {
 
   render() {
 
-    if (this.props.isLoading) {
+    if (this.props.isDealsLoading) {
       return (<div className="container py-4">
         <div class="row">
           <Loading />
         </div>
       </div>)
 
-    } else if (this.props.errMess) {
+    } else if (this.props.dealsErrMess) {
       return (<div className="container py-4">
         <div class="row text-center">
-          <h4>this.props.errMess</h4>
+          <h4>{this.props.dealsErrMess}</h4>
         </div>
       </div>)
 
@@ -133,9 +134,7 @@ class Deal extends Component {
               </div>
             </div>
 
-            <div class="text-center" id="review-section">
-              {this.props.reviews.map((review) => this.renderReview(review))}
-            </div>
+            <Comments reviews={this.props.reviews} isReviewsLoading={this.props.isReviewsLoading} reviewsErrMess={this.props.reviewsErrMess}/>
 
           </div>
         </React.Fragment>
