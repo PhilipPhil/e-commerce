@@ -1,6 +1,5 @@
 import * as ActionTypes from './ActionTypes';
 
-import { DEALS } from '../shared/deals';
 import { baseUrl } from '../shared/baseUrl';
 
 export const addReview = (dealId, rating, comment, user) => ({
@@ -17,8 +16,22 @@ export const addReview = (dealId, rating, comment, user) => ({
 export const fetchDeals = () => (dispatch) => {
     dispatch(dealsLoading());
     return fetch(baseUrl + 'deals')
+    .then(response => {
+        if (response.ok) {
+          return response;
+        } else {
+          var error = new Error('Error ' + response.status + ': ' + response.statusText);
+          error.response = response;
+          throw error;
+        }
+      },
+      error => {
+            var errmess = new Error(error.message);
+            throw errmess;
+      })
         .then(response => response.json())
         .then(deals => dispatch(addDeals(deals)))
+        .catch(error => dispatch(dealsFailed(error.message)));
 }
 
 export const dealsLoading = () => ({
@@ -38,8 +51,22 @@ export const dealsFailed = (errmess) => ({
 export const fetchReviews = () => (dispatch) => {
     dispatch(reviewsLoading());
     return fetch(baseUrl + 'reviews')
+    .then(response => {
+        if (response.ok) {
+          return response;
+        } else {
+          var error = new Error('Error ' + response.status + ': ' + response.statusText);
+          error.response = response;
+          throw error;
+        }
+      },
+      error => {
+            var errmess = new Error(error.message);
+            throw errmess;
+      })
         .then(response => response.json())
         .then(reviews => dispatch(addReviews(reviews)))
+        .catch(error => dispatch(reviewsFailed(error.message)));
 }
 
 export const reviewsLoading = () => ({

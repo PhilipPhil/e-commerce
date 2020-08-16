@@ -78,7 +78,7 @@ class Main extends Component {
                         <Route path='/deal/:dealId' component={DealWithId} />
                         <Route path='/about' component={Home} />
                         <Route path='/Contact' component={() => <Contact resetEmailForm={this.props.resetEmailForm} />} />
-                        <Route path='/error' component={() => <Error errMess="404" />} />
+                        <Route path='/error' component={() => <Error errMess="Error 404: Not Found" />} />
                         <Redirect to='/error' />
                     </Switch>
                 </div>
