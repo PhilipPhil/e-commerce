@@ -9,7 +9,7 @@ import Error from './Error';
 import Shop from './Shop';
 import Deal from './Deal';
 import { actions } from 'react-redux-form';
-import { addReview, fetchDeals, fetchReviews } from '../redux/ActionCreators';
+import { postReview, fetchDeals, fetchReviews } from '../redux/ActionCreators';
 
 
 const mapStateToProps = state => {
@@ -21,7 +21,7 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = dispatch => ({
-    addReview: (dealId, rating, comment, user) => dispatch(addReview(dealId, rating, comment, user)),
+    postReview: (dealId, rating, comment, user) => dispatch(postReview(dealId, rating, comment, user)),
     fetchReviews: () => {dispatch(fetchReviews())},
     fetchDeals: () => {dispatch(fetchDeals())},
     resetEmailForm: () => { dispatch(actions.reset('emailform'))}  });
@@ -56,7 +56,7 @@ class Main extends Component {
                     reviews={this.props.reviews.reviews.filter((review) => review.dealId === parseInt(match.params.dealId, 10))}
                     isReviewsLoading={this.props.reviews.isLoading}
                     reviewsErrMess={this.props.reviews.errMess}
-                    addReview={this.props.addReview} />
+                    postReview={this.props.postReview} />
             );
         };
 

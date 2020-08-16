@@ -125,7 +125,7 @@ class Deal extends Component {
 
             <div class="row" id="review-section">
               <div class="col text-center">
-                <Review dealId={this.props.deal.id} addReview={this.props.addReview} />
+                <Review dealId={this.props.deal.id} postReview={this.props.postReview} />
               </div>
             </div>
 

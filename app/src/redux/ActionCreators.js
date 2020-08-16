@@ -2,16 +2,45 @@ import * as ActionTypes from './ActionTypes';
 
 import { baseUrl } from '../shared/baseUrl';
 
-export const addReview = (dealId, rating, comment, user) => ({
+export const addReview = (review) => ({
     type: ActionTypes.REVIEW_ADD,
-    payload: {
+    payload: review
+});
+
+export const postReview = (dealId, rating, comment, user) => (dispatch) => {
+    const newReview = {
         dealId: dealId,
         rating: rating,
         comment: comment,
         user: user
     }
-});
+    newReview.date = new Date().toISOString()
 
+    return fetch(baseUrl + 'reviews', {
+        method: 'post',
+        body: JSON.stringify(newReview),
+        headers: {
+            'Content-Type':'application/json'
+        },
+        credentials: 'same-origin'
+    })
+    .then(response => {
+        if (response.ok) {
+          return response;
+        } else {
+          var error = new Error('Error ' + response.status + ': ' + response.statusText);
+          error.response = response;
+          throw error;
+        }
+      },
+      error => {
+            var errmess = new Error(error.message);
+            throw errmess;
+      })
+        .then(response => response.json())
+        .then(response => dispatch(addReview(response)))
+        .catch(error => console.log('Post comments', error.message))
+}
 
 export const fetchDeals = () => (dispatch) => {
     dispatch(dealsLoading());
