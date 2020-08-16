@@ -8,7 +8,7 @@ import Review from './Review'
 import Loading from './Loading'
 import Comments from './Comments'
 import { baseUrl } from '../shared/baseUrl'
-
+import Error from './Error';
 class Deal extends Component {
 
   constructor(props) {
@@ -64,12 +64,7 @@ class Deal extends Component {
       </div>)
 
     } else if (this.props.dealsErrMess) {
-      return (<div className="container py-4">
-        <div class="row text-center">
-          <h4>{this.props.dealsErrMess}</h4>
-        </div>
-      </div>)
-
+      return (<Error errMess={this.props.dealsErrMess} />)
     } else {
       return (
         <React.Fragment>

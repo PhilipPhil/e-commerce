@@ -5,6 +5,7 @@ import { Button } from 'reactstrap';
 import SearchBar from './SearchBar'
 import Loading from "./Loading"
 import { baseUrl } from '../shared/baseUrl'
+import Error from './Error';
 
 const CardComponent = (props) => {
   return (
@@ -54,13 +55,7 @@ class Shop extends Component {
         </div>
       )
     } else if (this.props.errMess) {
-      return (
-        <div className="container py-4">
-          <div class="row text-center">
-            <h4>this.props.errMess</h4>
-          </div>
-        </div>
-      );
+      return (<Error errMess={this.props.errMess} />);
     }
 
 
