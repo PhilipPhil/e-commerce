@@ -5,7 +5,7 @@ import Header from './include/Header'
 import Footer from './include/Footer'
 import Home from './Home';
 import Contact from './Contact';
-import Error404 from './Error404';
+import Error from './Error';
 import Shop from './Shop';
 import Deal from './Deal';
 import { actions } from 'react-redux-form';
@@ -78,8 +78,8 @@ class Main extends Component {
                         <Route path='/deal/:dealId' component={DealWithId} />
                         <Route path='/about' component={Home} />
                         <Route path='/Contact' component={() => <Contact resetEmailForm={this.props.resetEmailForm} />} />
-                        <Route path='/error404' component={Error404} />
-                        <Redirect to='/error404' />
+                        <Route path='/error' component={() => <Error errMess="404" />} />
+                        <Redirect to='/error' />
                     </Switch>
                 </div>
                 <Footer />
