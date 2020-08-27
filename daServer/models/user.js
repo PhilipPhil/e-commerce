@@ -9,9 +9,7 @@ var User = new Schema({
     unique: true
   },
   email: {
-    type: String,
-    required: true,
-    unique: true
+    type: String
   },
   company: {
     type: Boolean,
