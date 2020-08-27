@@ -9,7 +9,9 @@ var User = new Schema({
     unique: true
   },
   email: {
-    type: String
+    type: String,
+    required: true,
+    unique: true
   },
   company: {
     type: Boolean,
@@ -23,4 +25,4 @@ var User = new Schema({
 
 User.plugin(passportLocalMongoose);
 
-module.exports = mongoose.model('User', User);
+module.exports = mongoose.model('User', User); 

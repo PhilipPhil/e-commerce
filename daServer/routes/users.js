@@ -16,7 +16,8 @@ router.get('/', cors.corsWithOptions, authenticate.verifyUser, authenticate.veri
 
 router.post('/signup', cors.corsWithOptions, (req, res, next) => {
   // User.register(new User({username: req.body.username}), 
-  User.register(new User(req.body), 
+  User.register(new User({username: req.body.username, email: req.body.username, name: req.body.name}), 
+  // User.register(new User(req.body), 
     req.body.password, (err, user) => {
     if(err) {
       res.statusCode = 500;
@@ -26,10 +27,12 @@ router.post('/signup', cors.corsWithOptions, (req, res, next) => {
     else {
       // if (req.body.name)
       //   user.name = req.body.name;
-      // if (req.body.company)
-      //   user.company = req.body.company;
-      if (req.body.username)
-        user.email = req.body.username;
+      if (req.body.company)
+        user.company = req.body.company;
+      if (req.body.admin)
+        user.admin = req.body.admin;
+      // if (req.body.username)
+      //   user.email = req.body.username;
       user.save((err, user) => {
         if (err) {
           res.statusCode = 500;
