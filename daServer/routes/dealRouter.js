@@ -14,7 +14,7 @@ dealRouter.route('/')
     .options(cors.corsWithOptions, (req, res) => { res.sendStatus(200); })
     .get(cors.cors, (req, res, next) => {
         Deals.find({})
-            .populate('comments.author')
+            .populate('reviews.author')
             .then((deals) => {
                 res.statusCode = 200;
                 res.setHeader('Content-Type', 'application/json');
@@ -50,7 +50,7 @@ dealRouter.route('/:dealId')
     .options(cors.corsWithOptions, (req, res) => { res.sendStatus(200); })
     .get(cors.cors, (req, res, next) => {
         Deals.findById(req.params.dealId)
-            .populate('comments.author')
+            .populate('reviews.author')
             .then((deal) => {
                 res.statusCode = 200;
                 res.setHeader('Content-Type', 'application/json');
@@ -83,16 +83,16 @@ dealRouter.route('/:dealId')
             .catch((err) => next(err));
     });
 
-dealRouter.route('/:dealId/comments')
+dealRouter.route('/:dealId/reviews')
     .options(cors.corsWithOptions, (req, res) => { res.sendStatus(200); })
     .get(cors.cors, (req, res, next) => {
         Deals.findById(req.params.dealId)
-            .populate('comments.author')
+            .populate('reviews.author')
             .then((deal) => {
                 if (deal != null) {
                     res.statusCode = 200;
                     res.setHeader('Content-Type', 'application/json');
-                    res.json(deal.comments);
+                    res.json(deal.reviews);
                 }
                 else {
                     err = new Error('Deal ' + req.params.dealId + ' not found');
@@ -107,11 +107,11 @@ dealRouter.route('/:dealId/comments')
             .then((deal) => {
                 if (deal != null) {
                     req.body.author = req.user._id;
-                    deal.comments.push(req.body);
+                    deal.reviews.push(req.body);
                     deal.save()
                         .then((deal) => {
                             Deals.findById(deal._id)
-                                .populate('comments.author')
+                                .populate('reviews.author')
                                 .then((deal) => {
                                     res.statusCode = 200;
                                     res.setHeader('Content-Type', 'application/json');
@@ -130,14 +130,14 @@ dealRouter.route('/:dealId/comments')
     .put(cors.corsWithOptions, authenticate.verifyUser, authenticate.verifyAdmin, (req, res, next) => {
         res.statusCode = 403;
         res.end('PUT operation not supported on /deals/'
-            + req.params.dealId + '/comments');
+            + req.params.dealId + '/reviews');
     })
     .delete(cors.corsWithOptions, authenticate.verifyUser, authenticate.verifyAdmin, (req, res, next) => {
         Deals.findById(req.params.dealId)
             .then((deal) => {
                 if (deal != null) {
-                    for (var i = (deal.comments.length - 1); i >= 0; i--) {
-                        deal.comments.id(deal.comments[i]._id).remove();
+                    for (var i = (deal.reviews.length - 1); i >= 0; i--) {
+                        deal.reviews.id(deal.reviews[i]._id).remove();
                     }
                     deal.save()
                         .then((deal) => {
@@ -155,15 +155,15 @@ dealRouter.route('/:dealId/comments')
             .catch((err) => next(err));
     });
 
-dealRouter.route('/:dealId/comments/:commentId')
+dealRouter.route('/:dealId/reviews/:reviewId')
     .options(cors.corsWithOptions, (req, res) => { res.sendStatus(200); })
     .get(cors.cors, (req, res, next) => {
         Deals.findById(req.params.dealId)
             .then((deal) => {
-                if (deal != null && deal.comments.id(req.params.commentId) != null) {
+                if (deal != null && deal.reviews.id(req.params.reviewId) != null) {
                     res.statusCode = 200;
                     res.setHeader('Content-Type', 'application/json');
-                    res.json(deal.comments.id(req.params.commentId));
+                    res.json(deal.reviews.id(req.params.reviewId));
                 }
                 else if (deal == null) {
                     err = new Error('Deal ' + req.params.dealId + ' not found');
@@ -171,7 +171,7 @@ dealRouter.route('/:dealId/comments/:commentId')
                     return next(err);
                 }
                 else {
-                    err = new Error('Comment ' + req.params.commentId + ' not found');
+                    err = new Error('review ' + req.params.reviewId + ' not found');
                     err.status = 404;
                     return next(err);
                 }
@@ -181,29 +181,29 @@ dealRouter.route('/:dealId/comments/:commentId')
     .post(cors.corsWithOptions, authenticate.verifyUser, authenticate.verifyAdmin, (req, res, next) => {
         res.statusCode = 403;
         res.end('POST operation not supported on /deals/' + req.params.dealId
-            + '/comments/' + req.params.commentId);
+            + '/reviews/' + req.params.reviewId);
     })
     .put(cors.corsWithOptions, authenticate.verifyUser, authenticate.verifyAdmin, (req, res, next) => {
         Deals.findById(req.params.dealId)
             .then((deal) => {
-                if (deal != null && deal.comments.id(req.params.commentId) != null) {
+                if (deal != null && deal.reviews.id(req.params.reviewId) != null) {
 
-                    if (!deal.comments.id(req.params.commentId).author._id.equals(req.user._id)) {
-                        err = new Error('You are not authorized to edit this comment');
+                    if (!deal.reviews.id(req.params.reviewId).author._id.equals(req.user._id)) {
+                        err = new Error('You are not authorized to edit this review');
                         err.status = 403;
                         return next(err);
                     }
 
                     if (req.body.rating) {
-                        deal.comments.id(req.params.commentId).rating = req.body.rating;
+                        deal.reviews.id(req.params.reviewId).rating = req.body.rating;
                     }
-                    if (req.body.comment) {
-                        deal.comments.id(req.params.commentId).comment = req.body.comment;
+                    if (req.body.review) {
+                        deal.reviews.id(req.params.reviewId).review = req.body.review;
                     }
                     deal.save()
                         .then((deal) => {
                             Deals.findById(deal._id)
-                                .populate('comments.author')
+                                .populate('reviews.author')
                                 .then((deal) => {
                                     res.statusCode = 200;
                                     res.setHeader('Content-Type', 'application/json');
@@ -217,7 +217,7 @@ dealRouter.route('/:dealId/comments/:commentId')
                     return next(err);
                 }
                 else {
-                    err = new Error('Comment ' + req.params.commentId + ' not found');
+                    err = new Error('Review ' + req.params.reviewId + ' not found');
                     err.status = 404;
                     return next(err);
                 }
@@ -227,19 +227,19 @@ dealRouter.route('/:dealId/comments/:commentId')
     .delete(cors.corsWithOptions, authenticate.verifyUser, authenticate.verifyAdmin, (req, res, next) => {
         Deals.findById(req.params.dealId)
             .then((deal) => {
-                if (deal != null && deal.comments.id(req.params.commentId) != null) {
+                if (deal != null && deal.reviews.id(req.params.reviewId) != null) {
 
-                    if (!deal.comments.id(req.params.commentId).author._id.equals(req.user._id)) {
-                        err = new Error('You are not authorized to edit this comment');
+                    if (!deal.reviews.id(req.params.reviewId).author._id.equals(req.user._id)) {
+                        err = new Error('You are not authorized to edit this review');
                         err.status = 403;
                         return next(err);
                     }
 
-                    deal.comments.id(req.params.commentId).remove();
+                    deal.reviews.id(req.params.reviewId).remove();
                     deal.save()
                         .then((deal) => {
                             Deals.findById(deal._id)
-                                .populate('comments.author')
+                                .populate('reviews.author')
                                 .then((deal) => {
                                     res.statusCode = 200;
                                     res.setHeader('Content-Type', 'application/json');
@@ -253,7 +253,7 @@ dealRouter.route('/:dealId/comments/:commentId')
                     return next(err);
                 }
                 else {
-                    err = new Error('Comment ' + req.params.commentId + ' not found');
+                    err = new Error('Review ' + req.params.reviewId + ' not found');
                     err.status = 404;
                     return next(err);
                 }
