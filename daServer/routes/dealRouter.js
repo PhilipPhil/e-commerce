@@ -107,6 +107,13 @@ dealRouter.route('/:dealId/reviews')
             .then((deal) => {
                 if (deal != null) {
                     req.body.author = req.user._id;
+
+                    for (var i = (deal.reviews.length - 1); i >= 0; i--) {
+                        if(deal.reviews[i].author._id.equals(req.user._id)){
+                            deal.reviews.id(deal.reviews[i]._id).remove();
+                        }  
+                    }
+
                     deal.reviews.push(req.body);
                     deal.save()
                         .then((deal) => {
