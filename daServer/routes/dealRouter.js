@@ -25,10 +25,10 @@ dealRouter.route('/')
     .post(cors.corsWithOptions, authenticate.verifyUser, authenticate.verifyAdmin, (req, res, next) => {
         Deals.create(req.body)
             .then((deals) => {
-                console.log('Deal Created ', deal);
+                console.log('Deal Created ', deals);
                 res.statusCode = 200;
                 res.setHeader('Content-Type', 'application/json');
-                res.json(deal);
+                res.json(deals);
             }, (err) => next(err))
             .catch((err) => next(err));
     })

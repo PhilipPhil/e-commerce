@@ -39,7 +39,19 @@ const dealSchema = new Schema({
         type: String,
         required: true
     },
+    fineprint: {
+        type: String,
+        required: true
+    },
     website: {
+        type: String,
+        required: true
+    },
+    city: {
+        type: String,
+        required: true
+    },
+    address: {
         type: String,
         required: true
     },
@@ -47,7 +59,16 @@ const dealSchema = new Schema({
         type: Number,
         default: 0
     },
-    categories: [String],
+    categoriesOne: {
+        type: String,
+        required: true
+    },
+    categoriesTwo: {
+        type: String,
+    },
+    categoriesThree: {
+        type: String,
+    },
     reviews: [reviewSchema]
 }, {
     timestamps: true
