@@ -40,27 +40,19 @@ favoriteRouter.route('/:dealId')
     .post(cors.corsWithOptions, authenticate.verifyUser, (req, res, next) => {
         Favorites.findOne({ user: req.user._id })
             .then((favorite) => {
-                if (favorite) {
-                    if (favorite.deals.indexOf(req.params.dealId) === -1) {
+                if (favorite != null) {
+                    if (favorite.deals.indexOf(req.params.dealId) < 0) {
                         favorite.deals.push(req.params.dealId)
-                        favorite.save()
-                            .then((favorite) => {
-                                console.log('Favorite Created ', favorite);
-                                res.statusCode = 200;
-                                res.setHeader('Content-Type', 'application/json');
-                                res.json(favorite);
-                            }, (err) => next(err))
                     }
+                    favorite.save()
+                    .then((favorite) => {
+                        console.log('Favorite Created ', favorite);
+                        res.statusCode = 200;
+                        res.setHeader('Content-Type', 'application/json');
+                        res.json(favorite);
+                    }, (err) => next(err))
                 }
-                else {
-                    Favorites.create({ "user": req.user._id, "deals": [req.params.dealId] })
-                        .then((favorite) => {
-                            console.log('Favorite Created ', favorite);
-                            res.statusCode = 200;
-                            res.setHeader('Content-Type', 'application/json');
-                            res.json(favorite);
-                        }, (err) => next(err))
-                }
+
             }, (err) => next(err))
             .catch((err) => next(err));
     })
