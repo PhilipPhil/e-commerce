@@ -9,8 +9,9 @@ var router = express.Router();
 
 router.use(bodyParser.json());
 
+router.options('*', cors.corsWithOptions, (req, res) => { res.sendStatus(200); } )
+
 router.route('/')
-    .options(cors.corsWithOptions, (req, res) => { res.sendStatus(200); })
     .get(cors.corsWithOptions, authenticate.verifyUser, (req, res, next) => {
         User.findOne({_id : req.user._id})
             .then((deals) => {
