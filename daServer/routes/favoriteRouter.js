@@ -28,15 +28,14 @@ favoriteRouter.route('/')
 favoriteRouter.route('/:dealId')
     .options(cors.corsWithOptions, (req, res) => { res.sendStatus(200); })
     .get(cors.corsWithOptions, authenticate.verifyUser, (req, res, next) => {
-        Favorites.findById(req.params.dealId)
-        .populate('user')
-        .populate('deal')
-        .then((Favorites) => {
-            res.statusCode = 200;
-            res.setHeader('Content-Type', 'application/json');
-            res.json(Favorites);
-        }, (err) => next(err))
-        .catch((err) => next(err));
+        Favorites.findOne({ user: req.user._id })
+            .then((favorites) => {
+                res.json({"isFavorite": favorites.deals.indexOf(req.params.dealId) > -1});
+                res.statusCode = 200;
+                res.setHeader('Content-Type', 'application/json');
+                res.json(favorites);
+            }, (err) => next(err))
+            .catch((err) => next(err));
     })
     .post(cors.corsWithOptions, authenticate.verifyUser, (req, res, next) => {
         Favorites.findOne({ user: req.user._id })
