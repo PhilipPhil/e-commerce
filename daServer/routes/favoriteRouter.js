@@ -15,8 +15,8 @@ favoriteRouter.route('/')
     })
     .get(cors.cors, authenticate.verifyUser, (req, res, next) => {
         Favorites.findOne({ user: req.user._id })
-        .populate('user')    
-        .populate('deals')
+            .populate('user')
+            .populate('deals')
             .then((favorites) => {
                 res.statusCode = 200;
                 res.setHeader('Content-Type', 'application/json');
@@ -27,34 +27,62 @@ favoriteRouter.route('/')
 
 favoriteRouter.route('/:dealId')
     .options(cors.corsWithOptions, (req, res) => { res.sendStatus(200); })
-    .get(cors.corsWithOptions, authenticate.verifyUser, (req, res, next) => {
+    .get(cors.cors, authenticate.verifyUser, (req, res, next) => {
         Favorites.findOne({ user: req.user._id })
             .then((favorites) => {
-                res.json({"isFavorite": favorites.deals.indexOf(req.params.dealId) > -1});
-                res.statusCode = 200;
-                res.setHeader('Content-Type', 'application/json');
-                res.json(favorites);
-            }, (err) => next(err))
-            .catch((err) => next(err));
-    })
-    .post(cors.corsWithOptions, authenticate.verifyUser, (req, res, next) => {
-        Favorites.findOne({ user: req.user._id })
-            .then((favorite) => {
-                if (favorite != null) {
-                    if (favorite.deals.indexOf(req.params.dealId) < 0) {
-                        favorite.deals.push(req.params.dealId)
-                    }
-                    favorite.save()
-                    .then((favorite) => {
-                        console.log('Favorite Created ', favorite);
+                if (!favorites) {
+                    res.statusCode = 200;
+                    res.setHeader('Content-Type', 'application/json');
+                    return res.json({ "exists": false, "favorites": favorites });
+                }
+                else {
+                    if (favorites.deals.indexOf(req.params.dealId) < 0) {
                         res.statusCode = 200;
                         res.setHeader('Content-Type', 'application/json');
-                        res.json(favorite);
-                    }, (err) => next(err))
+                        return res.json({ "exists": false, "favorites": favorites });
+                    }
+                    else {
+                        res.statusCode = 200;
+                        res.setHeader('Content-Type', 'application/json');
+                        return res.json({ "exists": true, "favorites": favorites });
+                    }
                 }
 
             }, (err) => next(err))
-            .catch((err) => next(err));
+            .catch((err) => next(err))
+    })
+    .post(cors.corsWithOptions, authenticate.verifyUser, (req, res, next) => {
+        Favorites.findOne({ user: req.user._id }, (err, favorite) => {
+            if (err) { return next(err); }
+            if (!favorite) {
+                Favorites.create({ user: req.user._id })
+                    .then((favorite) => {
+                        favorite.deals.push(req.params.dealId);
+                        favorite.save()
+                            .then((favorite) => {
+                                console.log('favorite Created ', favorite);
+                                res.statusCode = 200;
+                                res.setHeader('Content-Type', 'application/json');
+                                res.json(favorite);
+                            });
+                    }, (err) => next(err))
+                    .catch((err) => next(err));
+            } else {
+                if (favorite.deals.indexOf(req.params.dealId) < 0) {
+                    favorite.deals.push(req.params.dealId);
+                    favorite.save()
+                        .then((favorite) => {
+                            console.log('favorite added ', favorite);
+                            res.statusCode = 200;
+                            res.setHeader('Content-Type', 'application/json');
+                            res.json(favorite);
+                        });
+                } else {
+                    res.statusCode = 200;
+                    res.end("Favorite already added!!");
+                }
+            }
+        });
     })
     .put(cors.corsWithOptions, authenticate.verifyUser, (req, res, next) => {
         res.statusCode = 403;
