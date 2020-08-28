@@ -79,7 +79,7 @@ favoriteRouter.route('/:dealId')
                         });
                 } else {
                     res.statusCode = 200;
-                    res.end("Favorite already added!!");
+                    res.json(favorite);
                 }
             }
         });
