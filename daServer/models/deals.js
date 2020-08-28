@@ -1,26 +1,5 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-require('mongoose-currency').loadType(mongoose);
-const Currency = mongoose.Types.Currency;
-
-var reviewSchema = new Schema({
-    rating: {
-        type: Number,
-        min: 1,
-        max: 5,
-        required: true
-    },
-    comment: {
-        type: String,
-        default: '',
-    },
-    author: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'User'
-    }
-}, {
-    timestamps: true
-});
 
 const dealSchema = new Schema({
     company: {
@@ -68,8 +47,7 @@ const dealSchema = new Schema({
     },
     categoriesThree: {
         type: String,
-    },
-    reviews: [reviewSchema]
+    }
 }, {
     timestamps: true
 });
