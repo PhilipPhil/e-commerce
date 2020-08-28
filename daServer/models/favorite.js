@@ -6,13 +6,12 @@ const favoriteSchema = new Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
     },
-    dishes: [{
+    deals: [{
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Deal'
+        ref: 'Deal'        
     }]
 }, {
-    timestamps: true,
-    usePushEach: true
+    timestamps: true
 })
 
 let Favorites = mongoose.model('favorite', favoriteSchema);
