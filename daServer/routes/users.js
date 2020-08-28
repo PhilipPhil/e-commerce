@@ -9,10 +9,17 @@ var router = express.Router();
 
 router.use(bodyParser.json());
 
-/* GET users listing. */
-// router.get('/', cors.corsWithOptions, authenticate.verifyUser, authenticate.verifyAdmin, function(req, res, next) {
-//   res.send('respond with a resource');
-// });
+router.route('/')
+    .options(cors.corsWithOptions, (req, res) => { res.sendStatus(200); })
+    .get(cors.corsWithOptions, authenticate.verifyUser, (req, res, next) => {
+        User.findOne({_id : req.user._id})
+            .then((deals) => {
+                res.statusCode = 200;
+                res.setHeader('Content-Type', 'application/json');
+                res.json(deals);
+            }, (err) => next(err))
+            .catch((err) => next(err));
+    })
 
 router.post('/signup', cors.corsWithOptions, (req, res, next) => {
   User.register(new User({username: req.body.username, email: req.body.username, name: req.body.name}), 
@@ -45,7 +52,6 @@ router.post('/signup', cors.corsWithOptions, (req, res, next) => {
 });
 
 router.post('/login', cors.corsWithOptions, passport.authenticate('local'), (req, res) => {
-
   var token = authenticate.getToken({_id: req.user._id});
   res.statusCode = 200;
   res.setHeader('Content-Type', 'application/json');
