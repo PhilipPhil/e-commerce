@@ -49,14 +49,17 @@ class Main extends Component {
         }
 
         const DealWithId = ({ match }) => {
+            // alert(JSON.stringify(this.props.deals.deals[0]))
             return (
-                <Deal deal={this.props.deals.deals.filter((deal) => deal.id === parseInt(match.params.dealId, 10))[0]}
+                <Deal 
+                    deal={this.props.deals.deals[0]}
                     isDealsLoading={this.props.deals.isLoading}
                     dealsErrMess={this.props.deals.errMess}
-                    reviews={this.props.reviews.reviews.filter((review) => review.dealId === parseInt(match.params.dealId, 10))}
-                    isReviewsLoading={this.props.reviews.isLoading}
-                    reviewsErrMess={this.props.reviews.errMess}
-                    postReview={this.props.postReview} />
+                    // reviews={this.props.reviews.reviews.filter((review) => review.dealId === match.params.dealId)}
+                    // isReviewsLoading={this.props.reviews.isLoading}
+                    // reviewsErrMess={this.props.reviews.errMess}
+                    // postReview={this.props.postReview}
+                    />
             );
         };
 

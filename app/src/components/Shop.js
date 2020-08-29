@@ -19,7 +19,7 @@ const CardComponent = (props) => {
           <div class="d-flex justify-content-between align-items-center">
             <div class="align-self-center">
               <div class="btn-group btn-group-sm" role="group" aria-label="...">
-                <Link className="btn btn-sm btn-outline-secondary" color="outline-secondary" outline to={`/deal/${props.deal.id}`} >View</Link>
+                <Link className="btn btn-sm btn-outline-secondary" color="outline-secondary" outline to={`/deal/${props.deal._id}`} >View</Link>
                 <Button className="btn btn-sm btn-outline-danger" type="submit" color="outline-danger" outline ><i class="fa fa-heart" /></Button>
               </div>
             </div>

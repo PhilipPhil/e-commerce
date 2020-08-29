@@ -22,15 +22,17 @@ class Deal extends Component {
   }
 
   renderCategory(category) {
-    return (
-      <React.Fragment>
-        <span style={{ "background-color": "rgba(0, 123, 255, 0.1)", "border-radius": "6px" }}>
-          &nbsp;{category}&nbsp;
-        </span>
-      &nbsp;
-      </React.Fragment>
+    if (category) {
+      return (
+        <React.Fragment>
+          <span style={{ "background-color": "rgba(0, 123, 255, 0.1)", "border-radius": "6px" }}>
+            &nbsp;{category}&nbsp;
+          </span>
+        &nbsp;
+        </React.Fragment>
 
-    )
+      )
+    }
   }
 
   renderReview(review) {
@@ -107,7 +109,7 @@ class Deal extends Component {
             <div class="row">
               <div class="col">
                 <p class="small"><b>THE FINE PRINT:</b> {this.props.deal.fineprint}</p>
-                <p class="small"><b>CITY:</b> {this.renderCategory(this.props.deal.city)}<b>CATEGORY:</b> {this.props.deal.categories.map((category) => this.renderCategory(category))}</p>
+                <p class="small"><b>CITY:</b> {this.renderCategory(this.props.deal.city)}<b>CATEGORY:</b> {this.renderCategory(this.props.deal.categoriesOne)} {this.renderCategory(this.props.deal.categoriesTwo)} {this.renderCategory(this.props.deal.categoriesThree)}</p>
               </div>
             </div>
 
@@ -125,11 +127,11 @@ class Deal extends Component {
 
             <div class="row" id="review-section">
               <div class="col text-center">
-                <Review dealId={this.props.deal.id} postReview={this.props.postReview} />
+                {/* <Review dealId={this.props.deal.id} postReview={this.props.postReview} /> */}
               </div>
             </div>
 
-            <Comments reviews={this.props.reviews} isReviewsLoading={this.props.isReviewsLoading} reviewsErrMess={this.props.reviewsErrMess}/>
+            {/* <Comments reviews={this.props.reviews} isReviewsLoading={this.props.isReviewsLoading} reviewsErrMess={this.props.reviewsErrMess}/> */}
 
           </div>
         </React.Fragment>
