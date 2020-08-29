@@ -1,4 +1,3 @@
-import { REVIEWS } from '../shared/reviews';
 import * as ActionTypes from './ActionTypes'
 
 export const Reviews = (state = {
@@ -9,6 +8,10 @@ export const Reviews = (state = {
     switch (action.type) {
         case ActionTypes.REVIEW_ADD:
             var review = action.payload
+            return { ...state, reviews: state.reviews.concat(review)}
+        case ActionTypes.REVIEW_REMOVE:
+            return { ...state, reviews: state.reviews.concat(review)}
+        case ActionTypes.REVIEW_EDIT:
             return { ...state, reviews: state.reviews.concat(review)}
         case ActionTypes.REVIEWS_ADD:
             return { ...state, isLoading: false, errMess: null, reviews: action.payload }
