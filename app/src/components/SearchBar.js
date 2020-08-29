@@ -33,7 +33,7 @@ class SearchBar extends Component {
             </Col>
 
             <Col className="col-12 col-xl-7 py-2">
-              <Control.text model=".name" id="name" name="name" placeholder="Search..."
+              <Control.text model=".name" id="name" name="name" placeholder="Search company..."
                 className="form-control" />
             </Col>
             <Col className="col-12 col-sm-6 col-md-auto py-2">
