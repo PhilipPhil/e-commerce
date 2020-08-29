@@ -20,7 +20,7 @@ class Comments extends Component {
             <div class="mb-4 col-12 col-md-8 offset-md-2 text-center">
                 <div class="row mb-2">
                     <div class="col-21 col-sm-6 text-left">
-                        <h4 style={{ marginBottom: 0 }}>{review.user}</h4>
+                        <h4 style={{ marginBottom: 0 }}>{review.author.name}</h4>
                         <small style={{ marginBottom: 0 }} class="text-muted">{review.date}</small>
                     </div>
                     <div class="col-12 col-sm-6 text-left text-sm-right">
