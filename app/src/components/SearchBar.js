@@ -40,10 +40,7 @@ class SearchBar extends Component {
               <Control.select model=".city" id="city" name="city" className="form-control">
                 <option>Any City</option>
                 <option>Vancouver</option>
-                <option>Burnaby</option>
-                <option>Richmond</option>
-                <option>Coquitlam</option>
-                <option>Other</option>
+                <option>Toronto</option>
               </ Control.select>
             </Col>
             <Col className="col-12 col-sm-6 col-md-auto py-2">
