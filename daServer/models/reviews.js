@@ -16,7 +16,7 @@ var reviewSchema = new Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
     },
-    dish: {
+    deal: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Deal'
     }

@@ -83,11 +83,11 @@ class Deal extends Component {
             </div>
 
             <div class="row featurette mb-4">
-              <div class="col-md-6 text-center">
+              <div class="col-md-6 text-center mb-2">
                 <img class="featurette-image img-fluid mx-auto" src={baseUrl + this.props.deal.mainimage} alt={this.props.deal.company} style={{ "max-height": "100vh" }} />
               </div>
               <div class="col-md-6 align-self-center text-center">
-                <img class="featurette-image img-fluid mx-auto" src={baseUrl + this.props.deal.logoimage} alt="Company Logo" style={{ "max-height": "129px", "max-width": "241px" }} />
+                <img class="featurette-image img-fluid mx-auto mb-2" src={baseUrl + this.props.deal.logoimage} alt="Company Logo" style={{ "max-height": "129px", "max-width": "241px" }} />
                 <h3>{this.props.deal.company}</h3>
                 <p>{this.props.deal.description}</p>
                 <a href="#review-section" style={{ "text-decoration": "none", color: "#212529" }}>
@@ -131,7 +131,7 @@ class Deal extends Component {
               </div>
             </div>
 
-            {/* <Comments reviews={this.props.reviews} isReviewsLoading={this.props.isReviewsLoading} reviewsErrMess={this.props.reviewsErrMess}/> */}
+            <Comments reviews={this.props.reviews} isReviewsLoading={this.props.isReviewsLoading} reviewsErrMess={this.props.reviewsErrMess}/>
 
           </div>
         </React.Fragment>

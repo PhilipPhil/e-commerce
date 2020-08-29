@@ -54,9 +54,9 @@ class Main extends Component {
                     deal={this.props.deals.deals.filter((deal) => deal._id == match.params.dealId)[0]}
                     isDealsLoading={this.props.deals.isLoading}
                     dealsErrMess={this.props.deals.errMess}
-                    // reviews={this.props.reviews.reviews.filter((review) => review.dealId === match.params.dealId)}
-                    // isReviewsLoading={this.props.reviews.isLoading}
-                    // reviewsErrMess={this.props.reviews.errMess}
+                    reviews={this.props.reviews.reviews.filter((review) => review._id === match.params.dealId)}
+                    isReviewsLoading={this.props.reviews.isLoading}
+                    reviewsErrMess={this.props.reviews.errMess}
                     postReview={this.props.postReview}
                     />
             );
