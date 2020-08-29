@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+var Float = require('mongoose-float').loadType(mongoose);
 
 const dealSchema = new Schema({
     company: {
@@ -35,7 +36,7 @@ const dealSchema = new Schema({
         required: true
     },
     rating: {
-        type: Number,
+        type: Float,
         default: 0
     },
     categoriesOne: {
