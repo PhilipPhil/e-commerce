@@ -1,7 +1,8 @@
 import {createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import { Deals } from './deals'
 import { Reviews } from './reviews'
-import { Users } from './users'
+import { Auth } from './auth';
+import { Favorites } from './favorites';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 import { createForms } from 'react-redux-form';
@@ -14,7 +15,8 @@ export const ConfigureStore = () => {
         combineReducers({
             deals: Deals,
             reviews: Reviews,
-            users: Users,
+            auth: Auth,
+            favorites: Favorites,
             ...createForms({
                 emailform: InitialEmailForm
             })
