@@ -16,7 +16,8 @@ class Login extends Component {
 
   handleSubmit(values) {
     console.log('Current State is: ' + JSON.stringify(values));
-    alert('Current State is: ' + JSON.stringify(values));
+    this.props.loginUser(values);
+    // alert('Current State is: ' + JSON.stringify(values));
   }
 
   render() {
@@ -29,9 +30,9 @@ class Login extends Component {
               <LocalForm onSubmit={(values) => this.handleSubmit(values)}>
 
                 <Row className="form-group">
-                  <Label htmlFor="email" md={12}>Email</Label>
+                  <Label htmlFor="username" md={12}>Email</Label>
                   <Col md={12}>
-                    <Control.text model=".email" id="email" name="email"
+                    <Control.text model=".username" id="username" name="username"
                       className="form-control"
                       placeholder="Email" />
                   </Col>

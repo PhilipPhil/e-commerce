@@ -20,7 +20,7 @@ class Header extends Component {
             isLoginOpen: false,
             isRegisterOpen: false
         };
-        this.toggleLogin= this.toggleLogin.bind(this);
+        this.toggleLogin = this.toggleLogin.bind(this);
         this.toggleRegister = this.toggleRegister.bind(this);
     }
 
@@ -43,13 +43,17 @@ class Header extends Component {
     }
 
     render() {
+        // alert(this.props.auth.isAuthenticated)
         return (
             <React.Fragment>
 
                 <Navbar dark expand className="top-nav">
                     <div className="container">
                         <Nav navbar className="ml-auto">
-                            <Button className="nav-link" outline onClick={this.toggleLogin} style={{ "border": "none", "outline": "none" }}><i class="fa fa-sign-in" /> LOGIN</Button>
+                            {!this.props.auth.isAuthenticated
+                                ? <Button className="nav-link" outline onClick={this.toggleLogin} style={{ "border": "none", "outline": "none" }}><i class="fa fa-sign-in" /> LOGIN</Button>
+                                : <span></span>
+                            }
                             <Button className="nav-link" outline onClick={this.toggleRegister} style={{ "border": "none", "outline": "none" }}>REGISTER</Button>
                         </Nav>
                     </div>
@@ -77,7 +81,8 @@ class Header extends Component {
 
                 <Modal isOpen={this.state.isLoginOpen} toggle={this.toggleLogin}>
                     <ModalBody>
-                        <Login />
+                        <Login auth={this.props.auth}
+                            loginUser={this.props.loginUser} />
                     </ModalBody>
                 </Modal>
 

@@ -9,22 +9,26 @@ import Error from './Error';
 import Shop from './Shop';
 import Deal from './Deal';
 import { actions } from 'react-redux-form';
-import { postReview, fetchDeals, fetchReviews } from '../redux/ActionCreators';
+import { postReview, fetchDeals, fetchReviews, loginUser, logoutUser } from '../redux/ActionCreators';
 
 
 const mapStateToProps = state => {
     return {
         deals: state.deals,
         reviews: state.reviews,
-        comments: state.comments
+        comments: state.comments,
+        auth: state.auth
     }
 }
 
 const mapDispatchToProps = dispatch => ({
     postReview: (dealId, rating, comment, user) => dispatch(postReview(dealId, rating, comment, user)),
-    fetchReviews: () => {dispatch(fetchReviews())},
-    fetchDeals: () => {dispatch(fetchDeals())},
-    resetEmailForm: () => { dispatch(actions.reset('emailform'))}  });
+    fetchReviews: () => { dispatch(fetchReviews()) },
+    fetchDeals: () => { dispatch(fetchDeals()) },
+    resetEmailForm: () => { dispatch(actions.reset('emailform')) },
+    loginUser: (creds) => dispatch(loginUser(creds)),
+    logoutUser: () => dispatch(logoutUser())
+});
 
 class Main extends Component {
 
@@ -41,7 +45,7 @@ class Main extends Component {
 
         const DealsPage = () => {
             return (
-                <Shop deals={this.props.deals.deals} 
+                <Shop deals={this.props.deals.deals}
                     isLoading={this.props.deals.isLoading}
                     errMess={this.props.deals.errMess}
                 />
@@ -50,7 +54,7 @@ class Main extends Component {
 
         const DealWithId = ({ match }) => {
             return (
-                <Deal 
+                <Deal
                     deal={this.props.deals.deals.filter((deal) => deal._id == match.params.dealId)[0]}
                     isDealsLoading={this.props.deals.isLoading}
                     dealsErrMess={this.props.deals.errMess}
@@ -58,14 +62,16 @@ class Main extends Component {
                     isReviewsLoading={this.props.reviews.isLoading}
                     reviewsErrMess={this.props.reviews.errMess}
                     postReview={this.props.postReview}
-                    />
+                />
             );
         };
 
         return (
             <div>
                 <div className="main-container">
-                    <Header />
+                    <Header auth={this.props.auth}
+                        loginUser={this.props.loginUser}
+                        logoutUser={this.props.logoutUser} />
                     <Switch>
 
                         <Route exact path="/" component={DealsPage} />
