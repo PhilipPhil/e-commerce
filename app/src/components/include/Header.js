@@ -87,7 +87,7 @@ class Header extends Component {
                 <Modal isOpen={this.state.isLoginOpen} toggle={this.toggleLogin}>
                     <ModalBody>
                         <Login auth={this.props.auth}
-                            loginUser={this.props.loginUser} />
+                            loginUser={this.props.loginUser} toggleLogin={this.toggleLogin}/>
                     </ModalBody>
                 </Modal>
 
