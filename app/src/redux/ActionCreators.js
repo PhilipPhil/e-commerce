@@ -7,20 +7,21 @@ export const addReview = (review) => ({
     payload: review
 });
 
-export const postReview = (dealId, rating, comment, user) => (dispatch) => {
+export const postReview = (dealId, rating, comment) => (dispatch) => {
     const newReview = {
-        dealId: dealId,
+        deal: dealId,
         rating: rating,
-        comment: comment,
-        user: user
+        comment: comment
     }
-    newReview.date = new Date().toISOString()
+
+    const bearer = 'Bearer ' + localStorage.getItem('token');
 
     return fetch(baseUrl + 'reviews', {
         method: 'post',
         body: JSON.stringify(newReview),
         headers: {
-            'Content-Type':'application/json'
+            'Content-Type':'application/json',
+            'Authorization': bearer
         },
         credentials: 'same-origin'
     })

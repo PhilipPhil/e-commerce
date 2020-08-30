@@ -22,7 +22,7 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = dispatch => ({
-    postReview: (dealId, rating, comment, user) => dispatch(postReview(dealId, rating, comment, user)),
+    postReview: (dealId, rating, comment) => dispatch(postReview(dealId, rating, comment)),
     fetchReviews: () => { dispatch(fetchReviews()) },
     fetchDeals: () => { dispatch(fetchDeals()) },
     resetEmailForm: () => { dispatch(actions.reset('emailform')) },

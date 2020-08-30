@@ -15,7 +15,7 @@ class Review extends Component {
   }
 
   handleSubmit(values) {
-    this.props.postReview(this.props.dealId, values.rating, values.comment, "username")
+    this.props.postReview(this.props.dealId, values.rating, values.comment)
   }
 
   render() {
