@@ -43,20 +43,25 @@ class Header extends Component {
     }
 
     render() {
-        // alert(this.props.auth.isAuthenticated)
         return (
             <React.Fragment>
 
                 <Navbar dark expand className="top-nav">
                     <div className="container">
-                        <Nav navbar className="ml-auto">
-                            {!this.props.auth.isAuthenticated
-                                ? <Button className="nav-link" outline onClick={this.toggleLogin} style={{ "border": "none", "outline": "none" }}><i class="fa fa-sign-in" /> LOGIN</Button>
-                                : <span></span>
-                            }
-                            <Button className="nav-link" outline onClick={this.toggleRegister} style={{ "border": "none", "outline": "none" }}>REGISTER</Button>
+                        {!this.props.auth.isAuthenticated
+                            ?
+                            <Nav navbar className="ml-auto">
+                                <Button className="nav-link" outline onClick={this.toggleLogin} style={{ "border": "none", "outline": "none" }}><i class="fa fa-sign-in" /> LOGIN</Button>
+                                <Button className="nav-link" outline onClick={this.toggleRegister} style={{ "border": "none", "outline": "none" }}>REGISTER</Button>
+                            </Nav>
+                            : 
+                            <Nav navbar className="ml-auto">
+                            <Button className="nav-link" outline onClick={this.props.logoutUser} style={{ "border": "none", "outline": "none" }}><i class="fa fa-sign-out" /> LOGOUT</Button>
+                            <Nav className="nav-link" exact to='/' style={{ "border": "none", "outline": "none" }}>{this.props.auth.user.username}</Nav>
                         </Nav>
+                        }
                     </div>
+
                 </Navbar>
 
                 <Navbar dark expand="md" className="bottom-nav">
