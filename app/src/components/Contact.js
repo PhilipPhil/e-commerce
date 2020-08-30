@@ -67,7 +67,7 @@ class Contact extends Component {
                                             }}>
                                             <option></option>
                                             <option>Partner with us</option>
-                                            <option>Careers - We are hiring!</option>
+                                            <option>Careers - We are hiring sales!</option>
                                             <option>Technical</option>
                                             <option>Other</option>
                                         </Control.select>
