@@ -21,7 +21,15 @@ class Header extends Component {
             isRegisterOpen: false
         };
         this.toggleLogin = this.toggleLogin.bind(this);
+        this.toggleLoginOff = this.toggleLoginOff.bind(this);
         this.toggleRegister = this.toggleRegister.bind(this);
+    }
+
+
+    toggleLoginOff() {
+        this.setState({
+            isLoginOpen: false
+        });
     }
 
     toggleLogin() {
@@ -54,11 +62,14 @@ class Header extends Component {
                                 <Button className="nav-link" outline onClick={this.toggleLogin} style={{ "border": "none", "outline": "none" }}><i class="fa fa-sign-in" /> LOGIN</Button>
                                 <Button className="nav-link" outline onClick={this.toggleRegister} style={{ "border": "none", "outline": "none" }}>REGISTER</Button>
                             </Nav>
-                            : 
+                            :
                             <Nav navbar className="ml-auto">
-                            <Button className="nav-link" outline onClick={this.props.logoutUser} style={{ "border": "none", "outline": "none" }}><i class="fa fa-sign-out" /> LOGOUT</Button>
-                            <NavLink className="nav-link" exact to='/' style={{ "border": "none", "outline": "none" }}><i class="fa fa-heart"/> FAVORITES</NavLink>
-                        </Nav>
+                                <Button className="nav-link" outline onClick={() => {
+                                    this.toggleLoginOff();
+                                    this.props.logoutUser();
+                                }} style={{ "border": "none", "outline": "none" }}><i class="fa fa-sign-out" /> LOGOUT</Button>
+                                <NavLink className="nav-link" exact to='/' style={{ "border": "none", "outline": "none" }}><i class="fa fa-heart" /> FAVORITES</NavLink>
+                            </Nav>
                         }
                     </div>
 
@@ -84,16 +95,15 @@ class Header extends Component {
                     </div>
                 </Navbar>
 
-                <Modal isOpen={this.state.isLoginOpen} toggle={this.toggleLogin}>
+                <Modal isOpen={this.state.isLoginOpen && !this.props.auth.isAuthenticated} toggle={this.toggleLogin}>
                     <ModalBody>
-                        <Login auth={this.props.auth}
-                            loginUser={this.props.loginUser} toggleLogin={this.toggleLogin}/>
+                        <Login loginUser={this.props.loginUser} />
                     </ModalBody>
                 </Modal>
 
                 <Modal isOpen={this.state.isRegisterOpen} toggle={this.toggleRegister}>
                     <ModalBody>
-                        <Register />
+                        <Register toggleRegister={this.toggleRegister} />
                     </ModalBody>
                 </Modal>
             </React.Fragment>
