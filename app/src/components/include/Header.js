@@ -57,7 +57,7 @@ class Header extends Component {
                             : 
                             <Nav navbar className="ml-auto">
                             <Button className="nav-link" outline onClick={this.props.logoutUser} style={{ "border": "none", "outline": "none" }}><i class="fa fa-sign-out" /> LOGOUT</Button>
-                            <Nav className="nav-link" exact to='/' style={{ "border": "none", "outline": "none" }}>{this.props.auth.user.username}</Nav>
+                            <NavLink className="nav-link" exact to='/' style={{ "border": "none", "outline": "none" }}><i class="fa fa-heart"/> FAVORITES</NavLink>
                         </Nav>
                         }
                     </div>
