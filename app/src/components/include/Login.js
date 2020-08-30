@@ -17,7 +17,6 @@ class Login extends Component {
   handleSubmit(values) {
     console.log('Current State is: ' + JSON.stringify(values));
     this.props.loginUser(values);
-    // alert('Current State is: ' + JSON.stringify(values));
   }
 
   render() {
