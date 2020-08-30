@@ -103,7 +103,7 @@ class Header extends Component {
 
                 <Modal isOpen={this.state.isRegisterOpen} toggle={this.toggleRegister}>
                     <ModalBody>
-                        <Register toggleRegister={this.toggleRegister} />
+                        <Register registerUser={this.props.registerUser} toggleRegister={this.toggleRegister} />
                     </ModalBody>
                 </Modal>
             </React.Fragment>

@@ -25,7 +25,3 @@ export const LOGOUT_FAILURE = 'LOGOUT_FAILURE';
 export const FAVORITES_LOADING = 'FAVORITES_LOADING';
 export const FAVORITES_FAILED = 'FAVORITES_FAILED';
 export const FAVORITES_ADD = 'FAVORITES_ADD';
-
-export const USER_ADD = 'USER_ADD';
-export const USER_REMOVE = 'USER_REMOVE';
-export const USER_EDIT = 'USER_EDIT';

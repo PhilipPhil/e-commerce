@@ -9,7 +9,7 @@ import Error from './Error';
 import Shop from './Shop';
 import Deal from './Deal';
 import { actions } from 'react-redux-form';
-import { postReview, fetchDeals, fetchReviews, loginUser, logoutUser } from '../redux/ActionCreators';
+import { postReview, fetchDeals, fetchReviews, loginUser, logoutUser, registerUser } from '../redux/ActionCreators';
 
 
 const mapStateToProps = state => {
@@ -27,6 +27,7 @@ const mapDispatchToProps = dispatch => ({
     fetchDeals: () => { dispatch(fetchDeals()) },
     resetEmailForm: () => { dispatch(actions.reset('emailform')) },
     loginUser: (creds) => dispatch(loginUser(creds)),
+    registerUser: (user) => dispatch(registerUser(user)),
     logoutUser: () => dispatch(logoutUser())
 });
 
@@ -71,7 +72,8 @@ class Main extends Component {
                 <div className="main-container">
                     <Header auth={this.props.auth}
                         loginUser={this.props.loginUser}
-                        logoutUser={this.props.logoutUser} />
+                        logoutUser={this.props.logoutUser}
+                        registerUser={this.props.registerUser} />
                     <Switch>
 
                         <Route exact path="/" component={DealsPage} />

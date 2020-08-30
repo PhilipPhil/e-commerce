@@ -14,9 +14,9 @@ class Register extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleSubmit(values) {
-        console.log('Current State is: ' + JSON.stringify(values));
-        alert('Current State is: ' + JSON.stringify(values));
+    handleSubmit(values) {  
+        this.props.registerUser(values)
+        this.props.toggleRegister()
     }
 
     render() {
@@ -48,9 +48,9 @@ class Register extends Component {
                                 </Row>
 
                                 <Row className="form-group">
-                                    <Label htmlFor="email" md={12}>Email</Label>
+                                    <Label htmlFor="username" md={12}>Email</Label>
                                     <Col md={12}>
-                                        <Control.text model=".email" id="email" name="email"
+                                        <Control.text model=".username" id="username" name="username"
                                             className="form-control"
                                             placeholder="Email"
                                             validators={{
