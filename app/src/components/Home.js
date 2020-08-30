@@ -7,36 +7,36 @@ const CarouselComponent = () => {
     <Carousel.Item>
       <img
         className="d-block w-100"
-        src="assets/images/1200x400.jpg"
+        src="assets/images/discover.jpeg"
         alt="First slide"
       />
       <Carousel.Caption>
-        <h3>First slide label</h3>
-        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+        <h3>Discover</h3>
+        <p>Find the best deals in your area.</p>
       </Carousel.Caption>
     </Carousel.Item>
     <Carousel.Item>
       <img
         className="d-block w-100"
-        src="assets/images/1200x400-1.jpg"
+        src="assets/images/community.jpg"
         alt="Third slide"
       />
   
       <Carousel.Caption>
-        <h3>Second slide label</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <h3>Community</h3>
+        <p>Connecting patrons to local businesses.</p>
       </Carousel.Caption>
     </Carousel.Item>
     <Carousel.Item>
       <img
         className="d-block w-100"
-        src="assets/images/1200x400-2.jpg"
+        src="assets/images/join.jpg"
         alt="Third slide"
       />
   
       <Carousel.Caption>
-        <h3>Third slide label</h3>
-        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+        <h3>Join</h3>
+        <p>Grow with the deal alchemist community.</p>
       </Carousel.Caption>
     </Carousel.Item>
   </Carousel>)
