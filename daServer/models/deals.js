@@ -21,7 +21,7 @@ const dealSchema = new Schema({
     },
     fineprint: {
         type: String,
-        required: true
+        default: ""
     },
     website: {
         type: String,
