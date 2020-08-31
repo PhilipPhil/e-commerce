@@ -46,7 +46,7 @@ class Favorites extends Component {
         else if (this.props.favorites != null) {
             const menu = this.props.favorites.deals.map((deal) => {
                 return (
-                    <Card deal={deal} />
+                    <Card deal={deal} deleteFavorite={this.props.deleteFavorite} postFavorite={this.props.postFavorite} />
                 );
             });
             return (

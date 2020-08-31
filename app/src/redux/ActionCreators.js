@@ -165,7 +165,7 @@ export const loginUser = (creds) => (dispatch) => {
         localStorage.setItem('token', response.token);
         localStorage.setItem('creds', JSON.stringify(creds));
         // Dispatch the success action
-        // dispatch(fetchFavorites());
+        dispatch(fetchFavorites());
         dispatch(receiveLogin(response));
       }
       else {
@@ -194,7 +194,7 @@ export const logoutUser = () => (dispatch) => {
   dispatch(requestLogout())
   localStorage.removeItem('token');
   localStorage.removeItem('creds');
-  // dispatch(favoritesFailed("Error 401: Unauthorized"));
+  dispatch(favoritesFailed("Error 401: Unauthorized"));
   dispatch(receiveLogout())
 }
 

@@ -35,8 +35,8 @@ const mapDispatchToProps = dispatch => ({
     loginUser: (creds) => dispatch(loginUser(creds)),
     registerUser: (user) => dispatch(registerUser(user)),
     fetchFavorites: () => dispatch(fetchFavorites()),
-    postFavorite: (dishId) => dispatch(postFavorite(dishId)),
-    deleteFavorite: (dishId) => dispatch(deleteFavorite(dishId)),
+    postFavorite: (dealId) => dispatch(postFavorite(dealId)),
+    deleteFavorite: (dealId) => dispatch(deleteFavorite(dealId)),
     logoutUser: () => dispatch(logoutUser())
 });
 
@@ -59,6 +59,7 @@ class Main extends Component {
                 <Shop deals={this.props.deals.deals}
                     isLoading={this.props.deals.isLoading}
                     errMess={this.props.deals.errMess}
+                    auth={this.props.auth}
                 />
             );
         }

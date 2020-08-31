@@ -36,7 +36,7 @@ class Shop extends Component {
       
       const menu = this.props.deals.map((deal) => {
         return (
-          <Card deal={deal} />
+          <Card deal={deal} deleteFavorite={this.props.deleteFavorite} postFavorite={this.props.postFavorite}/>
         );
       });
 
