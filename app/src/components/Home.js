@@ -51,17 +51,17 @@ const HomeBodyComponent = () => {
         <div class="col-lg-4 text-center">
           <img class="mb-2" src="assets/images/logo.png" alt="Generic placeholder image" width="140" height="140" />
           <h2>Who</h2>
-          <p>Deal Alchemist is based in Vancouver, formed through the love of a great bargain and helping local businesses.</p>
+          <p>Deal Alchemist was formed through the passion for a great bargain and helping local businesses. Our team of alchemists is based in Vancouver.</p>
         </div>
         <div class="col-lg-4 text-center">
           <img class="mb-2" src="assets/images/trophy.png" alt="Generic placeholder image" width="140" height="140" />
           <h2>Goal</h2>
-          <p>We bring top deals to patrons and help promote local businesses through customizable campaigns that increase their customer outreach.</p>
+          <p>We bring top deals to patrons and help promote local businesses through customizable campaigns that increase customer outreach.</p>
         </div>
         <div class="col-lg-4 text-center">
           <img class="mb-2" src="assets/images/flexed-biceps.png" alt="Generic placeholder image" width="140" height="140" />
           <h2>Try</h2>
-          <p>Sign up for free and start enjoying the best deals in your area. If you are a business and you would like to promote your deals, please <Link to='/contact'>contact us</Link>.</p>
+          <p>Sign up for free and start enjoying the best deals in your area. If you are a business and you would like to promote yourself, please <Link to='/contact'>contact us</Link>.</p>
         </div>
       </div>
 
