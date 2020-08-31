@@ -17,10 +17,6 @@ class Deal extends Component {
     this.renderReview = this.renderReview.bind(this);
   }
 
-  componentDidMount() {
-    window.scrollTo(0, 0)
-  }
-
   renderCategory(category) {
     if (category) {
       return (

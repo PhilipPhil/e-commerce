@@ -8,6 +8,7 @@ import Contact from './Contact';
 import Error from './Error';
 import Shop from './Shop';
 import Deal from './Deal';
+import ScrollToTop from './ScrollToTop';
 import { actions } from 'react-redux-form';
 import { postReview, fetchDeals, fetchReviews, loginUser, logoutUser, registerUser } from '../redux/ActionCreators';
 
@@ -75,23 +76,25 @@ class Main extends Component {
                         loginUser={this.props.loginUser}
                         logoutUser={this.props.logoutUser}
                         registerUser={this.props.registerUser} />
-                    <Switch>
+                    <ScrollToTop>
+                        <Switch>
 
-                        <Route exact path="/" component={DealsPage} />
+                            <Route exact path="/" component={DealsPage} />
 
-                        <Route exact path='/deal'>
-                            <Redirect exact path="/" />
-                        </Route>
-                        <Route path='/deals'>
-                            <Redirect exact path="/" />
-                        </Route>
+                            <Route exact path='/deal'>
+                                <Redirect exact path="/" />
+                            </Route>
+                            <Route path='/deals'>
+                                <Redirect exact path="/" />
+                            </Route>
 
-                        <Route path='/deal/:dealId' component={DealWithId} />
-                        <Route path='/about' component={Home} />
-                        <Route path='/Contact' component={() => <Contact resetEmailForm={this.props.resetEmailForm} />} />
-                        <Route path='/error' component={() => <Error errMess="Error 404: Not Found" />} />
-                        <Redirect to='/error' />
-                    </Switch>
+                            <Route path='/deal/:dealId' component={DealWithId} />
+                            <Route path='/about' component={Home} />
+                            <Route path='/Contact' component={() => <Contact resetEmailForm={this.props.resetEmailForm} />} />
+                            <Route path='/error' component={() => <Error errMess="Error 404: Not Found" />} />
+                            <Redirect to='/error' />
+                        </Switch>
+                    </ScrollToTop>
                 </div>
                 <Footer />
             </div>
