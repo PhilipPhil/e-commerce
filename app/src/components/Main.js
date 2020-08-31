@@ -63,6 +63,7 @@ class Main extends Component {
                     isReviewsLoading={this.props.reviews.isLoading}
                     reviewsErrMess={this.props.reviews.errMess}
                     postReview={this.props.postReview}
+                    auth={this.props.auth}
                 />
             );
         };

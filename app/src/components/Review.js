@@ -24,7 +24,7 @@ class Review extends Component {
         <div className="container">
           <div className="row py-2 d-flex justify-content-center">
             <div className="col-12 col-md-8">
-              <h4>Review</h4>
+              <h4>Reviews</h4>
               <LocalForm onSubmit={(values) => this.handleSubmit(values)}>
 
                 <Row className="form-group">

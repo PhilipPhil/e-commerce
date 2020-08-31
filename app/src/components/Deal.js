@@ -126,12 +126,21 @@ class Deal extends Component {
             <hr class="featurette-divider" />
 
             <div class="row" id="review-section">
-              <div class="col text-center">
-                <Review dealId={this.props.deal._id} postReview={this.props.postReview} />
-              </div>
+              {!this.props.auth.isAuthenticated
+                ?
+                <div class="col text-center">
+                  <h4>Reviews</h4>
+                  <p>Log in to leave a review.</p>
+                </div>
+                :
+                <div class="col text-center">
+                  <Review dealId={this.props.deal._id} postReview={this.props.postReview} />
+                </div>
+              }
+
             </div>
 
-            <Comments reviews={this.props.reviews} isReviewsLoading={this.props.isReviewsLoading} reviewsErrMess={this.props.reviewsErrMess}/>
+            <Comments reviews={this.props.reviews} isReviewsLoading={this.props.isReviewsLoading} reviewsErrMess={this.props.reviewsErrMess} />
 
           </div>
         </React.Fragment>
