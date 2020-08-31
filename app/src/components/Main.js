@@ -8,9 +8,13 @@ import Contact from './Contact';
 import Error from './Error';
 import Shop from './Shop';
 import Deal from './Deal';
+import Favorites from './Favorites'
 import ScrollToTop from './ScrollToTop';
 import { actions } from 'react-redux-form';
-import { postReview, fetchDeals, fetchReviews, loginUser, logoutUser, registerUser } from '../redux/ActionCreators';
+import {
+    postReview, fetchDeals, fetchReviews, loginUser, logoutUser,
+    registerUser, fetchFavorites, postFavorite, deleteFavorite
+} from '../redux/ActionCreators';
 
 
 const mapStateToProps = state => {
@@ -18,6 +22,7 @@ const mapStateToProps = state => {
         deals: state.deals,
         reviews: state.reviews,
         comments: state.comments,
+        favorites: state.favorites,
         auth: state.auth
     }
 }
@@ -29,6 +34,9 @@ const mapDispatchToProps = dispatch => ({
     resetEmailForm: () => { dispatch(actions.reset('emailform')) },
     loginUser: (creds) => dispatch(loginUser(creds)),
     registerUser: (user) => dispatch(registerUser(user)),
+    fetchFavorites: () => dispatch(fetchFavorites()),
+    postFavorite: (dishId) => dispatch(postFavorite(dishId)),
+    deleteFavorite: (dishId) => dispatch(deleteFavorite(dishId)),
     logoutUser: () => dispatch(logoutUser())
 });
 
@@ -48,6 +56,15 @@ class Main extends Component {
         const DealsPage = () => {
             return (
                 <Shop deals={this.props.deals.deals}
+                    isLoading={this.props.deals.isLoading}
+                    errMess={this.props.deals.errMess}
+                />
+            );
+        }
+
+        const FavoritesPage = () => {
+            return (
+                <Favorites deals={this.props.deals.deals}
                     isLoading={this.props.deals.isLoading}
                     errMess={this.props.deals.errMess}
                 />
@@ -90,7 +107,8 @@ class Main extends Component {
 
                             <Route path='/deal/:dealId' component={DealWithId} />
                             <Route path='/about' component={Home} />
-                            <Route path='/Contact' component={() => <Contact resetEmailForm={this.props.resetEmailForm} />} />
+                            <Route path='/contact' component={() => <Contact resetEmailForm={this.props.resetEmailForm} />} />
+                            <Route path='/favorites' component={FavoritesPage} />
                             <Route path='/error' component={() => <Error errMess="Error 404: Not Found" />} />
                             <Redirect to='/error' />
                         </Switch>

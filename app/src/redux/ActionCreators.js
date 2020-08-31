@@ -222,3 +222,104 @@ export const registerUser = (user) => (dispatch) => {
     .then(response => { console.log('User', response); alert("Registered successfully"); dispatch(loginUser(user)); })
     .catch(error => { console.log('User', error.message); alert("Registration failed")});
 };
+
+export const postFavorite = (dealId) => (dispatch) => {
+
+  const bearer = 'Bearer ' + localStorage.getItem('token');
+
+  return fetch(baseUrl + 'favorites/' + dealId, {
+      method: "POST",
+      body: JSON.stringify({"_id": dealId}),
+      headers: {
+        "Content-Type": "application/json",
+        'Authorization': bearer
+      },
+      credentials: "same-origin"
+  })
+  .then(response => {
+      if (response.ok) {
+        return response;
+      } else {
+        var error = new Error('Error ' + response.status + ': ' + response.statusText);
+        error.response = response;
+        throw error;
+      }
+    },
+    error => {
+          throw error;
+    })
+  .then(response => response.json())
+  .then(favorites => { console.log('Favorite Added', favorites); dispatch(addFavorites(favorites)); })
+  .catch(error => dispatch(favoritesFailed(error.message)));
+}
+
+export const deleteFavorite = (dealId) => (dispatch) => {
+
+  const bearer = 'Bearer ' + localStorage.getItem('token');
+
+  return fetch(baseUrl + 'favorites/' + dealId, {
+      method: "DELETE",
+      headers: {
+        'Authorization': bearer
+      },
+      credentials: "same-origin"
+  })
+  .then(response => {
+      if (response.ok) {
+        return response;
+      } else {
+        var error = new Error('Error ' + response.status + ': ' + response.statusText);
+        error.response = response;
+        throw error;
+      }
+    },
+    error => {
+          throw error;
+    })
+  .then(response => response.json())
+  .then(favorites => { console.log('Favorite Deleted', favorites); dispatch(addFavorites(favorites)); })
+  .catch(error => dispatch(favoritesFailed(error.message)));
+};
+
+export const fetchFavorites = () => (dispatch) => {
+  dispatch(favoritesLoading(true));
+
+  const bearer = 'Bearer ' + localStorage.getItem('token');
+
+  return fetch(baseUrl + 'favorites', {
+      headers: {
+          'Authorization': bearer
+      },
+  })
+  .then(response => {
+      if (response.ok) {
+          return response;
+      }
+      else {
+          var error = new Error('Error ' + response.status + ': ' + response.statusText);
+          error.response = response;
+          throw error;
+      }
+  },
+  error => {
+      var errmess = new Error(error.message);
+      throw errmess;
+  })
+  .then(response => response.json())
+  .then(favorites => dispatch(addFavorites(favorites)))
+  .catch(error => dispatch(favoritesFailed(error.message)));
+}
+
+export const favoritesLoading = () => ({
+  type: ActionTypes.FAVORITES_LOADING
+});
+
+export const favoritesFailed = (errmess) => ({
+  type: ActionTypes.FAVORITES_FAILED,
+  payload: errmess
+});
+
+export const addFavorites = (favorites) => ({
+  type: ActionTypes.FAVORITES_ADD,
+  payload: favorites
+});

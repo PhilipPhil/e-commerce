@@ -1,0 +1,74 @@
+import React, { Component } from 'react';
+import { Button, Label, Col, Row } from 'reactstrap';
+import Loading from "./Loading"
+import Error from './Error';
+import Card from "./Card"
+
+const Tittle = (props) => {
+    return (
+        <Row className="form-group justify-content-center mb-4" style={{ "backgroundColor": "rgb(0, 123, 255,0.06)", "border": "1px solid rgba(0,0,0,.125)", "padding": "15px", "border-radius": ".05rem" }}>
+            <Col className="col-12 text-center">
+                <h1>Favorites <span className="text-muted">{props.username}</span> <img style={{ "vertical-align": "sub" }} src='/assets/images/logo.png' height="60" width="60" alt='Deal Alchemist' /></h1>
+            </Col>
+        </Row>
+
+    )
+}
+
+
+
+class Favorites extends Component {
+
+    constructor(props) {
+        super(props);
+    }
+
+    componentDidMount() {
+        window.scrollTo(0, 0)
+    }
+
+    render() {
+        if (this.props.isLoading) {
+            return (
+                <div className="container py-4">
+                    <Tittle username="Username" />
+                    <div class="row">
+                        <Loading />
+                    </div>
+                </div>
+            )
+        } else if (this.props.errMess) {
+            return (<Error errMess={this.props.errMess} />);
+        }
+
+
+        else if (this.props.deals != null) {
+
+            const menu = this.props.deals.map((deal) => {
+                return (
+                    <Card deal={deal} />
+                );
+            });
+
+            return (
+                <div className="container py-4">
+                    <Tittle username="Username" />
+                    <div class="row">
+                        {menu}
+                    </div>
+                </div>
+            );
+        } else {
+            return (
+                <div className="container py-4">
+                    <Tittle username="Username" />
+                    <div class="row">
+                    </div>
+                </div>
+            );
+        }
+
+    }
+}
+
+export default Favorites;
