@@ -29,6 +29,8 @@ favoriteRouter.route('/:dealId')
     .options(cors.corsWithOptions, (req, res) => { res.sendStatus(200); })
     .get(cors.cors, authenticate.verifyUser, (req, res, next) => {
         Favorites.findOne({ user: req.user._id })
+        .populate('user')
+        .populate('deals')
             .then((favorites) => {
                 if (!favorites) {
                     res.statusCode = 200;
