@@ -49,6 +49,7 @@ class Main extends Component {
     componentDidMount() {
         this.props.fetchDeals();
         this.props.fetchReviews();
+        this.props.fetchFavorites();
     }
 
     render() {
@@ -64,9 +65,12 @@ class Main extends Component {
 
         const FavoritesPage = () => {
             return (
-                <Favorites deals={this.props.deals.deals}
-                    isLoading={this.props.deals.isLoading}
-                    errMess={this.props.deals.errMess}
+                <Favorites
+                    favorites={this.props.favorites.favorites}
+                    isLoading={this.props.favorites.isLoading}
+                    errMess={this.props.favorites.errMess}
+                    deleteFavorite={this.props.deleteFavorite}
+                    postFavorite={this.props.postFavorite}
                 />
             );
         }

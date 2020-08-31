@@ -8,7 +8,8 @@ const Tittle = (props) => {
     return (
         <Row className="form-group justify-content-center mb-4" style={{ "backgroundColor": "rgb(0, 123, 255,0.06)", "border": "1px solid rgba(0,0,0,.125)", "padding": "15px", "border-radius": ".05rem" }}>
             <Col className="col-12 text-center">
-                <h1>Favorites <span className="text-muted">{props.username}</span> <img style={{ "vertical-align": "sub" }} src='/assets/images/logo.png' height="60" width="60" alt='Deal Alchemist' /></h1>
+                <h1>Favorites <img style={{ "vertical-align": "sub" }} src='/assets/images/logo.png' height="60" width="60" alt='Deal Alchemist' /></h1>
+                <h2 className="text-muted">{props.username}</h2>
             </Col>
         </Row>
 
@@ -31,7 +32,7 @@ class Favorites extends Component {
         if (this.props.isLoading) {
             return (
                 <div className="container py-4">
-                    <Tittle username="Username" />
+                    <Tittle username={"Loading..."} />
                     <div class="row">
                         <Loading />
                     </div>
@@ -42,17 +43,15 @@ class Favorites extends Component {
         }
 
 
-        else if (this.props.deals != null) {
-
-            const menu = this.props.deals.map((deal) => {
+        else if (this.props.favorites != null) {
+            const menu = this.props.favorites.deals.map((deal) => {
                 return (
                     <Card deal={deal} />
                 );
             });
-
             return (
                 <div className="container py-4">
-                    <Tittle username="Username" />
+                    <Tittle username={this.props.favorites.user.name} />
                     <div class="row">
                         {menu}
                     </div>
@@ -61,7 +60,7 @@ class Favorites extends Component {
         } else {
             return (
                 <div className="container py-4">
-                    <Tittle username="Username" />
+                    <Tittle username={this.props.favorites.user.name} />
                     <div class="row">
                     </div>
                 </div>
