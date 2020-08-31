@@ -68,7 +68,7 @@ class Header extends Component {
                                     this.toggleLoginOff();
                                     this.props.logoutUser();
                                 }} style={{ "border": "none", "outline": "none" }}><i class="fa fa-sign-out" /> LOGOUT</Button>
-                                <NavLink className="nav-link" exact to='/' style={{ "border": "none", "outline": "none" }}><i class="fa fa-heart" /> FAVORITES</NavLink>
+                                <NavLink className="nav-link" exact to='/favorites' style={{ "border": "none", "outline": "none" }}><i class="fa fa-heart" /> FAVORITES</NavLink>
                             </Nav>
                         }
                     </div>
