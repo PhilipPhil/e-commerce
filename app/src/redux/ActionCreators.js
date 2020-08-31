@@ -219,6 +219,6 @@ export const registerUser = (user) => (dispatch) => {
         throw error;
       })
     .then(response => response.json())
-    .then(response => { console.log('User', response); alert(JSON.stringify(response))})
-    .catch(error => { console.log('User', error.message); alert(error.message)});
+    .then(response => { console.log('User', response); alert("Registered successfully"); dispatch(loginUser(user)); })
+    .catch(error => { console.log('User', error.message); alert("Registration failed")});
 };
