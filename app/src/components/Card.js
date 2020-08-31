@@ -2,7 +2,10 @@ import React, { Component } from 'react';
 import StarRatings from 'react-star-ratings';
 import { Link } from 'react-router-dom';
 import { Button } from 'reactstrap';
+import FavoritesButton from "./FavoritesButton"
 import { baseUrl } from '../shared/baseUrl'
+
+
 
 const Card = (props) => {
     return (
@@ -17,7 +20,14 @@ const Card = (props) => {
                         <div class="align-self-center">
                             <div class="btn-group btn-group-sm" role="group" aria-label="...">
                                 <Link className="btn btn-sm btn-outline-secondary" color="outline-secondary" outline to={`/deal/${props.deal._id}`} >View</Link>
-                                <Button className="btn btn-sm btn-outline-danger" type="submit" color="outline-danger" outline ><i class="fa fa-heart" /></Button>
+                                <FavoritesButton auth={props.auth}
+                                    dealId = {props.deal._id}
+                                    favorites={props.favorites}
+                                    isFavoritesLoading={props.isFavoritesLoading}
+                                    favoriteserrMess={props.favoriteserrMess}
+                                    deleteFavorite={props.deleteFavorite}
+                                    postFavorite={props.postFavorite}
+                                    fromFavorites={props.fromFavorites} />
                             </div>
                         </div>
                         <div className="align-self-center">

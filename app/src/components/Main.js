@@ -60,6 +60,11 @@ class Main extends Component {
                     isLoading={this.props.deals.isLoading}
                     errMess={this.props.deals.errMess}
                     auth={this.props.auth}
+                    favorites={this.props.favorites.favorites}
+                    isFavoritesLoading={this.props.favorites.isLoading}
+                    favoriteserrMess={this.props.favorites.errMess}
+                    deleteFavorite={this.props.deleteFavorite}
+                    postFavorite={this.props.postFavorite}
                 />
             );
         }
@@ -67,6 +72,7 @@ class Main extends Component {
         const FavoritesPage = () => {
             return (
                 <Favorites
+                    auth={this.props.auth}
                     favorites={this.props.favorites.favorites}
                     isLoading={this.props.favorites.isLoading}
                     errMess={this.props.favorites.errMess}
@@ -87,6 +93,11 @@ class Main extends Component {
                     reviewsErrMess={this.props.reviews.errMess}
                     postReview={this.props.postReview}
                     auth={this.props.auth}
+                    favorites={this.props.favorites.favorites}
+                    isFavoritesLoading={this.props.favorites.isLoading}
+                    favoriteserrMess={this.props.favorites.errMess}
+                    deleteFavorite={this.props.deleteFavorite}
+                    postFavorite={this.props.postFavorite}
                 />
             );
         };

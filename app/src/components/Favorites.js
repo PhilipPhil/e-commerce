@@ -46,7 +46,15 @@ class Favorites extends Component {
         else if (this.props.favorites != null) {
             const menu = this.props.favorites.deals.map((deal) => {
                 return (
-                    <Card deal={deal} deleteFavorite={this.props.deleteFavorite} postFavorite={this.props.postFavorite} />
+                    <Card deal={deal}
+                        auth={this.props.auth}
+                        favorites={this.props.favorites}
+                        isFavoritesLoading={this.props.isFavoritesLoading}
+                        favoriteserrMess={this.props.favoriteserrMess}
+                        deleteFavorite={this.props.deleteFavorite}
+                        postFavorite={this.props.postFavorite}
+                        fromFavorites={true}
+                    />
                 );
             });
             return (
@@ -60,7 +68,7 @@ class Favorites extends Component {
         } else {
             return (
                 <div className="container py-4">
-                    <Tittle username={this.props.favorites.user.name} />
+                    <Tittle username={""} />
                     <div class="row">
                     </div>
                 </div>
