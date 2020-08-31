@@ -70,7 +70,7 @@ const HomeBodyComponent = () => {
       <div class="row featurette">
         <div class="col-12 align-self-center">
           <h2 class="featurette-heading text-center mb-2">Why Deal Alchemist? <span class="text-muted"></span></h2>
-          <p class="lead">We partner with select businesses to promote top deals for a small monthly fee. Our partners are in a wide range of services, including food, entertainment, nightlife, health & fitness, beauty & spa, hotels, rentals and more. In return, our partners gain huge exposure in their customer outreach, and patriots gain access to great deals with no purchase or subscription is required. If you are interested in partnering with us or learning more please <Link to='/contact'>contact us</Link>.</p>
+          <p class="lead text-center">We partner with select businesses to promote top deals for a small monthly fee. Our partners are in a wide range of services, including food, entertainment, nightlife, health & fitness, beauty & spa, hotels, rentals and more. In return, our partners gain huge exposure in their customer outreach, and patriots gain access to great deals with no purchase or subscription is required. If you are interested in partnering with us or learning more please <Link to='/contact'>contact us</Link>.</p>
         </div>
       </div>
 
