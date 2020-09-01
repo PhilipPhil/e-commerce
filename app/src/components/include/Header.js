@@ -64,11 +64,11 @@ class Header extends Component {
                             </Nav>
                             :
                             <Nav navbar className="ml-auto">
+                                <NavLink className="nav-link" exact to='/favorites' style={{ "border": "none", "outline": "none" }}><i class="fa fa-heart" /> FAVORITES</NavLink>
                                 <Button className="nav-link" outline onClick={() => {
                                     this.toggleLoginOff();
                                     this.props.logoutUser();
                                 }} style={{ "border": "none", "outline": "none" }}><i class="fa fa-sign-out" /> LOGOUT</Button>
-                                <NavLink className="nav-link" exact to='/favorites' style={{ "border": "none", "outline": "none" }}><i class="fa fa-heart" /> FAVORITES</NavLink>
                             </Nav>
                         }
                     </div>
