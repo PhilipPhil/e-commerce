@@ -13,7 +13,7 @@ import ScrollToTop from './ScrollToTop';
 import { actions } from 'react-redux-form';
 import {
     postReview, fetchDeals, fetchReviews, loginUser, logoutUser,
-    registerUser, fetchFavorites, postFavorite, deleteFavorite
+    registerUser, fetchFavorites, postFavorite, deleteFavorite, postEmailForm
 } from '../redux/ActionCreators';
 
 
@@ -37,6 +37,7 @@ const mapDispatchToProps = dispatch => ({
     fetchFavorites: () => dispatch(fetchFavorites()),
     postFavorite: (dealId) => dispatch(postFavorite(dealId)),
     deleteFavorite: (dealId) => dispatch(deleteFavorite(dealId)),
+    postEmailForm: (emailform) => dispatch(postEmailForm(emailform)),
     logoutUser: () => dispatch(logoutUser())
 });
 
@@ -123,7 +124,7 @@ class Main extends Component {
 
                             <Route path='/deal/:dealId' component={DealWithId} />
                             <Route path='/about' component={Home} />
-                            <Route path='/contact' component={() => <Contact resetEmailForm={this.props.resetEmailForm} />} />
+                            <Route path='/contact' component={() => <Contact resetEmailForm={this.props.resetEmailForm} postEmailForm={this.props.postEmailForm} />} />
                             <Route path='/favorites' component={FavoritesPage} />
                             <Route path='/error' component={() => <Error errMess="Error 404: Not Found" />} />
                             <Redirect to='/error' />
