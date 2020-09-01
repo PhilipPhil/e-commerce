@@ -7,6 +7,7 @@ import { Breadcrumb, BreadcrumbItem, Button } from 'reactstrap';
 import Review from './Review'
 import Loading from './Loading'
 import Comments from './Comments'
+import FavoritesButton from "./FavoritesButton"
 import { baseUrl } from '../shared/baseUrl'
 import Error from './Error';
 class Deal extends Component {
@@ -93,7 +94,15 @@ class Deal extends Component {
                     <h1>&nbsp;{this.props.deal.rating.toFixed(1)}</h1>
                   </div>
                 </a>
-                <Button className="btn btn-outline-danger btn-sm" type="submit" color="outline-danger" outline ><i class="fa fa-heart" /></Button> &nbsp;
+                <FavoritesButton auth={this.props.auth}
+                                    dealId = {this.props.deal._id}
+                                    favorites={this.props.favorites}
+                                    isFavoritesLoading={this.props.isFavoritesLoading}
+                                    favoriteserrMess={this.props.favoriteserrMess}
+                                    deleteFavorite={this.props.deleteFavorite}
+                                    postFavorite={this.props.postFavorite}
+                                    fromFavorites={this.props.fromFavorites} />
+                 &nbsp;
               <a className="btn btn-outline-secondary btn-sm" href={this.props.deal.website}>Visit {this.props.deal.company} Website <i className="fa fa-external-link" /></a>
 
 
