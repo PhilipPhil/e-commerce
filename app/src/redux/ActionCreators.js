@@ -347,6 +347,6 @@ export const postEmailForm = (emailform) => (dispatch) => {
           throw error;
     })
   .then(response => response.json())
-  .then(response => { console.log('Feedback', response); alert('We will get back to you shorty!\n'+JSON.stringify(response)); })
+  .then(response => { console.log('Feedback', response); alert('We will get back to you shorty!'); })
   .catch(error =>  { console.log('Feedback', error.message); alert('Failed to send\nError: '+error.message); });
 };
