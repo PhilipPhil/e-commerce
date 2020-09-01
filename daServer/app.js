@@ -20,8 +20,6 @@ var favoriteRouter = require('./routes/favoriteRouter');
 
 const mongoose = require("mongoose");
 
-const Deals = require('./models/deals');
-
 const url = config.mongoUrl;
 const connect = mongoose.connect(url);
 
