@@ -16,7 +16,7 @@ var dealRouter = require("./routes/dealRouter");
 var uploadRouter = require('./routes/uploadRouter');
 var reviewRouter = require('./routes/reviewRouter');
 var favoriteRouter = require('./routes/favoriteRouter');
-
+var emailformRouter = require('./routes/emailformRouter');
 
 const mongoose = require("mongoose");
 
@@ -66,7 +66,7 @@ app.use("/deals", dealRouter);
 app.use('/imageUpload', uploadRouter);
 app.use('/favorites', favoriteRouter);
 app.use('/reviews', reviewRouter);
-
+app.use('/emailform', emailformRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

@@ -323,3 +323,30 @@ export const addFavorites = (favorites) => ({
   type: ActionTypes.FAVORITES_ADD,
   payload: favorites
 });
+
+export const postEmailForm = (emailform) => (dispatch) => {
+        
+  return fetch(baseUrl + 'emailform', {
+      method: "POST",
+      body: JSON.stringify(emailform),
+      headers: {
+        "Content-Type": "application/json"
+      },
+      credentials: "same-origin"
+  })
+  .then(response => {
+      if (response.ok) {
+        return response;
+      } else {
+        var error = new Error('Error ' + response.status + ': ' + response.statusText);
+        error.response = response;
+        throw error;
+      }
+    },
+    error => {
+          throw error;
+    })
+  .then(response => response.json())
+  .then(response => { console.log('Feedback', response); alert('We will get back to you shorty!\n'+JSON.stringify(response)); })
+  .catch(error =>  { console.log('Feedback', error.message); alert('Failed to send\nError: '+error.message); });
+};
