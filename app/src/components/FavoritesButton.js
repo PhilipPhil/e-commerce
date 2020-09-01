@@ -15,7 +15,10 @@ const FavoritesButton = (props) => {
     } else if (!props.auth.isAuthenticated || props.isFavoritesLoading || props.favoriteserrMess) {
         return (
             <React.Fragment>
+            <React.Fragment>
+                <Button className="btn btn-outline-danger btn-sm" color="outline-danger" outline disabled={true}><i class="fa fa-heart" /></Button>
             </React.Fragment>
+        </React.Fragment>
         )
     } else {
         if (props.favorites != null) {
