@@ -62,10 +62,15 @@ favoriteRouter.route('/:dealId')
                         favorite.deals.push(req.params.dealId);
                         favorite.save()
                             .then((favorite) => {
-                                console.log('favorite Created ', favorite);
-                                res.statusCode = 200;
-                                res.setHeader('Content-Type', 'application/json');
-                                res.json(favorite);
+                                Favorites.findById(favorite._id)
+                                .populate('user')
+                                .populate('deals')
+                                .then((favorite) => {
+                                    console.log('favorite Created ', favorite);
+                                    res.statusCode = 200;
+                                    res.setHeader('Content-Type', 'application/json');
+                                    res.json(favorite);
+                                })
                             });
                     }, (err) => next(err))
                     .catch((err) => next(err));
@@ -74,10 +79,16 @@ favoriteRouter.route('/:dealId')
                     favorite.deals.push(req.params.dealId);
                     favorite.save()
                         .then((favorite) => {
-                            console.log('favorite added ', favorite);
-                            res.statusCode = 200;
-                            res.setHeader('Content-Type', 'application/json');
-                            res.json(favorite);
+                            Favorites.findById(favorite._id)
+                            .populate('user')
+                            .populate('deals')
+                            .then((favorite) => {
+                                console.log('favorite added ', favorite);
+                                res.statusCode = 200;
+                                res.setHeader('Content-Type', 'application/json');
+                                res.json(favorite);
+                            })
+
                         });
                 } else {
                     res.statusCode = 200;
@@ -99,10 +110,15 @@ favoriteRouter.route('/:dealId')
                         favorite.deals.splice(index, 1);
                         favorite.save()
                             .then((favorite) => {
-                                console.log('Favorite Deleted ', favorite);
-                                res.statusCode = 200;
-                                res.setHeader('Content-Type', 'application/json');
-                                res.json(favorite);
+                                Favorites.findById(favorite._id)
+                                .populate('user')
+                                .populate('deals')
+                                .then((favorite) => {
+                                    console.log('Favorite Deleted ', favorite);
+                                    res.statusCode = 200;
+                                    res.setHeader('Content-Type', 'application/json');
+                                    res.json(favorite);
+                                })
                             }, (err) => next(err));
                     }
                     else {
