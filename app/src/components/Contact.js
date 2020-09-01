@@ -97,15 +97,37 @@ class Contact extends Component {
                                 </Row>
 
                                 <Row className="form-group">
+                                    <Label htmlFor="phone" md={2}>Phone</Label>
+                                    <Col md={10}>
+                                        <Control.text model=".phone" id="phone" name="phone"
+                                            className="form-control"
+                                            placeholder="Phone number"
+                                            validators={{
+                                                required,
+                                                isNumber,
+                                                minLength: minLength(10),
+                                                maxLength: maxLength(15)
+                                            }} />
+                                        <Errors className="text-danger" model=".phone" show="touched"
+                                            messages={{
+                                                required: 'Required\n',
+                                                isNumber: 'Numbers only\n',
+                                                minLength: 'Minimum 10 digit phone number\n',
+                                                maxLength: 'Maximum 15 digits phone number\n'
+                                            }}></Errors>
+                                    </Col>
+                                </Row>
+
+                                <Row className="form-group">
                                     <Label htmlFor="message" md={2}>Message</Label>
                                     <Col md={10}>
                                         <Control.textarea model=".message" id="message" name="message"
                                             rows="12"
-                                            className="form-control" 
+                                            className="form-control"
                                             validators={{
                                                 required, minLength: minLength(10), maxLength: maxLength(10000)
                                             }} />
-                                            <Errors className="text-danger" model=".message" show="touched"
+                                        <Errors className="text-danger" model=".message" show="touched"
                                             messages={{
                                                 required: 'Required\n',
                                                 minLength: 'Message too short\n',
