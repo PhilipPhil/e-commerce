@@ -115,7 +115,7 @@ class Deal extends Component {
             <div class="row">
               <div class="col">
                 <p class="small"><b>THE FINE PRINT:</b> {this.props.deal.fineprint}</p>
-                <p class="small"><b>CITY:</b> {this.renderCategory(this.props.deal.city)}<b>CATEGORY:</b> {this.renderCategory(this.props.deal.categoriesOne)} {this.renderCategory(this.props.deal.categoriesTwo)} {this.renderCategory(this.props.deal.categoriesThree)}</p>
+                <p class="small"><b>CITY:</b> {this.renderCategory(this.props.deal.city)}<b>CATEGORY:</b> {this.renderCategory(this.props.deal.category)} {this.renderCategory(this.props.deal.categoriesTwo)} {this.renderCategory(this.props.deal.categoriesThree)}</p>
               </div>
             </div>
 

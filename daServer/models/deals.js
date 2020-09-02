@@ -39,15 +39,9 @@ const dealSchema = new Schema({
         type: Float,
         default: 0
     },
-    categoriesOne: {
+    category: {
         type: String,
         required: true
-    },
-    categoriesTwo: {
-        type: String,
-    },
-    categoriesThree: {
-        type: String,
     }
 }, {
     timestamps: true
