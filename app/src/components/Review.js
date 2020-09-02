@@ -33,11 +33,11 @@ class Review extends Component {
 
                     <Control.select model=".rating" id="rating" name="rating" className="form-control" validators={{ required }}>
                       <option></option>
-                      <option value="5">⭐⭐⭐⭐⭐</option>
-                      <option value="4">⭐⭐⭐⭐</option>
-                      <option value="3">⭐⭐⭐</option>
-                      <option value="2">⭐⭐</option>
-                      <option value="1">⭐</option>
+                      <option value="5" style={{"color" : "black"}}>5 ⭐⭐⭐⭐⭐</option>
+                      <option value="4" style={{"color" : "black"}}>4 ⭐⭐⭐⭐</option>
+                      <option value="3" style={{"color" : "black"}}>3 ⭐⭐⭐</option>
+                      <option value="2" style={{"color" : "black"}}>2 ⭐⭐</option>
+                      <option value="1" style={{"color" : "black"}}>1 ⭐</option>
                     </ Control.select>
 
                     <Errors className="text-danger" model=".rating" show="touched"
