@@ -11,7 +11,9 @@ const Card = (props) => {
     return (
         <div class="col-md-6 col-lg-4">
             <div class="card mb-4">
-                <img class="card-img-top" src={baseUrl + props.deal.logoimage} alt={props.deal.company} />
+                <Link className="btn btn-sm btn-outline-secondary" color="outline-secondary" outline to={`/deal/${props.deal._id}`} className="link-deal">
+                    <img class="card-img-top" src={baseUrl + props.deal.logoimage} alt={props.deal.company} />
+                </Link>
                 <div class="card-body">
                     <h5 class="text-center">{props.deal.company}</h5>
                     <p class="card-text" style={{ marginBottom: 0 }}>{props.deal.description}</p>
@@ -21,7 +23,7 @@ const Card = (props) => {
                             <div class="btn-group btn-group-sm" role="group" aria-label="...">
                                 <Link className="btn btn-sm btn-outline-secondary" color="outline-secondary" outline to={`/deal/${props.deal._id}`} >View</Link>
                                 <FavoritesButton auth={props.auth}
-                                    dealId = {props.deal._id}
+                                    dealId={props.deal._id}
                                     favorites={props.favorites}
                                     isFavoritesLoading={props.isFavoritesLoading}
                                     favoriteserrMess={props.favoriteserrMess}

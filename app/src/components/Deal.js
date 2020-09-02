@@ -84,7 +84,9 @@ class Deal extends Component {
                 <img class="featurette-image img-fluid mx-auto" src={baseUrl + this.props.deal.mainimage} alt={this.props.deal.company} style={{ "max-height": "100vh" }} />
               </div>
               <div class="col-md-6 align-self-center text-center">
-                <img class="featurette-image img-fluid mx-auto mb-2" src={baseUrl + this.props.deal.logoimage} alt="Company Logo" style={{ "max-height": "129px", "max-width": "241px" }} />
+                <a className="link-deal" href={this.props.deal.website}>
+                  <img class="featurette-image img-fluid mx-auto mb-2" src={baseUrl + this.props.deal.logoimage} alt="Company Logo" style={{ "max-height": "129px", "max-width": "241px" }} />
+                </a>
                 <h3>{this.props.deal.company}</h3>
                 <p>{this.props.deal.description}</p>
                 <a href="#review-section" style={{ "text-decoration": "none", color: "#212529" }}>
@@ -95,13 +97,13 @@ class Deal extends Component {
                   </div>
                 </a>
                 <FavoritesButton auth={this.props.auth}
-                                    dealId = {this.props.deal._id}
-                                    favorites={this.props.favorites}
-                                    isFavoritesLoading={this.props.isFavoritesLoading}
-                                    favoriteserrMess={this.props.favoriteserrMess}
-                                    deleteFavorite={this.props.deleteFavorite}
-                                    postFavorite={this.props.postFavorite}
-                                    fromFavorites={this.props.fromFavorites} />
+                  dealId={this.props.deal._id}
+                  favorites={this.props.favorites}
+                  isFavoritesLoading={this.props.isFavoritesLoading}
+                  favoriteserrMess={this.props.favoriteserrMess}
+                  deleteFavorite={this.props.deleteFavorite}
+                  postFavorite={this.props.postFavorite}
+                  fromFavorites={this.props.fromFavorites} />
                  &nbsp;
               <a className="btn btn-outline-secondary btn-sm" href={this.props.deal.website}>Visit {this.props.deal.company} Website <i className="fa fa-external-link" /></a>
 
