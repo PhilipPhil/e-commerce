@@ -18,7 +18,7 @@ class Comments extends Component {
     renderReview(review) {
         return (
             <div class="mb-4 col-12 col-md-8 offset-md-2 text-center">
-                <div class="row mb-2">
+                <div class="row">
                     <div class="col-21 col-sm-6 text-left">
                         <h4 style={{ marginBottom: 0 }}>{review.author.name}</h4>
                         <small style={{ marginBottom: 0 }} class="text-muted">{review.date}</small>
@@ -29,6 +29,7 @@ class Comments extends Component {
                 </div>
                 <div class="row">
                     <div class="col-12 text-left">
+                        <small class="mb-2">{new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day:'2-digit'}).format(new Date(Date.parse(review.updatedAt)))}</small>
                         <p>{review.comment}</p>
                     </div>
                 </div>
