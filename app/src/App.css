@@ -54,6 +54,6 @@ html, body {
     background-color: none; text-decoration: none;
 }
 
-.link-deal:hover > img {
+.link-deal-website:hover > img {
     opacity: 0.85; 
 }

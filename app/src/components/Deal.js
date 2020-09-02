@@ -84,7 +84,7 @@ class Deal extends Component {
                 <img class="featurette-image img-fluid mx-auto" src={baseUrl + this.props.deal.mainimage} alt={this.props.deal.company} style={{ "max-height": "100vh" }} />
               </div>
               <div class="col-md-6 align-self-center text-center">
-                <a className="link-deal" href={this.props.deal.website}>
+                <a className="link-deal link-deal-website" href={this.props.deal.website}>
                   <img class="featurette-image img-fluid mx-auto mb-2" src={baseUrl + this.props.deal.logoimage} alt="Company Logo" style={{ "max-height": "129px", "max-width": "241px" }} />
                 </a>
                 <h3>{this.props.deal.company}</h3>
