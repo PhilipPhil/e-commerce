@@ -16,18 +16,18 @@ class Card extends Component {
     }
 
     componentDidMount() {
-        if (!this.props.isReviewsLoading && !this.props.reviewsErrMess 
-            // && !this.props.isFavoritesLoading && !this.props.favoriteserrMess
-            ) {
+        if (!this.props.isReviewsLoading && !this.props.reviewsErrMess) {
           let rating = 0
           let n = Math.min(this.props.reviews.length, 100);
-          for (let i = 0; i < n; i++) {
-            rating = rating + this.props.reviews[i].rating
+          if (n > 0) {
+            for (let i = 0; i < n; i++) {
+              rating = rating + this.props.reviews[i].rating
+            }
+            rating = rating / n
+            this.setState({
+              rating: rating
+            });
           }
-          rating = rating / n
-          this.setState({
-            rating: 4
-          });
         }
     
       }

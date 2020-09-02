@@ -15,16 +15,16 @@ class Contact extends Component {
     }
 
     handleSubmit(values) {
-        if(values.name.length > 0 && 
-            values.subject.length > 0 && 
-            values.email.length > 0 && 
-            values.phone.length > 0 && 
-            values.message.length > 0 ) {
-                alert(JSON.stringify(values))
-                this.props.postEmailForm(values);
-                this.props.resetEmailForm();
-            }
+        if (values.name.length > 0 &&
+            values.subject.length > 0 &&
+            values.email.length > 0 &&
+            values.phone.length > 0 &&
+            values.message.length > 0) {
+            this.props.postEmailForm(values);
+            this.props.resetEmailForm();
+        } else {
             alert('Failed to send\nError: Empty elements')
+        }
     }
 
     render() {
