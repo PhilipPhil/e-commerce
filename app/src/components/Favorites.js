@@ -3,6 +3,7 @@ import { Button, Label, Col, Row } from 'reactstrap';
 import Loading from "./Loading"
 import Error from './Error';
 import Card from "./Card"
+import { Redirect } from 'react-router-dom';
 
 const Tittle = (props) => {
     return (
@@ -35,7 +36,7 @@ class Favorites extends Component {
                 </div>
             )
         } else if (this.props.errMess) {
-            return (<Error errMess={this.props.errMess} />);
+            return (<Redirect exact to='/' />);
         }
 
 
