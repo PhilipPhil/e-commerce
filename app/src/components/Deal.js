@@ -14,8 +14,27 @@ class Deal extends Component {
 
   constructor(props) {
     super(props);
+    this.state = {
+      rating: 0
+    }
     this.renderCategory = this.renderCategory.bind(this);
     this.renderReview = this.renderReview.bind(this);
+  }
+
+  componentDidMount() {
+    if (!this.props.isReviewsLoading && !this.props.reviewsErrMess &&
+      !this.props.isFavoritesLoading && !this.props.favoriteserrMess &&
+      !this.props.isDealsLoading && !this.props.dealsErrMess) {
+      let rating = 0
+      let n = Math.min(this.props.reviews.length, 100);
+      for (let i = 0; i < n; i++) {
+        rating = rating + this.props.reviews[i].rating
+      }
+      rating = rating / n
+      this.setState({
+        rating: rating
+      });
+    }
   }
 
   renderCategory(category) {
@@ -92,8 +111,8 @@ class Deal extends Component {
                 <a href="#review-section" style={{ "text-decoration": "none", color: "#212529" }}>
                   <div class="row text-center justify-content-center mb-2">
 
-                    <StarRatings rating={this.props.deal.rating} starSpacing="2px" starRatedColor="gold" />
-                    <h1>&nbsp;{this.props.deal.rating.toFixed(1)}</h1>
+                    <StarRatings rating={this.state.rating} starSpacing="2px" starRatedColor="gold" />
+                    <h1>&nbsp;{this.state.rating.toFixed(1)}</h1>
                   </div>
                 </a>
                 <FavoritesButton auth={this.props.auth}

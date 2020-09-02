@@ -66,6 +66,9 @@ class Main extends Component {
                     favoriteserrMess={this.props.favorites.errMess}
                     deleteFavorite={this.props.deleteFavorite}
                     postFavorite={this.props.postFavorite}
+                    reviews={this.props.reviews.reviews}
+                    isReviewsLoading={this.props.reviews.isLoading}
+                    reviewsErrMess={this.props.reviews.errMess}
                 />
             );
         }
@@ -79,6 +82,9 @@ class Main extends Component {
                     errMess={this.props.favorites.errMess}
                     deleteFavorite={this.props.deleteFavorite}
                     postFavorite={this.props.postFavorite}
+                    reviews={this.props.reviews.reviews}
+                    isReviewsLoading={this.props.reviews.isLoading}
+                    reviewsErrMess={this.props.reviews.errMess}
                 />
             );
         }

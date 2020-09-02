@@ -40,6 +40,9 @@ class Shop extends Component {
           deleteFavorite={this.props.deleteFavorite}
           postFavorite={this.props.postFavorite}
           fromFavorites={false}
+          reviews={this.props.reviews.filter((review) => review.deal === deal._id)}
+          isReviewsLoading={this.props.reviews.isLoading}
+          reviewsErrMess={this.props.reviews.errMess}
           />
         );
       });
