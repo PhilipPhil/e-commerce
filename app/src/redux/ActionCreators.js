@@ -378,3 +378,39 @@ export const deleteReview = (reviewId) => (dispatch) => {
   .then(reviews => { console.log('Review Deleted', reviews); dispatch(addReviews(reviews)); })
   .catch(error => dispatch(favoritesFailed(error.message)));
 };
+
+export const editReview = (dealId, rating, comment, reviewId) => (dispatch) => {
+  const newReview = {
+    deal: dealId,
+    rating: rating,
+    comment: comment
+  }
+
+  const bearer = 'Bearer ' + localStorage.getItem('token');
+
+  return fetch(baseUrl + 'reviews/' + reviewId, {
+    method: 'PUT',
+    body: JSON.stringify(newReview),
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': bearer
+    },
+    credentials: 'same-origin'
+  })
+    .then(response => {
+      if (response.ok) {
+        return response;
+      } else {
+        var error = new Error('Error ' + response.status + ': ' + response.statusText);
+        error.response = response;
+        throw error;
+      }
+    },
+      error => {
+        var errmess = new Error(error.message);
+        throw errmess;
+      })
+    .then(response => response.json())
+    .then(response => dispatch(addReview(response)))
+    .catch(error => console.log('Post comments', error.message))
+}
