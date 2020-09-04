@@ -13,7 +13,8 @@ import ScrollToTop from './ScrollToTop';
 import { actions } from 'react-redux-form';
 import {
     postReview, fetchDeals, fetchReviews, loginUser, logoutUser,
-    registerUser, fetchFavorites, postFavorite, deleteFavorite, postEmailForm
+    registerUser, fetchFavorites, postFavorite, deleteFavorite,
+    postEmailForm, deleteReview, editReview
 } from '../redux/ActionCreators';
 
 
@@ -29,6 +30,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => ({
     postReview: (dealId, rating, comment) => dispatch(postReview(dealId, rating, comment)),
+    deleteReview: (reviewId) => dispatch(deleteReview(reviewId)),
+    editReview: (dealId, rating, comment, reviewId) => dispatch(editReview(dealId, rating, comment, reviewId)),
     fetchReviews: () => { dispatch(fetchReviews()) },
     fetchDeals: () => { dispatch(fetchDeals()) },
     resetEmailForm: () => { dispatch(actions.reset('emailform')) },
@@ -99,6 +102,8 @@ class Main extends Component {
                     isReviewsLoading={this.props.reviews.isLoading}
                     reviewsErrMess={this.props.reviews.errMess}
                     postReview={this.props.postReview}
+                    deleteReview={this.props.deleteReview}
+                    editReview={this.props.editReview}
                     auth={this.props.auth}
                     favorites={this.props.favorites.favorites}
                     isFavoritesLoading={this.props.favorites.isLoading}
