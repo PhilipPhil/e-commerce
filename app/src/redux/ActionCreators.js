@@ -350,3 +350,31 @@ export const postEmailForm = (emailform) => (dispatch) => {
   .then(response => { console.log('Feedback', response); alert('Message sent successfully.\nWe will get back to you shorty!'); })
   .catch(error =>  { console.log('Feedback', error.message); alert('Failed to send\nError: '+error.message); });
 };
+
+export const deleteReview = (reviewId) => (dispatch) => {
+
+  const bearer = 'Bearer ' + localStorage.getItem('token');
+
+  return fetch(baseUrl + 'reviews/' + reviewId, {
+      method: "DELETE",
+      headers: {
+        'Authorization': bearer
+      },
+      credentials: "same-origin"
+  })
+  .then(response => {
+      if (response.ok) {
+        return response;
+      } else {
+        var error = new Error('Error ' + response.status + ': ' + response.statusText);
+        error.response = response;
+        throw error;
+      }
+    },
+    error => {
+          throw error;
+    })
+  .then(response => response.json())
+  .then(reviews => { console.log('Review Deleted', reviews); dispatch(addReviews(reviews)); })
+  .catch(error => dispatch(favoritesFailed(error.message)));
+};

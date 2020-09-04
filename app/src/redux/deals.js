@@ -8,10 +8,6 @@ export const Deals = (state = {
     switch (action.type) {
         case ActionTypes.DEAL_ADD:
             return { ...state }
-        case ActionTypes.DEAL_REMOVE:
-            return { ...state }
-        case ActionTypes.DEAL_EDIT:
-            return { ...state }
         case ActionTypes.DEALS_ADD:
             return { ...state, isLoading: false, errMess: null, deals: action.payload }
         case ActionTypes.DEALS_LOADING:

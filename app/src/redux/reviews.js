@@ -9,10 +9,6 @@ export const Reviews = (state = {
         case ActionTypes.REVIEW_ADD:
             var review = action.payload
             return { ...state, reviews: state.reviews.concat(review)}
-        case ActionTypes.REVIEW_REMOVE:
-            return { ...state, reviews: state.reviews.concat(review)}
-        case ActionTypes.REVIEW_EDIT:
-            return { ...state, reviews: state.reviews.concat(review)}
         case ActionTypes.REVIEWS_ADD:
             return { ...state, isLoading: false, errMess: null, reviews: action.payload }
         case ActionTypes.REVIEWS_FAILED:
