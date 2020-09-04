@@ -140,7 +140,12 @@ class Deal extends Component {
                 </div>
                 :
                 <div class="col text-center">
-                  <Review dealId={this.props.deal._id} postReview={this.props.postReview} />
+                  <Review dealId={this.props.deal._id}
+                    postReview={this.props.postReview}
+                    deleteReview={this.props.deleteReview}
+                    editReview={this.props.editReview}
+                    review={this.props.reviews.filter((review) => (review.deal === this.props.deal._id && review.author.username == this.props.auth.user.username))[0]}
+                     />
                 </div>
               }
 

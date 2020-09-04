@@ -353,31 +353,31 @@ export const postEmailForm = (emailform) => (dispatch) => {
 
 export const deleteReview = (reviewId) => (dispatch) => {
 
-  const bearer = 'Bearer ' + localStorage.getItem('token');
-
-  return fetch(baseUrl + 'reviews/' + reviewId, {
-      method: "DELETE",
-      headers: {
-        'Authorization': bearer
-      },
-      credentials: "same-origin"
-  })
-  .then(response => {
-      if (response.ok) {
-        return response;
-      } else {
-        var error = new Error('Error ' + response.status + ': ' + response.statusText);
-        error.response = response;
-        throw error;
-      }
-    },
-    error => {
-          throw error;
+    const bearer = 'Bearer ' + localStorage.getItem('token');
+  
+    return fetch(baseUrl + 'reviews/' + reviewId, {
+        method: "DELETE",
+        headers: {
+          'Authorization': bearer
+        },
+        credentials: "same-origin"
     })
-  .then(response => response.json())
-  .then(reviews => { console.log('Review Deleted', reviews); dispatch(addReviews(reviews)); })
-  .catch(error => dispatch(favoritesFailed(error.message)));
-};
+    .then(response => {
+        if (response.ok) {
+          return response;
+        } else {
+          var error = new Error('Error ' + response.status + ': ' + response.statusText);
+          error.response = response;
+          throw error;
+        }
+      },
+      error => {
+            throw error;
+      })
+    .then(response => response.json())
+    .then(reviews => { console.log('Review Deleted', reviews); dispatch(fetchReviews()); })
+    .catch(error => dispatch(favoritesFailed(error.message)));
+  };
 
 export const editReview = (dealId, rating, comment, reviewId) => (dispatch) => {
   const newReview = {
@@ -411,6 +411,6 @@ export const editReview = (dealId, rating, comment, reviewId) => (dispatch) => {
         throw errmess;
       })
     .then(response => response.json())
-    .then(response => dispatch(addReview(response)))
+    .then(response => dispatch(fetchReviews()))
     .catch(error => console.log('Post comments', error.message))
 }

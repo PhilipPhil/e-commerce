@@ -15,7 +15,16 @@ class Review extends Component {
   }
 
   handleSubmit(values) {
-    this.props.postReview(this.props.dealId, values.rating, values.comment)
+    if (this.props.review) {
+      if(values.comment){
+        this.props.editReview(this.props.dealId, values.rating, values.comment, this.props.review._id)
+      } else {
+        this.props.editReview(this.props.dealId, values.rating, '', this.props.review._id)
+      }
+    }
+    else {
+      this.props.postReview(this.props.dealId, values.rating, values.comment)
+    }
   }
 
   render() {
@@ -33,11 +42,11 @@ class Review extends Component {
 
                     <Control.select model=".rating" id="rating" name="rating" className="form-control" validators={{ required }}>
                       <option></option>
-                      <option value="5" style={{"color" : "black"}}>5 ⭐⭐⭐⭐⭐</option>
-                      <option value="4" style={{"color" : "black"}}>4 ⭐⭐⭐⭐</option>
-                      <option value="3" style={{"color" : "black"}}>3 ⭐⭐⭐</option>
-                      <option value="2" style={{"color" : "black"}}>2 ⭐⭐</option>
-                      <option value="1" style={{"color" : "black"}}>1 ⭐</option>
+                      <option value="5" style={{ "color": "black" }}>5 ⭐⭐⭐⭐⭐</option>
+                      <option value="4" style={{ "color": "black" }}>4 ⭐⭐⭐⭐</option>
+                      <option value="3" style={{ "color": "black" }}>3 ⭐⭐⭐</option>
+                      <option value="2" style={{ "color": "black" }}>2 ⭐⭐</option>
+                      <option value="1" style={{ "color": "black" }}>1 ⭐</option>
                     </ Control.select>
 
                     <Errors className="text-danger" model=".rating" show="touched"
@@ -62,7 +71,16 @@ class Review extends Component {
 
                 <Row className="form-group">
                   <Col className="d-flex justify-content-end">
-                    <Button type="submit" color="primary" className="btn btn-sm">Post</Button>
+                    {this.props.review
+                      ?
+                      <React.Fragment>
+                        <Button onClick={() => {this.props.deleteReview(this.props.review._id)}} color="secondary" className="btn btn-sm">Remove</Button>
+                        &nbsp;
+                        <Button type="submit" color="primary" className="btn btn-sm">Edit</Button>
+                      </React.Fragment>
+                      :
+                      <Button type="submit" color="primary" className="btn btn-sm">Post</Button>
+                    }
                   </Col>
                 </Row>
 
