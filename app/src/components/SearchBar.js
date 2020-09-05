@@ -15,8 +15,7 @@ class SearchBar extends Component {
   }
 
   handleSubmit(values) {
-    console.log('Current State is: ' + JSON.stringify(values));
-    alert('Current State is: ' + JSON.stringify(values));
+    this.props.setFilter(values);
   }
 
   render() {
@@ -33,7 +32,7 @@ class SearchBar extends Component {
             </Col>
 
             <Col className="col-12 col-xl-7 py-2">
-              <Control.text model=".name" id="name" name="name" placeholder="Company name..."
+              <Control.text model=".company" id="company" name="company" placeholder="Company name..."
                 className="form-control" />
             </Col>
             <Col className="col-12 col-sm-6 col-md-auto py-2">
