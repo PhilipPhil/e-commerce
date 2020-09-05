@@ -49,8 +49,7 @@ class SearchBar extends Component {
                 <option>Entertainment</option>
                 <option>Night Life</option>
                 <option>Health &amp; Fitness</option>
-                <option>Beuty &amp; Spa</option>
-                <option>Hotels</option>
+                <option>Beauty &amp; Spa</option>
                 <option>Rentals</option>
                 <option>Other</option>
               </ Control.select>
