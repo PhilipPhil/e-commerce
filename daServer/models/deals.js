@@ -35,10 +35,6 @@ const dealSchema = new Schema({
         type: String,
         required: true
     },
-    rating: {
-        type: Float,
-        default: 0
-    },
     category: {
         type: String,
         required: true
