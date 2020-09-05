@@ -45,8 +45,8 @@ class Shop extends Component {
     else if (this.props.deals != null) {
 
       const menu = this.props.deals.map((deal) => {
-        if ((!this.state.category || this.state.category == 'All Categories' || this.state.category == deal.category) &&
-          (!this.state.city || this.state.city == 'Any City' || this.state.city == deal.city) &&
+        if ((!this.state.category || this.state.category == 'all' || this.state.category == deal.category) &&
+          (!this.state.city || this.state.city == 'any' || this.state.city == deal.city) &&
           (!this.state.company || this.state.company.length == 0 || deal.company.toLowerCase().includes(this.state.company.toLowerCase())  )) {
           return (
             <Card deal={deal}
