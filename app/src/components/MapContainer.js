@@ -74,7 +74,7 @@ export class MapContainer extends Component {
                 </div>
             );
         } else {
-            return(<div></div>)
+            return(<div style={{ height: '60vh', width: '100%', position: 'relative' }}></div>)
         }
 
     }
