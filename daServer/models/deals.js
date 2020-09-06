@@ -35,6 +35,10 @@ const dealSchema = new Schema({
         type: String,
         required: true
     },
+    postalcode: {
+        type: String,
+        required: true
+    },
     category: {
         type: String,
         required: true
