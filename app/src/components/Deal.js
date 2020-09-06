@@ -126,7 +126,7 @@ class Deal extends Component {
             <div class="row mb-4">
               <div class="col text-center">
                 <p class="small"><b>ADDRESS:</b> {this.props.deal.address} </p>
-                <MapContainer />
+                <MapContainer deal={this.props.deal}/>
               </div>
             </div>
 
