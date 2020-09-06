@@ -29,7 +29,6 @@ export class MapContainer extends Component {
                     lng: data.results[0].geometry.location.lng
                 }
             }))
-            // .then((data) => alert(JSON.stringify(data.results[0].geometry.location)))
     }
 
 
