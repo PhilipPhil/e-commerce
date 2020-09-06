@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import { Map, GoogleApiWrapper, Marker, InfoWindow } from 'google-maps-react';
+import { API_KEY } from '../shared/API_KEY'
 
 const mapStyles = {
     width: '100%',
     height: '100%',
 };
-
-const APIKEY = ''
 
 export class MapContainer extends Component {
     constructor(props) {
@@ -20,8 +19,8 @@ export class MapContainer extends Component {
     }
 
     componentWillMount() {
-        const APIURL = `https://maps.googleapis.com/maps/api/geocode/json?components=postal_code:${this.props.deal.postalcode}&key=${APIKEY}`
-        fetch(APIURL)
+        const API_URL = `https://maps.googleapis.com/maps/api/geocode/json?components=postal_code:${this.props.deal.postalcode}&key=${API_KEY}`
+        fetch(API_URL)
             .then((response) => response.json())
             .then((data) => this.setState({
                 geopin: {
@@ -81,5 +80,5 @@ export class MapContainer extends Component {
 }
 
 export default GoogleApiWrapper({
-    apiKey: APIKEY
+    apiKey: API_KEY
 })(MapContainer);
