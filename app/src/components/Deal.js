@@ -10,6 +10,8 @@ import Comments from './Comments'
 import FavoritesButton from "./FavoritesButton"
 import { baseUrl } from '../shared/baseUrl'
 import Error from './Error';
+import MapContainer from './MapContainer'
+
 class Deal extends Component {
 
   constructor(props) {
@@ -121,13 +123,12 @@ class Deal extends Component {
 
             <hr class="featurette-divider" />
 
-            <div class="row">
+            <div class="row mb-4">
               <div class="col text-center">
-                <p>Google Maps</p>
                 <p class="small"><b>ADDRESS:</b> {this.props.deal.address} </p>
+                <MapContainer />
               </div>
             </div>
-
 
             <hr class="featurette-divider" />
 
