@@ -97,7 +97,9 @@ class Deal extends Component {
                     <h1>&nbsp;{this.state.rating.toFixed(1)}</h1>
                   </div>
                 </a>
-                <FavoritesButton auth={this.props.auth}
+                <a className="btn btn-outline-secondary btn-sm" href={this.props.deal.website}>Visit {this.props.deal.company} Website <i className="fa fa-external-link" /></a>
+              &nbsp;&nbsp;
+              <FavoritesButton auth={this.props.auth}
                   dealId={this.props.deal._id}
                   favorites={this.props.favorites}
                   isFavoritesLoading={this.props.isFavoritesLoading}
@@ -105,9 +107,6 @@ class Deal extends Component {
                   deleteFavorite={this.props.deleteFavorite}
                   postFavorite={this.props.postFavorite}
                   fromFavorites={this.props.fromFavorites} />
-                 &nbsp;
-              <a className="btn btn-outline-secondary btn-sm" href={this.props.deal.website}>Visit {this.props.deal.company} Website <i className="fa fa-external-link" /></a>
-
 
               </div>
             </div>
@@ -126,7 +125,7 @@ class Deal extends Component {
             <div class="row mb-4">
               <div class="col text-center">
                 <p class="small"><b>ADDRESS:</b> {this.props.deal.address} </p>
-                <MapContainer deal={this.props.deal}/>
+                <MapContainer deal={this.props.deal} />
               </div>
             </div>
 
@@ -146,7 +145,7 @@ class Deal extends Component {
                     deleteReview={this.props.deleteReview}
                     editReview={this.props.editReview}
                     review={this.props.reviews.filter((review) => (review.deal === this.props.deal._id && review.author.username == this.props.auth.user.username))[0]}
-                     />
+                  />
                 </div>
               }
 
