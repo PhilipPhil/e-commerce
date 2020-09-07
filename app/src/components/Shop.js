@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
-import StarRatings from 'react-star-ratings';
-import { Link } from 'react-router-dom';
-import { Button } from 'reactstrap';
 import SearchBar from './SearchBar'
 import Loading from "./Loading"
-import { baseUrl } from '../shared/baseUrl'
 import Error from './Error';
-import Card from "./Card"
+import Card from './Card'
+
 class Shop extends Component {
 
   constructor(props) {

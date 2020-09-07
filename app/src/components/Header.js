@@ -1,14 +1,9 @@
 import React, { Component } from 'react';
-import { Nav, Navbar, NavbarBrand, NavbarToggler, Collapse, NavItem, Col } from 'reactstrap';
+import { Nav, Navbar, NavbarBrand, NavbarToggler, Collapse, NavItem } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
-
+import { Button, Modal, ModalBody } from 'reactstrap';
 import Login from './Login'
 import Register from './Register'
-
-import {
-    Button, Modal, ModalHeader, ModalBody,
-    Form, FormGroup, Input, Label
-} from 'reactstrap';
 
 class Header extends Component {
     constructor(props) {

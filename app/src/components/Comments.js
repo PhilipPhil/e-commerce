@@ -1,12 +1,6 @@
 import React, { Component } from 'react';
 import StarRatings from 'react-star-ratings';
-import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
-import { Link } from 'react-router-dom';
-
-import { Breadcrumb, BreadcrumbItem, Button } from 'reactstrap';
-import Review from './Review'
 import Loading from "./Loading"
-import { baseUrl } from '../shared/baseUrl'
 
 class Comments extends Component {
 

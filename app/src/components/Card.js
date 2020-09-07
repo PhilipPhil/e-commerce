@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import StarRatings from 'react-star-ratings';
 import { Link } from 'react-router-dom';
-import { Button } from 'reactstrap';
 import FavoritesButton from "./FavoritesButton"
 import { baseUrl } from '../shared/baseUrl'
 

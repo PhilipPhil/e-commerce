@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
+import { actions } from 'react-redux-form';
 import Header from './Header'
 import Footer from './Footer'
 import Home from './Home';
@@ -10,7 +11,6 @@ import Shop from './Shop';
 import Deal from './Deal';
 import Favorites from './Favorites'
 import ScrollToTop from './ScrollToTop';
-import { actions } from 'react-redux-form';
 import {
     postReview, fetchDeals, fetchReviews, loginUser, logoutUser,
     registerUser, fetchFavorites, postFavorite, deleteFavorite,

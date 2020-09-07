@@ -1,16 +1,14 @@
 import React, { Component } from 'react';
 import StarRatings from 'react-star-ratings';
-import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
 import { Link } from 'react-router-dom';
-
-import { Breadcrumb, BreadcrumbItem, Button } from 'reactstrap';
+import { Breadcrumb, BreadcrumbItem } from 'reactstrap';
 import Review from './Review'
 import Loading from './Loading'
 import Comments from './Comments'
 import FavoritesButton from "./FavoritesButton"
-import { baseUrl } from '../shared/baseUrl'
 import Error from './Error';
 import MapContainer from './MapContainer'
+import { baseUrl } from '../shared/baseUrl'
 
 class Deal extends Component {
 
