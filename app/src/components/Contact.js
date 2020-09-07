@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Button, Label, Col, Row } from 'reactstrap';
 import { Control, Form, Errors, actions } from 'react-redux-form';
+import { RECAPTCHA_KEY } from '../shared/API_KEY'
+import Reaptcha from 'reaptcha';
 
 const required = (val) => val && val.length;
 const maxLength = (len) => (val) => !(val) || (val.length <= len);
@@ -11,8 +13,18 @@ const validEmail = (val) => /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val
 class Contact extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            verified: false
+        };
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.onVerify = this.onVerify.bind(this);
     }
+
+    onVerify = (recaptchaResponse) => {
+        this.setState({
+            verified: true
+        });
+    };
 
     handleSubmit(values) {
         if (values.name.length > 0 &&
@@ -140,8 +152,13 @@ class Contact extends Component {
                                 </Row>
 
                                 <Row className="form-group">
+                                    <Col className="text-lg-left offset-md-2">
+                                        <Reaptcha sitekey={RECAPTCHA_KEY} onVerify={this.onVerify} />
+                                    </Col>
+                                </Row>
+                                <Row className="form-group">
                                     <Col className="text-right">
-                                        <Button type="submit" color="primary">
+                                        <Button type="submit" color="primary" disabled={!this.state.verified}>
                                             Send
                                     </Button>
                                     </Col>

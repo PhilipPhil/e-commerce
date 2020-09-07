@@ -57,3 +57,19 @@ html, body {
 .link-deal-website:hover > img {
     opacity: 0.85; 
 }
+
+@media only screen and (max-width: 382px) {
+    .g-recaptcha iframe {
+        max-width: 100% !important;
+        transform:scale(0.79) !important;
+        -webkit-transform:scale(0.79) !important;
+        transform-origin: left center !important;
+        -webkit-transform-origin: left center !important;
+      }
+      #rc-imageselect {
+        transform:scale(0.79) !important;
+        -webkit-transform:scale(0.79) !important;
+        transform-origin:0 0 !important;
+        -webkit-transform-origin:0 0 !important;
+      }
+  }

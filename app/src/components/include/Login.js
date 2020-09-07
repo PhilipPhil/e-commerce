@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Button, Label, Col, Row } from 'reactstrap';
 import { Control, LocalForm, Errors } from 'react-redux-form';
+import { RECAPTCHA_KEY } from './API_KEY'
+import Reaptcha from 'reaptcha';
 
 const required = (val) => val && val.length;
 const maxLength = (len) => (val) => !(val) || (val.length <= len);
@@ -11,8 +13,18 @@ const validEmail = (val) => /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val
 class Login extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      verified: false
+  };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.onVerify = this.onVerify.bind(this);
   }
+
+  onVerify = (recaptchaResponse) => {
+    this.setState({
+      verified: true
+    });
+  };
 
   handleSubmit(values) {
     this.props.loginUser(values);
@@ -46,8 +58,14 @@ class Login extends Component {
                 </Row>
 
                 <Row className="form-group">
-                  <Col className="d-flex justify-content-end">
-                    <Button type="submit" color="primary" className="btn btn-sm">Login</Button>
+                  <Col className="text-left">
+                    <Reaptcha sitekey={RECAPTCHA_KEY} onVerify={this.onVerify} />
+                  </Col>
+                </Row>
+
+                <Row className="form-group">
+                  <Col className="text-right">
+                    <Button type="submit" color="primary" className="btn btn-sm" disabled={!this.state.verified}>Login</Button>
                   </Col>
                 </Row>
 
