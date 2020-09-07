@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
-import Header from './include/Header'
-import Footer from './include/Footer'
+import Header from './Header'
+import Footer from './Footer'
 import Home from './Home';
 import Contact from './Contact';
 import Error from './Error';

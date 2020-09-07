@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Button, Label, Col, Row } from 'reactstrap';
 import { Control, LocalForm, Errors } from 'react-redux-form';
-import { RECAPTCHA_KEY } from './API_KEY'
+import { RECAPTCHA_KEY } from '../shared/API_KEY'
 import Reaptcha from 'reaptcha';
 
 const required = (val) => val && val.length;
