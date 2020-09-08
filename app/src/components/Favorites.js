@@ -6,11 +6,9 @@ import Card from "./Card"
 
 const Tittle = (props) => {
     return (
-        <Row className="form-group justify-content-center mb-4" style={{ "backgroundColor": "rgb(0, 123, 255,0.06)", "border": "1px solid rgba(0,0,0,.125)", "padding": "15px", "border-radius": ".05rem" }}>
-            <Col className="col-12 text-center">
-                <h1>Favorites <img style={{ "vertical-align": "sub" }} src='/assets/images/logo.png' height="60" width="60" alt='Deal Alchemist' /></h1>
-                <h2 className="text-muted">{props.username}</h2>
-            </Col>
+        <Row className="form-group justify-content-center" style={{ "backgroundColor": "rgb(0, 123, 255,0.06)", "border": "1px solid rgba(0,0,0,.125)", "padding": "15px", "border-radius": ".05rem" }}>
+                <h1 className="col-12 text-center">Favorites <img style={{ "vertical-align": "sub" }} src='/assets/images/logo.png' height="60" width="60" alt='Deal Alchemist' /></h1>
+                <h4 className="text-muted" style={{marginBottom:0, paddingBottom:0}}>{props.username}</h4>
         </Row>
 
     )

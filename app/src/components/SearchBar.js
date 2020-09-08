@@ -58,7 +58,7 @@ class SearchBar extends Component {
               <option value={1}>1 and up </option>
             </ Control.select>
 
-            <Button type="submit" color="primary" className="form-control col-3 col-md-1 mb-2" style={{ borderTopLeftRadius: 0, borderBottomLeftRadius: 0 }}><i class="fa fa-search" /></Button>
+            <Button type="submit" color="primary" className="form-control col-3 col-md-1" style={{ borderTopLeftRadius: 0, borderBottomLeftRadius: 0 }}><i class="fa fa-search" /></Button>
           </Row>
         </LocalForm>
 
