@@ -96,8 +96,8 @@ class Register extends Component {
 
                                 <Row className="form-group">
                                     <Col className="text-left">
-                                        <Label htmlFor="business" className="form-check-label">
-                                            <Control.checkbox model=".business" id="business" name="business"
+                                        <Label htmlFor="company" className="form-check-label">
+                                            <Control.checkbox model=".company" id="company" name="company"
                                                 className="form-group" /> Are you a business?</Label>
                                     </Col>
 
