@@ -31,15 +31,15 @@ class SearchBar extends Component {
               <h1>Deal Alchemist <img style={{ "vertical-align": "sub" }} src='/assets/images/logo.png' height="60" width="60" alt='Deal Alchemist' /></h1>
             </Col>
 
-            <Control.text model=".company" id="company" name="company" placeholder="Company name..." class="form-control col-12 col-md-5" style={{ borderTopRightRadius: 0, borderBottomRightRadius: 0, borderLeft: "none" }} />
+            <Control.text model=".company" id="company" name="company" placeholder="Company name..." class="form-control col-12 col-md-5" style={{ borderTopRightRadius: 0, borderBottomRightRadius: 0, borderRight: 0, boxShadow: 'none' }} />
 
-            <Control.select model=".city" id="city" name="city" class="form-control col-3 col-md-2" style={{ borderRadius: 0 }}>
+            <Control.select model=".city" id="city" name="city" class="form-control col-3 col-md-2" style={{ borderRadius: 0, borderRight: 0, boxShadow: 'none' }}>
               <option value="any">Any City</option>
               <option>Vancouver</option>
               <option disabled>More soon</option>
             </ Control.select>
 
-            <Control.select model=".category" id="category" name="category" class="form-control col-3 col-md-2" style={{ borderRadius: 0 }}>
+            <Control.select model=".category" id="category" name="category" class="form-control col-3 col-md-2" style={{ borderRadius: 0, borderRight: 0, boxShadow: 'none' }}>
               <option value="any">Any Category</option>
               <option>Food</option>
               <option>Entertainment</option>
@@ -50,7 +50,7 @@ class SearchBar extends Component {
               <option>Other</option>
             </ Control.select>
 
-            <Control.select model=".rating" id="rating" name="rating" class="form-control col-3 col-md-2" style={{ borderRadius: 0 }}>
+            <Control.select model=".rating" id="rating" name="rating" class="form-control col-3 col-md-2" style={{ borderRadius: 0, borderRight: 0, boxShadow: 'none' }}>
               <option value={0}>Any Rating</option>
               <option value={4}>4 and up </option>
               <option value={3}>3 and up </option>
