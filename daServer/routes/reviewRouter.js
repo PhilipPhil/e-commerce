@@ -13,7 +13,7 @@ reviewRouter.use(bodyParser.json());
 reviewRouter.route('/')
     .options(cors.corsWithOptions, (req, res) => { res.sendStatus(200); })
     .get(cors.cors, (req, res, next) => {
-        Reviews.find(req.query)
+        Reviews.find(req.query).sort({"updatedAt":-1})
             .populate('author')
             .then((reviews) => {
                 res.statusCode = 200;

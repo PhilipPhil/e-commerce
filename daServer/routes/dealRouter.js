@@ -13,7 +13,7 @@ dealRouter.use(bodyParser.json());
 dealRouter.route('/')
     .options(cors.corsWithOptions, (req, res) => { res.sendStatus(200); })
     .get(cors.cors, (req, res, next) => {
-        Deals.find(req.query)
+        Deals.find(req.query).sort({"updatedAt":-1})
             .populate('reviews.author')
             .then((deals) => {
                 res.statusCode = 200;
