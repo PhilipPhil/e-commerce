@@ -9,27 +9,7 @@ class Card extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-            rating: 0
-        }
     }
-
-    componentDidMount() {
-        if (!this.props.isReviewsLoading && !this.props.reviewsErrMess) {
-          let rating = 0
-          let n = Math.min(this.props.reviews.length, 100);
-          if (n > 0) {
-            for (let i = 0; i < n; i++) {
-              rating = rating + this.props.reviews[i].rating
-            }
-            rating = rating / n
-            this.setState({
-              rating: rating
-            });
-          }
-        }
-    
-      }
 
     render() {
         return (
@@ -57,7 +37,7 @@ class Card extends Component {
                                 </div>
                             </div>
                             <div className="align-self-center">
-                                <StarRatings rating={this.state.rating} starDimension="20px" starSpacing="2px" starRatedColor="gold" />
+                                <StarRatings rating={this.props.rating} starDimension="20px" starSpacing="2px" starRatedColor="gold" />
                             </div>
                         </div>
                     </div>

@@ -41,20 +41,31 @@ class Favorites extends Component {
 
         else if (this.props.favorites != null) {
             const menu = this.props.favorites.deals.map((deal) => {
-                return (
-                    <Card deal={deal}
-                        auth={this.props.auth}
-                        favorites={this.props.favorites}
-                        isFavoritesLoading={this.props.isFavoritesLoading}
-                        favoriteserrMess={this.props.favoriteserrMess}
-                        deleteFavorite={this.props.deleteFavorite}
-                        postFavorite={this.props.postFavorite}
-                        fromFavorites={true}
-                        reviews={this.props.reviews.filter((review) => review.deal === deal._id)}
-                        isReviewsLoading={this.props.reviews.isLoading}
-                        reviewsErrMess={this.props.reviews.errMess}
-                    />
-                );
+                if (!this.props.isReviewsLoading && !this.props.reviewsErrMess) {
+                    var rating = 0
+                    var reviewsWithId = this.props.reviews.filter((review) => review.deal === deal._id)
+                    var n = Math.min(reviewsWithId.length, 100);
+                    if (n > 0) {
+                      for (let i = 0; i < n; i++) {
+                        rating = rating + reviewsWithId[i].rating
+                      }
+                      rating = rating / n
+                    }
+                    return (
+                        <Card deal={deal}
+                            auth={this.props.auth}
+                            favorites={this.props.favorites}
+                            isFavoritesLoading={this.props.isFavoritesLoading}
+                            favoriteserrMess={this.props.favoriteserrMess}
+                            deleteFavorite={this.props.deleteFavorite}
+                            postFavorite={this.props.postFavorite}
+                            fromFavorites={true}
+                            rating={rating}
+                        />
+                    );
+                }
+
+
             });
             return (
                 <div className="container py-4">

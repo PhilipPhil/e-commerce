@@ -25,26 +25,22 @@ class SearchBar extends Component {
 
         <LocalForm onSubmit={(values) => this.handleSubmit(values)}>
 
-          <Row className="form-group justify-content-center mb-4" style={{"backgroundColor": "rgb(0, 123, 255,0.06)" ,"border": "1px solid rgba(0,0,0,.125)", "padding": "15px", "border-radius":".05rem"}}>
+          <Row className="justify-content-center mb-4" style={{ "backgroundColor": "rgb(0, 123, 255,0.06)", "border": "1px solid rgba(0,0,0,.125)", "padding": "15px", "border-radius": ".05rem" }}>
 
-          <Col className="col-12 text-center">
-              <h1>Deal Alchemist <img style={{"vertical-align": "sub"}} src='/assets/images/logo.png' height="60" width="60" alt='Deal Alchemist'/></h1>
+            <Col className="col-12 text-center">
+              <h1>Deal Alchemist <img style={{ "vertical-align": "sub" }} src='/assets/images/logo.png' height="60" width="60" alt='Deal Alchemist' /></h1>
             </Col>
 
-            <Col className="col-12 col-xl-7 py-2">
-              <Control.text model=".company" id="company" name="company" placeholder="Company name..."
-                className="form-control" />
-            </Col>
-            <Col className="col-12 col-sm-6 col-md-auto py-2">
-              <Control.select model=".city" id="city" name="city" className="form-control">
+              <Control.text model=".company" id="company" name="company" placeholder="Company name..." class="form-control col-12 col-md-5" style={{ borderTopRightRadius: 0,borderBottomRightRadius: 0, borderLeft: "none"  }}/>
+
+              <Control.select model=".city" id="city" name="city" class="form-control col-3 col-md-2" style={{ borderRadius: 0 }}>
                 <option value="any">Any City</option>
                 <option>Vancouver</option>
                 <option disabled>More soon</option>
               </ Control.select>
-            </Col>
-            <Col className="col-12 col-sm-6 col-md-auto py-2">
-              <Control.select model=".category" id="category" name="category" className="form-control">
-                <option value="all">All Categories</option>
+ 
+              <Control.select model=".category" id="category" name="category" class="form-control col-3 col-md-2" style={{ borderRadius: 0 }}>
+                <option value="any">Any Category</option>
                 <option>Food</option>
                 <option>Entertainment</option>
                 <option>Nightlife</option>
@@ -53,10 +49,16 @@ class SearchBar extends Component {
                 <option>Rentals</option>
                 <option>Other</option>
               </ Control.select>
-            </Col>
-            <Col className="col-xl-auto py-2 text-right">
-              <Button type="submit" color="primary">Search</Button>
-            </Col>
+
+              <Control.select model=".rating" id="rating" name="rating" class="form-control col-3 col-md-2" style={{ borderRadius: 0 }}>
+                <option value={0}>Any Rating</option>
+                <option value={4}>4 and up </option>
+                <option value={3}>3 and up </option>
+                <option value={2}>2 and up </option>
+                <option value={1}>1 and up </option>
+              </ Control.select>
+
+              <Button type="submit" color="primary" className="form-control col-3 col-md-1" style={{ borderTopLeftRadius: 0, borderBottomLeftRadius: 0 }}><i class="fa fa-search" /></Button>
           </Row>
 
         </LocalForm>

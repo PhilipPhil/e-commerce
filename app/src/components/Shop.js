@@ -12,7 +12,8 @@ class Shop extends Component {
     this.state = {
       company: false,
       city: false,
-      category: false
+      category: false,
+      rating: 0
     };
   }
 
@@ -20,7 +21,8 @@ class Shop extends Component {
     this.setState({
       company: values.company,
       city: values.city,
-      category: values.category
+      category: values.category,
+      rating: values.rating
     })
   }
 
@@ -42,25 +44,37 @@ class Shop extends Component {
     else if (this.props.deals != null) {
 
       const menu = this.props.deals.map((deal) => {
-        if ((!this.state.category || this.state.category == 'all' || this.state.category == deal.category) &&
-          (!this.state.city || this.state.city == 'any' || this.state.city == deal.city) &&
-          (!this.state.company || this.state.company.length == 0 || deal.company.toLowerCase().includes(this.state.company.toLowerCase())  )) {
-          return (
-            <Card deal={deal}
-              auth={this.props.auth}
-              favorites={this.props.favorites}
-              isFavoritesLoading={this.props.isFavoritesLoading}
-              favoriteserrMess={this.props.favoriteserrMess}
-              deleteFavorite={this.props.deleteFavorite}
-              postFavorite={this.props.postFavorite}
-              fromFavorites={false}
-              reviews={this.props.reviews.filter((review) => review.deal === deal._id)}
-              isReviewsLoading={this.props.reviews.isLoading}
-              reviewsErrMess={this.props.reviews.errMess}
-            />
-          );
+        if (!this.props.isReviewsLoading && !this.props.reviewsErrMess) {
+          var rating = 0
+          var reviewsWithId = this.props.reviews.filter((review) => review.deal === deal._id)
+          var n = Math.min(reviewsWithId.length, 100);
+          if (n > 0) {
+            for (let i = 0; i < n; i++) {
+              rating = rating + reviewsWithId[i].rating
+            }
+            rating = rating / n
+          }
+          if ((!this.state.category || this.state.category == 'any' || this.state.category == deal.category) &&
+            (!this.state.city || this.state.city == 'any' || this.state.city == deal.city) &&
+            (this.state.rating <= rating) &&
+            (!this.state.company || this.state.company.length == 0 || deal.company.toLowerCase().includes(this.state.company.toLowerCase()))) {
+            return (
+              <Card deal={deal}
+                auth={this.props.auth}
+                favorites={this.props.favorites}
+                isFavoritesLoading={this.props.isFavoritesLoading}
+                favoriteserrMess={this.props.favoriteserrMess}
+                deleteFavorite={this.props.deleteFavorite}
+                postFavorite={this.props.postFavorite}
+                fromFavorites={false}
+                rating={rating}
+              />
+            );
+          }
         }
-      });
+
+      }
+      );
 
       return (
         <div className="container py-4">
