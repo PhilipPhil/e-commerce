@@ -21,8 +21,8 @@ class Card extends Component {
                         <h5 class="text-center">{this.props.deal.company}</h5>
                         <p class="card-text" style={{ marginBottom: 0 }}>{this.props.deal.description}</p>
                         <div className="row">
-                            <p class="card-text text-left col"><small style={{ backgroundColor: "rgba(0, 123, 255, 0.1)", borderRadius: "6px", paddingBottom:"2px" }}>&nbsp;{this.props.deal.category}&nbsp;</small></p>
-                            <p class="card-text text-right col"><small style={{ backgroundColor: "rgba(0, 123, 255, 0.1)", borderRadius: "6px" , paddingBottom:"2px"}}>&nbsp;{this.props.deal.city}&nbsp;</small></p>
+                            <p class="card-text text-left col"><small style={{ backgroundColor: "rgba(0, 123, 255, 0.1)", borderRadius: "6px", padding:"2px" }}>&nbsp;{this.props.deal.category}&nbsp;</small></p>
+                            <p class="card-text text-right col"><small style={{ backgroundColor: "rgba(0, 123, 255, 0.1)", borderRadius: "6px" , padding:"2px"}}>&nbsp;{this.props.deal.city}&nbsp;</small></p>
                         </div>
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="align-self-center">

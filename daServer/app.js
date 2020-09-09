@@ -55,22 +55,47 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use(passport.initialize());
 
-app.use("/", indexRouter);
-app.use("/users", usersRouter);
+// app.use("/", indexRouter);
+app.use("/api-users", usersRouter);
 
 
 app.use(express.static(path.join(__dirname, "public")));
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+app.get('/deal/:dealId', function (req, res) {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+app.get('/contact', function (req, res) {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+app.get('/about', function (req, res) {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+app.get('/favorites', function (req, res) {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+app.get('/deals', function (req, res) {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+app.get('/deal', function (req, res) {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+app.get('/error', function (req, res) {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
 
 
-app.use("/deals", dealRouter);
-app.use('/imageUpload', uploadRouter);
-app.use('/favorites', favoriteRouter);
-app.use('/reviews', reviewRouter);
-app.use('/emailform', emailformRouter)
+app.use("/api-deals", dealRouter);
+app.use('/api-imageUpload', uploadRouter);
+app.use('/api-favorites', favoriteRouter);
+app.use('/api-reviews', reviewRouter);
+app.use('/api-emailform', emailformRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
-  next(createError(404));
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+  // next(createError(404));
 });
 
 // error handler
