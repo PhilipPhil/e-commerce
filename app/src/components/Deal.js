@@ -8,7 +8,6 @@ import Comments from './Comments'
 import FavoritesButton from "./FavoritesButton"
 import Error from './Error';
 import MapContainer from './MapContainer'
-import { baseUrl } from '../shared/baseUrl'
 
 class Deal extends Component {
 
@@ -80,11 +79,11 @@ class Deal extends Component {
 
             <div class="row featurette mb-4">
               <div class="col-md-6 text-center mb-2">
-                <img class="featurette-image img-fluid mx-auto" src={baseUrl + this.props.deal.mainimage} alt={this.props.deal.company} style={{ "max-height": "100vh" }} />
+                <img class="featurette-image img-fluid mx-auto" src={process.env.REACT_APP_baseUrl + this.props.deal.mainimage} alt={this.props.deal.company} style={{ "max-height": "100vh" }} />
               </div>
               <div class="col-md-6 align-self-center text-center">
                 <a className="link-deal link-deal-website" href={this.props.deal.website}>
-                  <img class="featurette-image img-fluid mx-auto mb-2" src={baseUrl + this.props.deal.logoimage} alt="Company Logo" style={{ "max-height": "129px", "max-width": "241px" }} />
+                  <img class="featurette-image img-fluid mx-auto mb-2" src={process.env.REACT_APP_baseUrl + this.props.deal.logoimage} alt="Company Logo" style={{ "max-height": "129px", "max-width": "241px" }} />
                 </a>
                 <h3>{this.props.deal.company}</h3>
                 <p>{this.props.deal.description}</p>

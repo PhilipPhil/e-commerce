@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import StarRatings from 'react-star-ratings';
 import { Link } from 'react-router-dom';
 import FavoritesButton from "./FavoritesButton"
-import { baseUrl } from '../shared/baseUrl'
 
 
 class Card extends Component {
@@ -16,7 +15,7 @@ class Card extends Component {
             <div class="col-md-6 col-lg-4">
                 <div class="card mb-4">
                     <Link className="btn btn-sm btn-outline-secondary" color="outline-secondary" outline to={`/deal/${this.props.deal._id}`} className="link-deal">
-                        <img class="card-img-top" src={baseUrl + this.props.deal.logoimage} alt={this.props.deal.company} />
+                        <img class="card-img-top" src={process.env.REACT_APP_baseUrl + this.props.deal.logoimage} alt={this.props.deal.company} />
                     </Link>
                     <div class="card-body">
                         <h5 class="text-center">{this.props.deal.company}</h5>

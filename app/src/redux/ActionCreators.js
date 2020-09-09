@@ -1,7 +1,5 @@
 import * as ActionTypes from './ActionTypes';
 
-import { baseUrl } from '../shared/baseUrl';
-
 export const addReview = (review) => ({
   type: ActionTypes.REVIEW_ADD,
   payload: review
@@ -16,7 +14,7 @@ export const postReview = (dealId, rating, comment) => (dispatch) => {
 
   const bearer = 'Bearer ' + localStorage.getItem('token');
 
-  return fetch(baseUrl + 'reviews', {
+  return fetch(process.env.REACT_APP_baseUrl + 'reviews', {
     method: 'post',
     body: JSON.stringify(newReview),
     headers: {
@@ -45,7 +43,7 @@ export const postReview = (dealId, rating, comment) => (dispatch) => {
 
 export const fetchDeals = () => (dispatch) => {
   dispatch(dealsLoading());
-  return fetch(baseUrl + 'deals')
+  return fetch(process.env.REACT_APP_baseUrl + 'deals')
     .then(response => {
       if (response.ok) {
         return response;
@@ -80,7 +78,7 @@ export const addDeals = (deals) => ({
 
 export const fetchReviews = () => (dispatch) => {
   dispatch(reviewsLoading());
-  return fetch(baseUrl + 'reviews')
+  return fetch(process.env.REACT_APP_baseUrl + 'reviews')
     .then(response => {
       if (response.ok) {
         return response;
@@ -139,7 +137,7 @@ export const loginUser = (creds) => (dispatch) => {
   // We dispatch requestLogin to kickoff the call to the API
   dispatch(requestLogin(creds))
 
-  return fetch(baseUrl + 'users/login', {
+  return fetch(process.env.REACT_APP_baseUrl + 'users/login', {
     method: 'post',
     headers: {
       'Content-Type': 'application/json'
@@ -199,7 +197,7 @@ export const logoutUser = () => (dispatch) => {
 }
 
 export const registerUser = (user) => (dispatch) => {
-  return fetch(baseUrl + 'users/signup', {
+  return fetch(process.env.REACT_APP_baseUrl + 'users/signup', {
     method: 'post',
     headers: {
       'Content-Type': 'application/json'
@@ -227,7 +225,7 @@ export const postFavorite = (dealId) => (dispatch) => {
 
   const bearer = 'Bearer ' + localStorage.getItem('token');
 
-  return fetch(baseUrl + 'favorites/' + dealId, {
+  return fetch(process.env.REACT_APP_baseUrl + 'favorites/' + dealId, {
       method: "POST",
       body: JSON.stringify({"_id": dealId}),
       headers: {
@@ -257,7 +255,7 @@ export const deleteFavorite = (dealId) => (dispatch) => {
 
   const bearer = 'Bearer ' + localStorage.getItem('token');
 
-  return fetch(baseUrl + 'favorites/' + dealId, {
+  return fetch(process.env.REACT_APP_baseUrl + 'favorites/' + dealId, {
       method: "DELETE",
       headers: {
         'Authorization': bearer
@@ -286,7 +284,7 @@ export const fetchFavorites = () => (dispatch) => {
 
   const bearer = 'Bearer ' + localStorage.getItem('token');
 
-  return fetch(baseUrl + 'favorites', {
+  return fetch(process.env.REACT_APP_baseUrl + 'favorites', {
       headers: {
           'Authorization': bearer
       },
@@ -326,7 +324,7 @@ export const addFavorites = (favorites) => ({
 
 export const postEmailForm = (emailform) => (dispatch) => {
         
-  return fetch(baseUrl + 'emailform', {
+  return fetch(process.env.REACT_APP_baseUrl + 'emailform', {
       method: "POST",
       body: JSON.stringify(emailform),
       headers: {
@@ -355,7 +353,7 @@ export const deleteReview = (reviewId) => (dispatch) => {
 
     const bearer = 'Bearer ' + localStorage.getItem('token');
   
-    return fetch(baseUrl + 'reviews/' + reviewId, {
+    return fetch(process.env.REACT_APP_baseUrl + 'reviews/' + reviewId, {
         method: "DELETE",
         headers: {
           'Authorization': bearer
@@ -388,7 +386,7 @@ export const editReview = (dealId, rating, comment, reviewId) => (dispatch) => {
 
   const bearer = 'Bearer ' + localStorage.getItem('token');
 
-  return fetch(baseUrl + 'reviews/' + reviewId, {
+  return fetch(process.env.REACT_APP_baseUrl + 'reviews/' + reviewId, {
     method: 'PUT',
     body: JSON.stringify(newReview),
     headers: {

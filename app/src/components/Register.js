@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Button, Label, Col, Row } from 'reactstrap';
 import { Control, LocalForm, Errors } from 'react-redux-form';
 import Reaptcha from 'reaptcha';
-import { RECAPTCHA_KEY } from '../shared/API_KEY'
 
 const required = (val) => val && val.length;
 const maxLength = (len) => (val) => !(val) || (val.length <= len);
@@ -104,7 +103,7 @@ class Register extends Component {
                                 </Row>
                                 <Row className="form-group">
                                     <Col className="text-left" style={{ position: 'relative' }}>
-                                        <Reaptcha sitekey={RECAPTCHA_KEY} onVerify={this.onVerify} />
+                                        <Reaptcha sitekey={process.env.REACT_APP_RECAPTCHA_KEY} onVerify={this.onVerify} />
                                     </Col>
 
                                 </Row>

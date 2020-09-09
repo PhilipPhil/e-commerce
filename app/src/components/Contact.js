@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Button, Label, Col, Row } from 'reactstrap';
 import { Control, Form, Errors } from 'react-redux-form';
 import Reaptcha from 'reaptcha';
-import { RECAPTCHA_KEY } from '../shared/API_KEY'
 
 const required = (val) => val && val.length;
 const maxLength = (len) => (val) => !(val) || (val.length <= len);
@@ -152,7 +151,7 @@ class Contact extends Component {
 
                                 <Row className="form-group">
                                     <Col className="text-lg-left offset-md-2">
-                                        <Reaptcha sitekey={RECAPTCHA_KEY} onVerify={this.onVerify} />
+                                        <Reaptcha sitekey={process.env.REACT_APP_RECAPTCHA_KEY} onVerify={this.onVerify} />
                                     </Col>
                                 </Row>
                                 <Row className="form-group">

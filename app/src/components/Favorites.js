@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Col, Row } from 'reactstrap';
+import { Row } from 'reactstrap';
 import { Redirect } from 'react-router-dom';
 import Loading from "./Loading"
 import Card from "./Card"
