@@ -41,7 +41,7 @@ class Deal extends Component {
     if (category) {
       return (
         <React.Fragment>
-          <span style={{ "background-color": "rgba(0, 123, 255, 0.1)", "border-radius": "6px" }}>
+          <span style={{ backgroundColor: "rgba(0, 123, 255, 0.1)", borderRadius: "6px", paddingBottom:"2px" }}>
             &nbsp;{category}&nbsp;
           </span>
         &nbsp;
