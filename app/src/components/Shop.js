@@ -56,7 +56,7 @@ class Shop extends Component {
           }
           if ((!this.state.category || this.state.category == 'any' || this.state.category == deal.category) &&
             (!this.state.city || this.state.city == 'any' || this.state.city == deal.city) &&
-            (this.state.rating <= rating) &&
+            (!this.state.rating || this.state.rating <= rating) &&
             (!this.state.company || this.state.company.length == 0 || deal.company.toLowerCase().includes(this.state.company.toLowerCase()))) {
             return (
               <Card deal={deal}
