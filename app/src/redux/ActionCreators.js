@@ -126,7 +126,7 @@ export const receiveLogin = (response) => {
 }
 
 export const loginError = (message) => {
-  alert("Login Failed")
+  alert("Login Failed\nCheck: Username and Password")
   return {
     type: ActionTypes.LOGIN_FAILURE,
     message

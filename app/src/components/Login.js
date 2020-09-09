@@ -14,7 +14,7 @@ class Login extends Component {
     super(props);
     this.state = {
       verified: false
-  };
+    };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.onVerify = this.onVerify.bind(this);
   }
@@ -43,7 +43,15 @@ class Login extends Component {
                   <Col md={12}>
                     <Control.text model=".username" id="username" name="username"
                       className="form-control"
-                      placeholder="Email" />
+                      placeholder="Email"
+                      validators={{
+                        required, validEmail
+                      }} />
+                    <Errors className="text-danger" model=".username" show="touched"
+                      messages={{
+                        required: 'Required\n',
+                        validEmail: 'Email is not valid\n'
+                      }}></Errors>
                   </Col>
                 </Row>
 
@@ -52,7 +60,16 @@ class Login extends Component {
                   <Col md={12}>
                     <Control.password model=".password" id="password" name="password"
                       className="form-control"
-                      placeholder="Password" />
+                      placeholder="Password"
+                      validators={{
+                        required, minLength: minLength(6), maxLength: maxLength(12)
+                      }} />
+                    <Errors className="text-danger" model=".password" show="touched"
+                      messages={{
+                        required: 'Required\n',
+                        minLength: 'Minimum length is 6 characters\n',
+                        maxLength: 'Maximum length is 12 characters\n'
+                      }}></Errors>
                   </Col>
                 </Row>
 
