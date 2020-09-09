@@ -8,7 +8,7 @@ export const Reviews = (state = {
     switch (action.type) {
         case ActionTypes.REVIEW_ADD:
             var review = action.payload
-            return { ...state, reviews: state.reviews.concat(review)}
+            return { ...state, reviews: state.reviews.reverse().concat(review).reverse()}
         case ActionTypes.REVIEWS_ADD:
             return { ...state, isLoading: false, errMess: null, reviews: action.payload }
         case ActionTypes.REVIEWS_FAILED:

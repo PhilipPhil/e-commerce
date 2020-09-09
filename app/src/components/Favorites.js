@@ -40,7 +40,7 @@ class Favorites extends Component {
 
 
         else if (this.props.favorites != null) {
-            const menu = this.props.favorites.deals.map((deal) => {
+            const menu = this.props.favorites.deals.reverse().map((deal) => {
                 if (!this.props.isReviewsLoading && !this.props.reviewsErrMess) {
                     var rating = 0
                     var reviewsWithId = this.props.reviews.filter((review) => review.deal === deal._id)
