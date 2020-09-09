@@ -67,7 +67,7 @@ class Register extends Component {
                                             validators={{
                                                 required, validEmail
                                             }} />
-                                        <Errors className="text-danger" model=".email" show="touched"
+                                        <Errors className="text-danger" model=".username" show="touched"
                                             messages={{
                                                 required: 'Required\n',
                                                 validEmail: 'Email is not valid\n'
