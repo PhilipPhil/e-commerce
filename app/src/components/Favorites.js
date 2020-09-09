@@ -6,11 +6,13 @@ import Card from "./Card"
 
 const Tittle = (props) => {
     return (
-        <Row className="form-group justify-content-center" style={{ "backgroundColor": "rgb(0, 123, 255,0.06)", "border": "1px solid rgba(0,0,0,.125)", "padding": "15px", "border-radius": ".05rem" }}>
+        <React.Fragment>
+            <Row className="form-group justify-content-center" style={{ paddingLeft: "15px", paddingRight:"15px" }}>
                 <h1 className="col-12 text-center">Favorites <img style={{ "vertical-align": "sub" }} src='/assets/images/logo.png' height="60" width="60" alt='Deal Alchemist' /></h1>
-                <h4 className="text-muted" style={{marginBottom:0, paddingBottom:0}}>{props.username}</h4>
-        </Row>
-
+                <h4 className="text-muted" style={{ marginBottom: 0, paddingBottom: 0 }}>{props.username}</h4>
+            </Row>
+            <hr class="featurette-divider" />
+        </React.Fragment>
     )
 }
 
@@ -44,10 +46,10 @@ class Favorites extends Component {
                     var reviewsWithId = this.props.reviews.filter((review) => review.deal === deal._id)
                     var n = Math.min(reviewsWithId.length, 100);
                     if (n > 0) {
-                      for (let i = 0; i < n; i++) {
-                        rating = rating + reviewsWithId[i].rating
-                      }
-                      rating = rating / n
+                        for (let i = 0; i < n; i++) {
+                            rating = rating + reviewsWithId[i].rating
+                        }
+                        rating = rating / n
                     }
                     return (
                         <Card deal={deal}
