@@ -2,8 +2,8 @@
   "name": "website",
   "version": "0.1.0",
   "scripts": {
-    "start": "npm start",
-    "heroku-postbuild": "cd app && npm install && npm build && cd .. && cd daServer && npm start",
+    "start": "cd daServer && npm start",
+    "heroku-postbuild": "cd app && npm install && npm build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
