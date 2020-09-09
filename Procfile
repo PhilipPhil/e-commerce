@@ -1,1 +1,1 @@
-web: cd daServer && npm start
+web: cd app && npm start
