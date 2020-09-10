@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 var authenticate = require('../authenticate');
 const cors = require('./cors');
 
-const Reviews = require('../models/Reviews');
+const Reviews = require('../models/reviews');
 
 const reviewRouter = express.Router();
 
