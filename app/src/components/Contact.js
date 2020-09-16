@@ -79,7 +79,7 @@ class Contact extends Component {
                                                 required
                                             }}>
                                             <option></option>
-                                            <option>Partner with us</option>
+                                            <option>Make a post</option>
                                             <option>Technical</option>
                                             <option>Other</option>
                                         </Control.select>
