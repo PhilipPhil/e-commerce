@@ -51,7 +51,7 @@ const HomeBodyComponent = () => {
         <div class="col-lg-4 text-center">
           <img class="mb-2" src="assets/images/logo.png" alt="Generic placeholder image" width="140" height="140" />
           <h2>Who</h2>
-          <p>Deal Alchemist was formed through the passion for a great bargain and helping local businesses. Our team of alchemists is based in Vancouver.</p>
+          <p>Deal Alchemist was formed through the passion for a great bargain and helping local businesses.</p>
         </div>
         <div class="col-lg-4 text-center">
           <img class="mb-2" src="assets/images/trophy.png" alt="Generic placeholder image" width="140" height="140" />
