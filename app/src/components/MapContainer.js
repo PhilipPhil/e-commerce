@@ -65,7 +65,7 @@ export class MapContainer extends Component {
                             <div className="text-center">
                                 <h5>{this.props.deal.company}</h5>
                                 <p style={{ marginBottom: "10px" }}>{this.props.deal.address}</p>
-                                <a href={'https://www.google.com/search?q=' + this.props.deal.company + ' ' + this.props.deal.address} target="_blank">More</a>
+                                <a href={'https://www.google.com/search?q=' + this.props.deal.company.replace("&", "and") + ' ' + this.props.deal.address} target="_blank">More</a>
                             </div>
                         </InfoWindow>
                     </Map>
