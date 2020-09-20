@@ -12,7 +12,7 @@ const FooterComponent = (props) => {
                         <div className="col-12 col-md-7 mt-3">
                             <h5>Deal Alchemist</h5>
                             <p>
-                                If you have questions or would like to make a post please contact us!
+                                If you have questions or would like to make a post please contact us! All deals are subject to change, confirm with provider.
                         </p>
                         </div>
 
