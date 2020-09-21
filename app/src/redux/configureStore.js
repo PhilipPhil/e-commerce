@@ -6,7 +6,7 @@ import { Favorites } from './favorites';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 import { createForms } from 'react-redux-form';
-import { InitialEmailForm } from './forms';
+import { InitialEmailForm, SearchForm } from './forms';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
@@ -18,7 +18,8 @@ export const ConfigureStore = () => {
             auth: Auth,
             favorites: Favorites,
             ...createForms({
-                emailform: InitialEmailForm
+                emailform: InitialEmailForm,
+                searchform: SearchForm
             })
         }),
         composeEnhancers(applyMiddleware(thunk,logger))

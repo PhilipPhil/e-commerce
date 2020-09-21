@@ -48,7 +48,23 @@ class Main extends Component {
 
     constructor(props) {
         super(props);
+        this.state = {
+            company: false,
+            city: false,
+            category: false,
+            rating: 0
+          };
+        this.setFilter = this.setFilter.bind(this);
     }
+
+    setFilter(values) {
+        this.setState({
+          company: values.company,
+          city: values.city,
+          category: values.category,
+          rating: values.rating
+        })
+      }
 
     componentDidMount() {
         this.props.fetchDeals();
@@ -72,6 +88,8 @@ class Main extends Component {
                     reviews={this.props.reviews.reviews}
                     isReviewsLoading={this.props.reviews.isLoading}
                     reviewsErrMess={this.props.reviews.errMess}
+                    state={this.state}
+                    setFilter={this.setFilter}
                 />
             );
         }

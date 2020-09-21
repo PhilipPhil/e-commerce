@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Col, Row } from 'reactstrap';
-import { Control, LocalForm } from 'react-redux-form';
+import { Control, Form } from 'react-redux-form';
 
 const required = (val) => val && val.length;
 const maxLength = (len) => (val) => !(val) || (val.length <= len);
@@ -23,7 +23,7 @@ class SearchBar extends Component {
       <React.Fragment>
 
 
-        <LocalForm onSubmit={(values) => this.handleSubmit(values)}>
+        <Form model="searchform" onSubmit={(values) => this.handleSubmit(values)}>
 
           <Row className="justify-content-center mb-4" 
           style={{ paddingLeft: "15px", paddingRight:"15px" }}
@@ -62,7 +62,7 @@ class SearchBar extends Component {
 
             <Button type="submit" color="primary" className="form-control col-3 col-md-1" style={{ borderTopLeftRadius: 0, borderBottomLeftRadius: 0 }}><i class="fa fa-search" /></Button>
           </Row>
-        </LocalForm>
+        </Form>
         <hr class="featurette-divider" />
       </React.Fragment>
     );

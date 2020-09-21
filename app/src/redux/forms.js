@@ -5,3 +5,10 @@ export const InitialEmailForm = {
     phone: '' ,
     message: ''
 };
+
+export const SearchForm = {
+    company: '',
+    city: '',
+    category: '',
+    rating: 0
+};

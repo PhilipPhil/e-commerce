@@ -8,29 +8,29 @@ class Shop extends Component {
 
   constructor(props) {
     super(props);
-    this.setFilter = this.setFilter.bind(this);
-    this.state = {
-      company: false,
-      city: false,
-      category: false,
-      rating: 0
-    };
+    // this.setFilter = this.setFilter.bind(this);
+    // this.state = {
+    //   company: false,
+    //   city: false,
+    //   category: false,
+    //   rating: 0
+    // };
   }
 
-  setFilter(values) {
-    this.setState({
-      company: values.company,
-      city: values.city,
-      category: values.category,
-      rating: values.rating
-    })
-  }
+  // setFilter(values) {
+  //   this.setState({
+  //     company: values.company,
+  //     city: values.city,
+  //     category: values.category,
+  //     rating: values.rating
+  //   })
+  // }
 
   render() {
     if (this.props.isLoading) {
       return (
         <div className="container py-4">
-          <SearchBar setFilter={this.setFilter} />
+          <SearchBar setFilter={this.props.setFilter} />
           <div class="row">
             <Loading />
           </div>
@@ -54,10 +54,10 @@ class Shop extends Component {
             }
             rating = rating / n
           }
-          if ((!this.state.category || this.state.category == 'any' || this.state.category == deal.category) &&
-            (!this.state.city || this.state.city == 'any' || this.state.city == deal.city) &&
-            (!this.state.rating || this.state.rating <= rating) &&
-            (!this.state.company || this.state.company.length == 0 || deal.company.toLowerCase().includes(this.state.company.toLowerCase()))) {
+          if ((!this.props.state.category || this.props.state.category == 'any' || this.props.state.category == deal.category) &&
+            (!this.props.state.city || this.props.state.city == 'any' || this.props.state.city == deal.city) &&
+            (!this.props.state.rating || this.props.state.rating <= rating) &&
+            (!this.props.state.company || this.props.state.company.length == 0 || deal.company.toLowerCase().includes(this.props.state.company.toLowerCase()))) {
             return (
               <Card deal={deal}
                 auth={this.props.auth}
@@ -78,7 +78,7 @@ class Shop extends Component {
 
       return (
         <div className="container py-4">
-          <SearchBar setFilter={this.setFilter} />
+          <SearchBar setFilter={this.props.setFilter} />
           <div class="row">
             {menu}
           </div>
@@ -87,7 +87,7 @@ class Shop extends Component {
     } else {
       return (
         <div className="container py-4">
-          <SearchBar setFilter={this.setFilter} />
+          <SearchBar setFilter={this.props.setFilter} />
           <div class="row">
           </div>
         </div>
