@@ -37,6 +37,7 @@ class SearchBar extends Component {
 
             <Control.select model=".city" id="city" name="city" class="form-control col-3 col-md-2" style={{ borderRadius: 0, borderRight: 0, boxShadow: 'none' }}>
               <option value="any">Any City</option>
+              <option value="Any">Global Only</option>
               <option>Vancouver</option>
               <option disabled>More soon</option>
             </ Control.select>

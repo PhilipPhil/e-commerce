@@ -55,7 +55,7 @@ class Shop extends Component {
             rating = rating / n
           }
           if ((!this.props.state.category || this.props.state.category == 'any' || this.props.state.category == deal.category) &&
-            (!this.props.state.city || this.props.state.city == 'any' || this.props.state.city == deal.city) &&
+            (!this.props.state.city || this.props.state.city == 'any' || this.props.state.city == deal.city)  &&
             (!this.props.state.rating || this.props.state.rating <= rating) &&
             (!this.props.state.company || this.props.state.company.length == 0 || deal.company.toLowerCase().includes(this.props.state.company.toLowerCase()))) {
             return (
